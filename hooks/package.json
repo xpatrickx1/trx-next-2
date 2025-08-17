@@ -1,0 +1,44 @@
+{
+  "name": "receivetrxcom",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p 3000"
+  },
+  "dependencies": {
+    "@tronweb3/tronwallet-adapter-walletconnect": "^2.0.2",
+    "@walletconnect/core": "^2.21.0",
+    "@walletconnect/modal": "^2.7.0",
+    "@walletconnect/sign-client": "^2.19.2",
+    "axios": "^1.8.4",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "i18next-browser-languagedetector": "^8.1.0",
+    "i18next-http-backend": "^3.0.2",
+    "next": "^15.2.3",
+    "pg": "^8.14.1",
+    "pg-hstore": "^2.3.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "^15.5.2",
+    "react-icons": "^5.5.0",
+    "react-spinners": "^0.15.0",
+    "sequelize": "^6.37.7",
+    "tronweb": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.13",
+    "@types/react": "19.0.12",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.3.3"
+  }
+}

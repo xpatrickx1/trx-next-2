@@ -1,0 +1,141 @@
+{
+  "pageTitle": "TRX-PRIME.com bietet sichere Energie- und Soforttauschdienste",
+  "toggleLang": "de",
+  "desc": "Über TRX-PRIME.com können Sie den bidirektionalen Austausch zwischen USDT und TRX sowie den Energieerwerb über TRX nutzen, um Ressourcenanforderungen im TRON-Netzwerk zu erfüllen.",
+  "energy": "Energie:",
+  "bandwidth": "Bandbreite:",
+  "buyEnergy": "Energie kaufen",
+  "flashExchange": "Soforttausch",
+  "addressLabel": "Empfangsadresse",
+  "connectWallet": "Wallet verbinden, um Adresse zu erhalten",
+  "addressPlaceholder": "Standardmäßig aktuelle Kontoadresse",
+  "buyCount": "Anzahl der USDT-Transaktionen",
+  "tip": "Falls der Empfänger kein USDT besitzt, bitte 2 Käufe tätigen.",
+  "btn1": "1 Kauf",
+  "btn2": "2 Käufe",
+  "btn5": "5 Käufe",
+  "btn10": "10 Käufe",
+  "loadingExchange": "Laden...",
+  "getEnergy": "Energie erhalten",
+  "expireTip": "Energie gültig für <span class='text-orange'>24 Stunden</span>",
+  "energyPlaceholder": "Energiewert",
+  "finalPriceText": "Sie zahlen nur <span class='' id='final_price' style={{color: '#74eb69'}}></span> und sparen <span class='text-gray-500 mr-2' id='origin_price'></span>",
+  "purchaseBtn": "Energie kaufen",
+  "inputAmountPlaceholder": "Bitte Betrag eingeben",
+  "outputAmountPlaceholder": "Voraussichtlicher Erhalt",
+  "payText": "Zahlbetrag:",
+  "saveText": "Ersparnis:",
+  "payLabel": "Zahlung",
+  "receiveLabel": "Erhalt",
+  "exchangeNow": "Jetzt tauschen",
+  "chooseWallet": "Wallet wählen",
+  "scanToLogin": "Zum Anmelden scannen",
+  "confirmOrder": "Bestellung bestätigen",
+  "paymentAddress": "Zahladresse:",
+  "receiveAddress": "Empfangsadresse:",
+  "energyAmount": "Gemietete Energie:",
+  "paymentAmount": "Zahlbetrag:",
+  "confirmPay": "Bezahlen",
+  "cancel": "Abbrechen",
+  "closeButtonText": "Schließen",
+  "partners": "Partner",
+  "contactUs": "Kontakt",
+  "descsspan": "Nicht erneut anzeigen",
+  "exchangeRate": "Wechselkurs",
+  "energyFee": "Energiegebühr",
+  "fee": "Gebühr",
+  "payment": "Zu zahlen",
+  "receiveAmount": "Erhaltener Betrag:",
+  "freeEnergy": "Kostenlose Energie:",
+  "freeOfCharge": "Gebührenfrei:",
+  "waiting": "Bestellung wird verarbeitet, bitte warten...",
+  "additionalTextPurchase": "Bitte nutzen Sie die Energie innerhalb von 10 Minuten, um Gültigkeit zu gewährleisten.",
+  "additionalTextSwap": "Für den Tausch ist mindestens ein Energieerwerb erforderlich!",
+  "usdtMinAmount": "Mindestbetrag für Transaktionen ist 10 USDT",
+  "trxMinAmount": "Mindestbetrag für Transaktionen ist 40 TRX",
+  "walletconnecting": "Wallet wird verbunden, bitte warten...",
+
+  "last_purchase_label": "Letzter einkauf",
+  "last_purchase_text": "vor 2 min",
+  "wallets_available": "Für alle geldbörsen verfügbar...",
+  "referral_referral": "Empfehlungsprogramm",
+  "referral_program": "",
+  "referral_text": "Nehmen Sie an unserem Empfehlungsprogramm teil und erhalten Sie bis zu 8 % ihrer Einkäufe!",
+  "hero_buy": "Kaufen sie",
+  "hero_trx": "TRX",
+  "hero_buy_text": "zu einem günstigen kurs",
+  "hero_buy_text_bottom": "Auch wenn Sie noch kein TRX haben.",
+  "show_receiver_address": "EMPFÄNGERADRESSE ANZEIGEN",
+  "pre_receiver_address": "EMPFÄNGERADRESSE",
+
+  "wait_trust_wallet_connect": "Warten auf die Verbindung...",
+  "open_trust_wallet_text": "Gehen Sie zu Trust Wallet und bestätigen Sie die Operation",
+  "open_trust_wallet_text_button": "Trust Wallet öffnen",
+
+  "text_domen" : "TRX-PRIME.com",
+  "saveupto": "TRX kaufen",
+  "saveuptotwo": "Selbst mit 0 Guthaben",
+  "saveuptothree": "Ein zuverlässiger Partner für den Tausch",
+  
+  "onestep": "einfache Schritte:",
+  "twostep": "Schritt 1:",
+  "threestep": "Schritt 2:",
+  "fourstep": "Verbinden Sie Ihre Wallet",
+  "fivestep": "Bestätigen Sie die Transaktion in Ihrer Wallet",
+
+   "text_picture_one": "Smart-Modus",
+  "text_picture_two": "Ein zuverlässiges Tool für komfortables Arbeiten mit USDT TRC-20 und anderen TRON-Token",
+  "text_picture_three": "Nutzen Sie alle",
+  "text_picture_four": "Vorteile",
+  "text_picture_five": "des Dienstes",
+  "text_picture_six": "Machen Sie die Arbeit mit dem TRON-Netzwerk so effizient wie möglich!",
+  "text_picture_seven": "Niedrige Gebühren",
+  "text_picture_eut": "Wir bieten wettbewerbsfähige Marktbedingungen",
+
+  "text_picture_one_two": "Hohe Geschwindigkeit",
+  "text_picture_one_three": "Energie wird bereitgestellt",
+  "text_picture_one_four": "ohne Verzögerungen",
+
+  "text_picture_one_five": "Flexibilität",
+
+  "text_picture_one_six": "Wir bieten Tarife für jedes Transaktionsvolumen",
+  "text_picture_one_seven": "24/7 Support",
+  "text_picture_one_eut": "Unser Team",
+  "text_picture_one_ten": "ist jederzeit bereit zu helfen",
+  "message": {
+    "installWallet": "Bitte stellen Sie sicher, dass die {{walletName}} App installiert ist",
+    "invalidPaymentAddress": "Ungültige Zahlungsadresse! Bitte Wallet neu verbinden.",
+    "invalidReceiveAddress": "Ungültige Empfangsadresse! Bitte gültige TRON-Adresse eingeben.",
+    "insufficientBalance": "Unzureichendes Guthaben",
+    "userCancelled": "Unterschrift vom Nutzer abgebrochen",
+    "serverError": "Fehlerhafte Serverantwort!",
+    "paymentSuccess": "Zahlung erfolgreich!",
+    "paymentFailure": "Zahlung fehlgeschlagen",
+    "paymentError": "Fehler während der Zahlung. Bitte überprüfen Sie den Wallet-Status.",
+    "orderCancelled": "Bestellung wurde abgebrochen"
+  },
+
+  "faq": [
+    {
+      "question": "Wie sicher ist es, eine Wallet mit der Website zu verbinden?",
+      "answer": "Die Verbindung zeigt nur Ihre Adresse an, erlaubt aber keinen Zugriff auf Gelder. Dies ist Standard bei dApps."
+    },
+    {
+      "question": "Warum sollte ich der Website vertrauen?",
+      "answer": "Unsere Website folgt den besten Sicherheits- und Datenschutzpraktiken."
+    },
+    {
+      "question": "Welche Wallets werden unterstützt?",
+      "answer": "Wir unterstützen Trust Wallet."
+    },
+    {
+      "question": "Warum sollte ich der Website vertrauen?",
+      "answer": "Wir sind Open Source und werden von der Community überprüft."
+    },
+    {
+      "question": "Gibt es ein KYC?",
+      "answer": "Für die Nutzung unserer Plattform ist kein KYC erforderlich."
+    }
+  ]
+  
+}

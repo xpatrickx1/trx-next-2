@@ -1,0 +1,152 @@
+{
+  "pageTitle": "TRX-PRIME.com | USDT to TRX Conversion & TRON Energy Purchase | Fast, Secure, Reliable",
+  "toggleLang": "EN",
+  "desc": "Through TRX-PRIME.com, you can access bi-directional conversion services between USDT and TRX, as well as TRX-based energy purchase services to meet resource demands for transactions on the TRON network.",
+  "energy": "Energy : ",
+  "bandwidth": "Bandwidth : ",
+  "buyEnergy": "Rent Energy",
+  "flashExchange": "Exchange",
+  "addressLabel": "Receiving Address",
+  "connectWallet": "Connect your wallet",
+  "addressPlaceholder": "Default is current wallet address",
+
+  "buyCount": "Quantity of USDT transactions",
+
+
+
+  "tip": "Select 2× if the recipient has no USDT.",
+  "loadingExchange": "Loading...",
+  "btn1": "1x",
+  "btn2": "2x",
+  "btn5": "5x",
+  "btn10": "10x",
+  "getEnergy": "Energy Obtained",
+  "expireTip": "Energy is valid for <span class='text-orange'>24 hours</span>.",
+  "energyPlaceholder": "Energy Value",
+  "finalPriceText": "You only pay <span class='' id='final_price' style={{color: '#74eb69'}}></span> saving you <span class='text-gray-500 mr-2' id='origin_price'></span>",
+  "purchaseBtn": "Buy Energy",
+  "inputAmountPlaceholder": "Enter amount",
+  "outputAmountPlaceholder": "Expected amount",
+  "payText": "Amount to Pay",
+  "saveText": "You will save",
+  "payLabel": "Pay",
+  "receiveLabel": "Receive",
+  "exchangeNow": "Buy",
+  "chooseWallet": "Choose Wallet",
+  "scanToLogin": "Scan to Login",
+  "confirmOrder": "Order Confirmation",
+  "paymentAddress": "Payment Address : ",
+  "receiveAddress": "Receive Address : ",
+  "energyAmount": "Energy Amount : ",
+  "paymentAmount": "Amount to Pay : ",
+  "closeButtonText": "Close",
+  "confirmPay": "Confirm",
+  "cancel": "Cancel",
+  "partners": "Partners",
+  "contactUs": "Contact Us",
+  "descsspan": "Don't show again",
+  "exchangeRate": "Exchange Rate",
+  "energyFee": "Energy Fee",
+  "fee": "Fee",
+  "payment": "Amount to Pay",
+  "receiveAmount": "Receive Amount : ",
+  "freeEnergy": "Free Energy : ",
+  "freeOfCharge": "Free of Charge : ",
+  "waiting": "Processing your order, please wait...",
+  "additionalTextPurchase": "Please use the allocated energy within 10 minutes to avoid expiration.",
+  "additionalTextSwap": "Energy purchase is required to proceed with the exchange.",
+  "usdtMinAmount": "The minimum transaction amount is 10 USDT",
+  "trxMinAmount": "The minimum transaction amount is 40 TRX",
+  "walletconnecting": "Connecting to wallet, please wait...",
+
+  "wait_trust_wallet_connect": "Waiting for connection...",
+  "open_trust_wallet_text": "Go to Trust Wallet and confirm the operation",
+  "open_trust_wallet_text_button": "Open Trust Wallet",
+
+  "text_domen" : "TRX-PRIME.com",
+
+  "saveupto": "Buy TRX",
+  "saveuptotwo": "Even With 0 Balance",
+  "saveuptothree": "A reliable partner to swap",
+  "last_purchase_label": "Last purchase",
+  "last_purchase_text": "2 min ago",
+  "wallets_available": "Available for all wallets...",
+
+  "referral_referral": "Referral",
+  "referral_program": "Program",
+  "referral_text": "Join our referral program and get up to 8% of their purchases!",
+  "hero_buy": "Buy",
+  "hero_trx": "TRX",
+  "hero_buy_text": "at a favorable rate",
+  "hero_buy_text_bottom": "Even if you don't have any TRX yet.",
+  "show_receiver_address": "SHOW RECEIVER ADDRESS",
+  "pre_receiver_address": "RECEIVER ADDRESS",
+
+  "onestep": "simple steps",
+  "twostep": "Step 1:",
+  "threestep": "Step 2:",
+  "fourstep": "Connect your wallet",
+  "fivestep": " Confirm the transaction in your wallet",
+
+  "text_picture_one": "Smart Mode",
+  "text_picture_two": "A reliable tool for seamless work with USDT TRC-20 and other TRON tokens",
+  "text_picture_three": "Take full",
+  "text_picture_four": "advantage",
+  "text_picture_five": "of the service",
+  "text_picture_six": "Make working with the TRON network as efficient as possible!",
+  "text_picture_seven": "Low fees",
+  "text_picture_eut": "We offer competitive market conditions",
+
+  "text_picture_one_two": "Great Speed",
+  "text_picture_one_three": "Energy is delivered",
+  "text_picture_one_four": "without delays",
+
+  "text_picture_one_five": "Flexibility",
+
+  "text_picture_one_six": "We offer rates for any transaction volume",
+  "text_picture_one_seven": "24/7 Support",
+  "text_picture_one_eut": "Our team",
+  "text_picture_one_ten": "is always ready to help",
+  
+  "message": {
+    "invalidPaymentAddress": "Invalid payment address! Please reconnect your wallet",
+    "invalidReceiveAddress": "Invalid receive address! Please enter a valid TRON address",
+    "insufficientBalance": "Insufficient balance in your account",
+    "userCancelled": "User cancelled the signature",
+    "serverError": "Server returned an error!",
+    "paymentSuccess": "Payment successful!",
+    "paymentFailure": "Payment failed",
+    "paymentError": "An error occurred during payment, please check wallet status",
+    "orderCancelled": "Order has been cancelled"
+  },
+
+  "faq": [
+    {
+      "question": "How safe is it to connect a wallet to the site?",
+      "answer": "Connecting a wallet only shows your address to the site but does not give permission to spend funds. This is standard practice for dApps."
+    },
+    {
+      "question": "Why should I trust the site?",
+      "answer": "Our site follows best practices for security and user privacy."
+    },
+    {
+      "question": "What wallets are supported?",
+      "answer": "We support Trust Wallet."
+    },
+    {
+      "question": "Why should I trust the site?",
+      "answer": "We are open source and community reviewed."
+    },
+    {
+      "question": "Is there KYC?",
+      "answer": "No KYC is required for using our platform."
+    }
+  ],
+
+  "thankYou": {
+    "title": "Thank You",
+    "heading": "Thank you for your submission!",
+    "description": "We have received your request and will get back to you shortly.",
+    "back": "Back to Home"
+  }
+}

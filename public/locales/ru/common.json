@@ -1,0 +1,143 @@
+{
+  "pageTitle": "TRX-PRIME.com предоставляет безопасные услуги обмена и покупки энергии",
+  "toggleLang": "РУССКИЙ",
+  "desc": "Через TRX-PRIME.com вы можете воспользоваться двусторонними услугами обмена между USDT и TRX, а также услугой покупки энергии с использованием TRX для обеспечения ресурсов в сети TRON.",
+  "energy": "Энергия:",
+  "bandwidth": "Пропускная способность:",
+  "buyEnergy": "Купить энергию",
+  "flashExchange": "Мгновенный обмен",
+  "addressLabel": "Адрес получения",
+  "connectWallet": "Подключите кошелёк для получения адреса",
+  "addressPlaceholder": "По умолчанию используется текущий адрес аккаунта",
+  "buyCount": "Количество транзакций USDT",
+  "tip": "Если у получателя нет USDT, совершите 2 покупки.",
+  "btn1": "1 раз",
+  "btn2": "2 раза",
+  "btn5": "5 раз",
+  "btn10": "10 раз",
+  "loadingExchange": "Загрузка...",
+  "getEnergy": "Получить энергию",
+  "expireTip": "Срок действия энергии <span class='text-orange'>24 часа</span>",
+  "energyPlaceholder": "Количество энергии",
+  "finalPriceText": "Вы заплатите всего <span class='0' id='final_price' style={{color: '#74eb69'}}></span> и сэкономите <span class='text-gray-500 mr-2' id='origin_price'></span>",
+  "purchaseBtn": "Купить энергию",
+  "inputAmountPlaceholder": "Введите сумму",
+  "outputAmountPlaceholder": "Вы получите",
+  "payText": "К оплате",
+  "saveText": "Экономия",
+  "payLabel": "Оплата",
+  "receiveLabel": "Получение",
+  "exchangeNow": "Обменять сейчас",
+  "chooseWallet": "Выберите кошелёк",
+  "scanToLogin": "Отсканируйте QR-код для входа",
+  "confirmOrder": "Подтвердить заказ",
+  "paymentAddress": "Адрес оплаты:",
+  "receiveAddress": "Адрес получения:",
+  "energyAmount": "Арендованная энергия:",
+  "paymentAmount": "Сумма оплаты:",
+  "confirmPay": "Подтвердить оплату",
+  "cancel": "Отмена",
+  "closeButtonText": "Закрыть",
+  "partners": "Партнёры",
+  "contactUs": "Связаться с нами",
+  "descsspan": "Больше не показывать",
+  "exchangeRate": "Курс обмена",
+  "energyFee": "Комиссия за энергию",
+  "fee": "Комиссия",
+  "payment": "К оплате",
+  "receiveAmount": "Сумма получения:",
+  "freeEnergy": "Бесплатная энергия:",
+  "freeOfCharge": "Без комиссии:",
+  "waiting": "Обработка заказа, пожалуйста, подождите...",
+  "additionalTextPurchase": "Пожалуйста, используйте энергию в течение 10 минут, чтобы она не истекла.",
+  "additionalTextSwap": "Для обмена требуется приобрести одну энергию!",
+  "usdtMinAmount": "Минимальная сумма сделки — 10 USDT",
+  "trxMinAmount": "Минимальная сумма сделки — 40 TRX",
+  "walletconnecting": "Подключение кошелька, пожалуйста, подождите...",
+  "last_purchase_label": "Последняя покупка",
+  "last_purchase_text": "2 мин назад",
+  "wallets_available": "Доступно для всех кошельков...",
+  "referral_referral": "Реферальная",
+  "referral_program": "программа",
+  "referral_text": "Присоединяйтесь к нашей реферальной программе и получайте до 8% от их покупок!",
+  "hero_buy": "Купить",
+  "hero_trx": "TRX",
+  "hero_buy_text": "по выгодному курсу",
+  "hero_buy_text_bottom": "Даже если у вас еще нет TRX.",
+  "show_receiver_address": "ПОКАЗАТЬ АДРЕС ПОЛУЧАТЕЛЯ",
+  "pre_receiver_address": "АДРЕС ПОЛУЧАТЕЛЯ",
+
+  "wait_trust_wallet_connect": "Ожидаем подключение...",
+  "open_trust_wallet_text": "Перейдите в Trust Wallet и подтвердите операцию",
+  "open_trust_wallet_text_button": "Открыть Trust Wallet",
+
+  
+  "text_domen" : "TRX-PRIME.com",
+
+  "saveupto": "Обмен USDT/TRX",
+  "saveuptotwo": "и покупка энергии",
+  "saveuptothree": "Надёжный партнёр для обмена",
+
+  "onestep": "простых шага:",
+  "twostep": "Шаг 1:",
+  "threestep": "Шаг 2:",
+  "fourstep": "Подключите кошелёк",
+  "fivestep": "Подтвердите транзакцию в вашем кошельке",
+
+  "text_picture_one":"Смарт-режим",
+  "text_picture_two":"Надежный инструмент для комфортной работы с USDT TRC-20 и другими токенами TRON",
+  "text_picture_three":"Используйте все",
+  "text_picture_four":"преимущества",
+  "text_picture_five":"сервиса",
+  "text_picture_six":"Сделайте работу с сетью TRON максимально эффективной!",
+  "text_picture_seven":"низкие комиссии",
+  "text_picture_eut":"Предлагаем конкурентные условия на рынке",
+
+  "text_picture_one_two":"Высокая скорость",
+  "text_picture_one_three":"Энергия предоставляется",
+  "text_picture_one_four":"без задержек",
+
+  "text_picture_one_five":"Гибкость",
+
+  "text_picture_one_six":"Мы предлагаем тарифы для любых объемов транзакций",
+  "text_picture_one_seven":"Поддержка 24/7",
+  "text_picture_one_eut":"Наша команда",
+  "text_picture_one_ten":"всегда готова помочь",
+
+
+  "message": {
+    "installWallet": "Пожалуйста, убедитесь, что приложение {{walletName}} установлено",
+    "invalidPaymentAddress": "Недопустимый адрес оплаты! Пожалуйста, переподключите кошелёк",
+    "invalidReceiveAddress": "Неверный адрес получения! Введите корректный адрес TRON",
+    "insufficientBalance": "Недостаточный баланс",
+    "userCancelled": "Пользователь отменил подписание",
+    "serverError": "Ошибка на сервере!",
+    "paymentSuccess": "Оплата прошла успешно!",
+    "paymentFailure": "Не удалось выполнить оплату",
+    "paymentError": "Ошибка во время оплаты, проверьте состояние кошелька.",
+    "orderCancelled": "Заказ отменён"
+  },
+
+  "faq": [
+    {
+      "question": "Насколько безопасно подключать кошелёк к сайту?",
+      "answer": "Подключение кошелька только показывает ваш адрес, но не даёт доступ к средствам. Это стандартная практика для dApps."
+    },
+    {
+      "question": "Почему я должен доверять сайту?",
+      "answer": "Наш сайт следует лучшим практикам безопасности и конфиденциальности."
+    },
+    {
+      "question": "Какие кошельки поддерживаются?",
+      "answer": "Мы поддерживаем Trust Wallet."
+    },
+    {
+      "question": "Почему я должен доверять сайту?",
+      "answer": "Мы — open source и проверены сообществом."
+    },
+    {
+      "question": "Есть ли KYC?",
+      "answer": "Для использования нашей платформы не требуется KYC."
+    }
+  ]
+}

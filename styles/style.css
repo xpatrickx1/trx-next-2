@@ -1,0 +1,1038 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Space Grotesk;
+  src: url("/icons/SpaceGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Space Grotesk;
+  src: url("/icons/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Space Grotesk;
+  src: url("/icons/SpaceGrotesk-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Space Grotesk;
+  src: url("/icons/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: FiraCode;
+  src: url("/icons/FiraCode-Regular.woff2") format("woff2"),
+    url("/icons/FiraCode-Regular.woff") format("woff"),
+    url("/icons/FiraCode-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: RobotoSlab;
+  src: url("/icons/RobotoSlab-Regular.woff2") format("woff2"),
+    url("/icons/RobotoSlab-Regular.woff") format("woff"),
+    url("/icons/RobotoSlab-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: RobotoSlab;
+  src: url("/icons/RobotoSlab-SemiBold.woff2") format("woff2"),
+    url("/icons/RobotoSlab-SemiBold.woff") format("woff"),
+    url("/icons/RobotoSlab-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: RobotoSlab;
+  src: url("/icons/RobotoSlab-Bold.woff2") format("woff2"),
+    url("/icons/RobotoSlab-Bold.woff") format("woff"),
+    url("/icons/RobotoSlab-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: RobotoSlab;
+  src: url("/icons/RobotoSlab-ExtraBold.woff2") format("woff2"),
+    url("/icons/RobotoSlab-ExtraBold.woff") format("woff"),
+    url("/icons/RobotoSlab-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/icons/Lato-ExtraBold.woff2") format("woff2"),
+    url("/icons/Lato-ExtraBold.woff") format("woff"),
+    url("/icons/Lato-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/icons/Lato-Bold.woff2") format("woff2"),
+    url("/icons/Lato-Bold.woff") format("woff"),
+    url("/icons/Lato-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/icons/Lato-BoldItalic.woff2") format("woff2"),
+    url("/icons/Lato-BoldItalic.woff") format("woff"),
+    url("/icons/Lato-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/icons/Lato-ExtraBoldItalic.woff2") format("woff2"),
+    url("/icons/Lato-ExtraBoldItalic.woff") format("woff"),
+    url("/icons/Lato-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/icons/Lato-Regular.woff2") format("woff2"),
+    url("/icons/Lato-Regular.woff") format("woff"),
+    url("/icons/Lato-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/icons/Lato-MediumItalic.woff2") format("woff2"),
+    url("/icons/Lato-MediumItalic.woff") format("woff"),
+    url("/icons/Lato-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/icons/Lato-Medium.woff2") format("woff2"),
+    url("/icons/Lato-Medium.woff") format("woff"),
+    url("/icons/Lato-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/icons/Lato-SemiBold.woff2") format("woff2"),
+    url("/icons/Lato-SemiBold.woff") format("woff"),
+    url("/icons/Lato-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/icons/Lato-SemiBoldItalic.woff2") format("woff2"),
+    url("/icons/Lato-SemiBoldItalic.woff") format("woff"),
+    url("/icons/Lato-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/icons/Lato-Italic.woff2") format("woff2"),
+    url("/icons/Lato-Italic.woff") format("woff"),
+    url("/icons/Lato-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  font-family: Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #262626;
+  color: #e2e8f2;
+}
+
+h2 {
+  font-size: 42px;
+  line-height: 51px;
+}
+
+.text-theme-primary {
+  color: #ef0027;
+}
+
+.text-theme-green {
+  color: #21ED0E;
+}
+
+.theme-primary {
+color: #ef0027;
+}
+
+.theme-green {
+  color: #21ED0E;
+}
+
+.main-wrapper {
+  width: 100%;
+  margin: 0 auto; /* 水平居中 */
+  padding: 0; /* 上下 24px，左右 16px 内边距 */
+  box-sizing: border-box;
+}
+.gradient-border {
+  position: relative;
+  border-radius: 10px;
+  padding: 1px;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: inherit;
+  background: #ef0027;
+  z-index: -1;
+  filter: blur(14px);
+  opacity: 0.4;
+}
+
+input[type="text"],
+input[type="number"] {
+  color: white;
+  border: 0px solid #000;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  height: 60px;
+  font-size: 28px;
+}
+
+.theme-primary input[type="text"]:focus,
+.theme-primary input[type="number"]:focus {
+  border-color: #ef0027;
+  box-shadow: 0 0 0 2px #ef0027;
+}
+
+.theme-green input[type="text"]:focus,
+.theme-green input[type="number"]:focus {
+  border-color: #21ED0E;
+  box-shadow: 0 0 0 2px #21ED0E;
+}
+
+.purchase-btn {
+  color: #ffffff;
+  font-size: 18px;
+  border: 1px solid #000;
+  padding: 0.8rem 0.75rem;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.purchase-btn:hover {
+  background-color: #374151;
+  color: white;
+}
+
+.selected-btn {
+  background-color: #374151 !important;
+  color: white !important;
+}
+
+.purchase-energy-btn {
+  background-color: #ffffff;
+  color: #0b0b0b;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 12px 24px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-size: 21px;
+}
+
+.purchase-energy-btn:hover {
+  font-weight: bold;
+  background-color: #dbdbdb;
+}
+.custom-wallet-icon {
+  width: 1.5em; /* 调整图标大小 */
+  height: 1.5em;
+  background-image: url("/img/wallet-s3.svg"); /* 替换为你的SVG图标路径 */
+  background-size: contain; /* 确保图标按比例缩放 */
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* 背景滑动效果 */
+.slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background-color: #007fe9;
+  transition: transform 0.3s ease;
+}
+
+.switch-currency-button {
+  padding: 16px;
+  background-color: #000;
+  border-radius: 50%;
+  border: 6px solid #1B1B1B;
+  margin: -25px 0;
+  z-index: 3;
+}
+
+.i-local\:logo-lightning\?mask {
+  --un-icon: url("data:image/svg+xml,%3Csvg width='29' height='41' viewBox='0 0 29 41' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.725386 17.8614L28.698 0.860779L17.3643 16.5351L28.698 22.8048L0.00195312 40.4083L11.818 24.2517L0.725386 17.8614Z' fill='%23EF0027'/%3E%3C/svg%3E%0A");
+  background-color: currentColor;
+  display: inline-block;
+  flex: none;
+  height: 1em;
+  -webkit-mask: var(--un-icon) no-repeat;
+  mask: var(--un-icon) no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  vertical-align: middle;
+  width: 1em;
+}
+
+.theme-primary .i-local\:logo-lightning\?mask {
+  color: #EF0027;
+}
+
+.theme-green .i-local\:logo-lightning\?mask {
+  color: #21ED0E;
+}
+
+.i-local\:tron-wallet-s3 {
+  background: url("data:image/svg+xml;utf8,%3Csvg display='inline-block' flex='none' vertical-align='middle' xmlns='http://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 23 23'%3E%3Cg id='组_8819' data-name='组 8819' transform='translate(-50 -921)'%3E%3Cg id='组_8389' data-name='组 8389' transform='translate(-209 -139)'%3E%3Crect id='矩形_2784' data-name='矩形 2784' width='25' height='25' transform='translate(259 1060)' fill='none' opacity='0'/%3E%3C/g%3E%3Cpath id='钱包' d='M54.433,81.108,49.821,83.77H47.5l6.686-3.86a.773.773,0,0,1,1.056.283l2.065,3.577h1.585a.773.773,0,0,1,.773.773V94.589a.773.773,0,0,1-.773.773H43.439a.773.773,0,0,1-.773-.773V84.544a.773.773,0,0,1,.773-.773H55.97l-1.537-2.663Zm4.075,3.822H43.826v2.318H47.3a2.318,2.318,0,0,1,0,4.636H43.826V94.2H58.508V84.93ZM47.3,88.407H43.826v2.318H47.3a1.159,1.159,0,0,0,.068-2.316l-.068,0Zm9.466,0a.58.58,0,0,1,.58.58v1.159a.58.58,0,1,1-1.159,0V88.987A.58.58,0,0,1,56.769,88.407Z' transform='translate(10.333 845.193)' fill='%23007fe9'/%3E%3C/g%3E%3C/svg%3E")
+    no-repeat;
+  background-color: transparent;
+  background-size: 100% 100%;
+  display: inline-block;
+  flex: none;
+  height: 1em;
+  vertical-align: middle;
+  width: 1em;
+}
+
+.i-local\:bandwidth-s2 {
+  background: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='%23007fe9'%3E%3Cpath d='M512 457.088A55.04 55.04 0 0 1 566.912 512 55.04 55.04 0 0 1 512 566.848 55.04 55.04 0 0 1 457.152 512 55.04 55.04 0 0 1 512 457.088z'/%3E%3Cpath d='M512 951.04a30.08 30.08 0 0 0 20.672-8.128 27.008 27.008 0 0 0 8.576-19.584v-337.92c17.088-5.632 31.872-16.192 42.368-30.208 10.496-13.952 16.128-30.72 16.192-47.808 0-45.888-39.424-83.2-87.808-83.2-48.448 0-87.808 37.312-87.808 83.2 0 36.096 24.512 66.56 58.496 78.08v337.856c0 7.36 3.136 14.4 8.576 19.584A30.08 30.08 0 0 0 512 951.04z m0-471.36c5.76 0 11.456 1.6 16.256 4.608a28.16 28.16 0 0 1 10.88 12.48 26.432 26.432 0 0 1-6.4 30.272 30.784 30.784 0 0 1-32 6.016 28.992 28.992 0 0 1-13.12-10.24 26.752 26.752 0 0 1-4.928-15.424c0-15.296 13.12-27.712 29.312-27.712z'/%3E%3Cpath d='M681.28 737.728a26.496 26.496 0 0 0 18.816 8.128 25.792 25.792 0 0 0 18.816-8.128 307.584 307.584 0 0 0 85.76-214.72 307.584 307.584 0 0 0-85.76-214.72A285.568 285.568 0 0 0 512 219.328a285.568 285.568 0 0 0-206.912 88.96 307.584 307.584 0 0 0-85.76 214.72c0 81.088 30.464 157.312 85.76 214.72a26.624 26.624 0 0 0 18.88 8.448 25.728 25.728 0 0 0 19.072-8.128 27.648 27.648 0 0 0 7.744-19.776 28.544 28.544 0 0 0-8.128-19.584 251.648 251.648 0 0 1-70.144-175.68c0-66.368 24.96-128.704 70.144-175.68A233.6 233.6 0 0 1 512 274.56c63.936 0 124.032 25.92 169.28 72.832a251.648 251.648 0 0 1 70.208 175.68c0 66.368-24.96 128.704-70.208 175.68a28.16 28.16 0 0 0 0 39.04z'/%3E%3Cpath d='M512 72.96a435.84 435.84 0 0 0-310.592 129.024A439.68 439.68 0 0 0 72.96 513.792a439.68 439.68 0 0 0 128.448 311.68 27.392 27.392 0 0 0 46.528-19.456 27.584 27.584 0 0 0-7.68-19.392 384.96 384.96 0 0 1-112.448-272.832c0-102.912 39.936-199.808 112.448-272.832A381.952 381.952 0 0 1 512 128.064c102.4 0 198.976 40.128 271.68 112.832a384.96 384.96 0 0 1 112.448 272.896 384.96 384.96 0 0 1-112.448 272.832 27.52 27.52 0 1 0 38.848 38.912 439.68 439.68 0 0 0 128.512-311.744 439.744 439.744 0 0 0-128.512-311.872A437.184 437.184 0 0 0 512 72.96z'/%3E%3C/svg%3E")
+    no-repeat;
+  background-color: transparent;
+  background-size: 100% 100%;
+  display: inline-block;
+  flex: none;
+  height: 1em;
+  vertical-align: middle;
+  width: 1em;
+}
+
+.i-local\:energy-s2 {
+  background: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_9_1021)'%3E%3Cpath d='M11.064 0.766479C16.8627 0.766479 21.564 5.46775 21.564 11.2665C21.564 17.0652 16.8625 21.7665 11.064 21.7665C5.26544 21.7665 0.563965 17.0665 0.563965 11.2665C0.563965 5.46649 5.2646 0.766479 11.064 0.766479Z' fill='%230094FF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.8761 5.56893L11.0063 9.96122H15.4535C15.7395 9.96122 15.9841 10.1118 16.114 10.3665C16.2438 10.6212 16.2203 10.9077 16.0518 11.1384L10.7824 18.3613C10.5753 18.6457 10.2087 18.7442 9.88628 18.6031C9.56442 18.4621 9.38865 18.1257 9.45695 17.7803L10.3268 13.3886H5.87962C5.59358 13.3886 5.34898 13.238 5.21911 12.9833C5.08981 12.7286 5.11276 12.4421 5.28124 12.2109L10.5506 4.98792C10.7578 4.70356 11.1244 4.60505 11.4468 4.74611C11.7687 4.88716 11.9444 5.22357 11.8761 5.56838V5.56893Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_9_1021'%3E%3Crect width='21' height='21' fill='white' transform='translate(0.563965 0.766479)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+    no-repeat;
+  background-color: transparent;
+  background-size: 100% 100%;
+  display: inline-block;
+  flex: none;
+  height: 1em;
+  right: 16px;
+  margin-left: auto;
+  vertical-align: middle;
+  width: 1em;
+}
+
+.i-local\:reverse-currency\?mask {
+  --un-icon: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.37898 7.30966C12.3592 2.33067 20.3442 2.17296 25.5316 6.80891L24.8102 7.53029C24.6218 7.71746 24.5549 7.99262 24.6342 8.24549C24.7136 8.49835 24.9255 8.68551 25.1858 8.73263L28.5957 9.34867C28.6378 9.3561 28.68 9.35982 28.7209 9.35982C28.9081 9.35982 29.0903 9.28545 29.2241 9.15034C29.389 8.98549 29.4621 8.74999 29.42 8.52314L28.8039 5.11454C28.7568 4.853 28.5697 4.64228 28.3168 4.56295C28.0652 4.48486 27.79 4.55055 27.6016 4.73896L26.8269 5.51365C20.9242 0.164035 11.7766 0.320154 6.08241 6.01317C2.55957 9.536 1.0079 14.5658 1.93383 19.468C2.01688 19.908 2.40114 20.2154 2.8337 20.2154C2.88948 20.2154 2.9465 20.2092 3.00475 20.1993C3.5018 20.1051 3.82904 19.6266 3.73607 19.1284C2.92419 14.8224 4.28642 10.4047 7.38012 7.30963L7.37898 7.30966Z' fill='white'/%3E%3Cpath d='M31.5533 13.8654C31.4702 13.4253 31.086 13.1179 30.6534 13.1179C30.5976 13.1179 30.5406 13.1229 30.4824 13.134C29.9853 13.227 29.6581 13.7067 29.7511 14.205C30.5629 18.5109 29.2007 22.9286 26.107 26.0237C21.1267 31.0027 13.1418 31.1604 7.95435 26.5245L8.67574 25.8031C8.86414 25.6159 8.93108 25.3407 8.85175 25.0879C8.77242 24.835 8.56046 24.6478 8.30016 24.6007L4.89029 23.9847C4.84815 23.9773 4.806 23.9735 4.7651 23.9735C4.57793 23.9735 4.39571 24.0479 4.26187 24.183C4.09701 24.3479 4.02388 24.5821 4.06602 24.8102L4.68206 28.2188C4.72916 28.4804 4.91633 28.6911 5.1692 28.7704C5.42082 28.8485 5.69601 28.7828 5.8844 28.5944L6.65909 27.8197C12.5627 33.1693 21.7094 33.0132 27.4036 27.3189C30.9264 23.7961 32.4781 18.7664 31.5522 13.8641L31.5533 13.8654Z' fill='white'/%3E%3C/svg%3E%0A");
+  background-color: currentColor;
+  color: #fff;
+  display: inline-block;
+  flex: none;
+  height: 1em;
+  -webkit-mask: var(--un-icon) no-repeat;
+  mask: var(--un-icon) no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  vertical-align: middle;
+  width: 1em;
+}
+
+.i-local\:tg-s4 {
+  background: url("data:image/svg+xml;utf8,%3Csvg display='inline-block' flex='none' vertical-align='middle' xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cg id='组_58' data-name='组 58' transform='translate(-1448 -23)'%3E%3Ccircle id='椭圆_1' data-name='椭圆 1' cx='15' cy='15' r='15' transform='translate(1448 23)' fill='%23266ef1'/%3E%3Cpath id='路径_2' data-name='路径 2' d='M332.045,240.734l4.361,1.8,2.612-15.137-16.278,8.963,4.31,2.307,8.773-7.872-7.049,8.672-.025,4.082Z' transform='translate(1131.261 -197.397)' fill='%23e2e8f2'/%3E%3C/g%3E%3C/svg%3E")
+    no-repeat;
+  background-color: transparent;
+  background-size: 100% 100%;
+  display: inline-block;
+  flex: none;
+  height: 1em;
+  vertical-align: middle;
+  width: 1em;
+}
+
+.wallet-modal-content {
+  background: #0c1530;
+  border-radius: 14px;
+  padding: 24px;
+  color: white;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 360px;
+  min-width: 240px;
+}
+
+.wallet-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: white;
+  padding-left: 20px;
+}
+
+.wallet-item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.wallet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+.wallet-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.wallet-close-btn {
+  margin-top: 24px;
+  width: 100%;
+  background: #1f2a48;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/* confirmModal 外层控制 */
+.confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9998;
+}
+
+/* 隐藏用 */
+.confirm-modal.hidden {
+  display: none;
+}
+
+/* 背景模糊层 */
+.confirm-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+/* 弹窗定位 */
+.confirm-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* 渐变发光边框 */
+.confirm-gradient-border {
+  position: absolute;
+  border-radius: 16px;
+  padding: 2px; /* 边框厚度 */
+  background: url("/img/bj.png") center center / cover;
+  box-shadow: 0 0 3px rgba(0, 127, 233, 0.5), 0 0 6px rgba(0, 127, 233, 0.3),
+    0 0 9px rgba(0, 127, 233, 0.2);
+}
+
+.confirm-gradient-border::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: inherit;
+  background: rgba(0, 127, 233, 0.5);
+  z-index: -1;
+  filter: blur(12px);
+}
+
+/* 弹窗内容样式 */
+.confirm-modal-content {
+  background: #0c1530;
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 更柔和的内容投影 */
+  width: auto; /* 宽度自动调整，依内容自适应 */
+  max-width: none; /* 去除最大宽度限制 */
+  white-space: nowrap; /* 不允许换行 */
+  overflow-x: auto; /* 如果内容超出，允许水平滚动 */
+}
+
+/* p 内容样式 */
+.confirm-modal-content p {
+  background-color: #142546;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  white-space: nowrap; /* 不允许换行 */
+  overflow-x: auto; /* 超出时允许水平滚动 */
+  text-overflow: ellipsis; /* 如果文本超出显示... */
+}
+
+/* 按钮样式 */
+.confirm-btn {
+  margin-top: 24px;
+  margin-left: 6px; /* 添加左间隔 */
+  margin-right: 6px; /* 添加右间隔 */
+  background: #1f2a48;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 48%; /* 确保按钮宽度适中，不至于填满整个容器 */
+}
+
+.message-box {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  display: none;
+  pointer-events: none;
+  opacity: 0;
+  animation: slideIn 0.5s ease-out forwards;
+  width: fit-content; /* 自动适配内容宽度 */
+  max-width: 90vw; /* 保底最大宽度，避免超出视口 */
+  white-space: nowrap; /* 不换行 */
+}
+
+.message-content {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.message-content span {
+  white-space: nowrap; /* 确保文字本身不换行 */
+}
+
+/* 信息框滑动显示的动画 */
+@keyframes slideIn {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  100% {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+/* 错误提示样式 */
+.message-error {
+  background-color: #f44336;
+}
+
+/* 成功提示样式 */
+.message-success {
+  background-color: #4caf50;
+}
+
+/* 警告提示样式 */
+.message-warning {
+  background-color: #ff9800;
+}
+
+/* 图标样式 */
+.anticon {
+  font-size: 20px;
+  margin-right: 8px;
+  color: #fff;
+}
+
+.message-content span {
+  font-size: 14px;
+  color: #fff;
+}
+
+/* 自动隐藏动画效果 */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: -50px;
+  }
+}
+
+/* 用于消失的过渡动画 */
+.message-box.hide {
+  animation: fadeOut 0.5s ease-in forwards;
+}
+.partner-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 2rem;
+  object-fit: contain;
+  border-radius: 50%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.partner-logo:hover {
+  opacity: 1;
+}
+
+.partners-track {
+  display: flex;
+  animation: seamless-scroll 25s linear infinite;
+}
+
+@keyframes seamless-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.partners-container {
+  max-width: 100%;
+}
+
+.light-sweep-blue {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 127, 233, 0),
+    rgba(26, 85, 66, 0.3) 50%,
+    rgba(0, 127, 233, 0)
+  );
+  animation: sweep 4s linear infinite;
+  z-index: 1;
+}
+
+@keyframes sweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+#language-select {
+  background-color: black; /* 深灰色背景 */
+  color: white; /* 白色字体 */
+  border: 0px solid #4b5563; /* 边框颜色 */
+  padding: 6px 12px;
+  border-radius: 6px;
+  appearance: none; /* 移除浏览器默认样式（可选） */
+}
+
+.relative.z-10 {
+  position: relative;
+  z-index: 10;
+}
+.additional-text {
+  white-space: pre-wrap; /* 保持换行符并自动换行 */
+  word-wrap: break-word; /* 强制在长单词或 URL 处换行 */
+  word-break: break-word; /* 确保长字符串能够断开 */
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #111;
+  padding: 30px;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  max-width: 90%;
+  width: 320px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.modal-content .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  gap: 10px;
+}
+
+.modal-content .modal-header img {
+  width: 24px;
+  height: 24px;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-content button:hover {
+  background-color: #e5e5e5;
+}
+/* ✅ Основной контейнер модалки */
+/* ✅ Запрет скролла при открытии WalletConnect */
+.trust-wallet-button {
+  margin-top: 20px;
+  background-color: #00b8a9;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.trust-wallet-button:hover {
+  background-color: #009e94;
+}
+.stepsContainer {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #0d0d0d;
+  border-radius: 12px;
+  font-family: "Lato", sans-serif;
+  color: #e2e8f2;
+  font-size: 16px;
+
+  line-height: 1.5;
+}
+
+.stepsContainer h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.stepIcon {
+  color: #facc15;
+  margin-right: 8px;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.stepContent .title {
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 0 -30px;
+}
+
+.stepContent .text {
+  font-weight: 500;
+  text-align: center;
+}
+
+.stepContent .text a {
+  color: #3b82f6;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.walletBox {
+  margin-top: 20px;
+  background-color: #1f2937;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.walletIcons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.walletIcons > img {
+  margin-left: -8px;
+}
+
+.walletIcons > img:first-child {
+  margin-left: 0;
+}
+
+.walletText {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .stepsContainer {
+    padding: 16px;
+    font-size: 15px;
+  }
+
+  .stepsContainer h2 {
+    font-size: 18px;
+  }
+
+  .walletBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .walletText {
+    margin-left: 0;
+  }
+}
+
+.theme-primary .style_for_energy {
+  background-color: #000;
+  border-color: #EF0027;
+}
+
+.theme-green .style_for_energy {
+  background-color: #000;
+  border-color: #21ED0E;
+}
+
+
+@keyframes accordion-down {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 300px; /* залежно від контенту */
+    opacity: 0.6;
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    max-height: 300px;
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes spin-scale {
+  0% {
+    transform: rotate(0deg) scale(1.4);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.4);
+  }
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content.open {
+  max-height: 500px;
+}
+
+.accordion-content {
+  overflow: hidden;
+  transition: height 0.2s ease-out;
+}
+
+.opening {
+  animation: accordion-down 0.5s ease-out forwards;
+}
+
+.closing {
+  animation: accordion-up 0s ease-out forwards;
+}
+
+.bg-spin {
+  animation: spin-scale 120s linear infinite;
+}
+
+.loaderWrapper {
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loaderHolder {
+  width: 70%;
+  height: 70%;
+  margin-left: 15%;
+  margin-top: 15%;
+  transform: rotate(-45deg);
+  position: relative;
+}
+
+.rect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 1000% 1000%;
+  background-position: 0% 50%;
+  animation: moveGradient 15s infinite;
+  overflow: hidden;
+}
+
+.theme-primary .rect {
+  background: linear-gradient(
+    to right,
+    #EB1B1B,
+    #FF37CA,
+    #3B37FF
+  );
+}
+
+.theme-green .rect {
+  background: linear-gradient(
+    to right,
+    #0AFFBE,
+    #2ECA07,
+    #379BFF
+  );
+}
+
+
+
+@keyframes moveGradient {
+  to {
+    background-position: 100% 50%;
+  }
+}
