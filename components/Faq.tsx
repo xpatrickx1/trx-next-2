@@ -1,85 +1,82 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useTheme } from '../components/ThemeContext';
 
-type FaqItem = {
-  question: string;
-  answer: string;
-};
+  const faqData = [
+    {
+    question: "What is TRX Exchanger?",
+    answer:
+      "TRX Exchanger is a non-custodial platform for fast and secure crypto swaps without registration.",
+    },
+    {
+    question: "Do I need to create an account?",
+    answer:
+      "No, you can use the platform without any sign-up or account creation.",
+    },
+    {
+    question: "How is my privacy protected?",
+    answer:
+      "We do not store your personal data. All transactions are private and secure.",
+  },
+];
 
-const Faq = () => {
-  
-  const { theme } = useTheme();
-
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
+export const Faq = (): React.ReactElement => {
+  const [openIndexes, setOpenIndexes] = useState<number[]>([]);
   const { t } = useTranslation();
-
   const faqItems = t("faq", { returnObjects: true }) as FaqItem[];
 
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const toggle = (idx: number) => {
+    setOpenIndexes((prev) =>
+      prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
+    );
+  };
 
   return (
-    <div className="w-full bg-[#0000004c] rounded-xl backdrop-blur-[42px] backdrop-brightness-[100%] border-none mb-[12px] p-8 space-y-4" 
-    style={{
-      width: '100%',
-      backgroundColor: '#0000004c',
-      borderRadius: '0.75rem',
-      backdropFilter: 'blur(42px) brightness(100%)',
-      border: 'none',
-      marginTop: '12px',
-      marginBottom: '12px',
-      overflow: 'hidden',
-    }}>
-      <h2 className="font-bold text-2xl mb-4">
-        <span className={`${
-                theme === 'green' ? 'text-theme-green' : 'text-theme-primary'
-              }`}>FAQ</span>
-      </h2>
-
-      <div className="space-y-2">
-        {faqItems.map((item, index) => {
-          const isOpen = openIndex === index;
-
-          return (
-            <div key={index} className="pb-2">
-              <button
-                onClick={() => toggle(index)}
-                className="w-full text-left flex items-center justify-between py-2 text-white text-base font-medium focus:outline-none"
-                
-              >
-                <span style={{
-                  maxWidth: '250px',
-                }}>{item.question}</span>
-                <span
-                  className={`transition-transform duration-300 transform relative border border-white rounded-full flex items-center justify-center opacity-50`}
-                  style={{
-                    width: '32px',
-                    height: '32px',
-                    
-                  }}
-                >
-                  <span className="absolute w-3 h-0.5 bg-white"></span>
-                  <span className="absolute w-0.5 h-3 bg-white transition-transform duration-300 ease-in-out" style={{ transform: isOpen ? "rotate(90deg)" : "rotate(0deg)" }} />
-                </span>
-              </button>
-              <div className="overflow-hidden">
-                <div
-                  className={`text-white opacity-60 text-sm font-normal leading-5 ${
-                    isOpen ? "opening" : "closing"
-                  }`}
-                >
-                  {item.answer}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+    <section id="faq" className="w-full mx-auto py-12 px-4 relative">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none ">
+        <div className="[-webkit-text-stroke:3px_#ffffff] [font-family:'Public_Sans',Helvetica] font-black text-transparent text-[200px] md:text-[400px] lg:text-[600px] xl:text-[818.7px] text-center tracking-[8.19px] leading-none whitespace-nowrap opacity-50">
+          FAQ
+        </div>
       </div>
-    </div>
+      <div className="container mx-auto relative z-10 max-w-[842px]">
+        <h2 className="text-3xl font-bold text-center mb-8 text-[#252525]">FAQ</h2>
+        <div className="space-y-4">
+          {faqItems.map((item, idx) => {
+            const isOpen = openIndexes.includes(idx);
+            return (
+              <div
+                key={idx}
+                className={`border rounded-2xl bg-white overflow-hidden shadow-sm ${
+                  isOpen ? 'border-[#2e77da]' : ''
+                }`}
+              >
+                <button
+                  className="w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none select-none"
+                  onClick={() => toggle(idx)}
+                  aria-expanded={isOpen}
+                >
+                  <span className="font-semibold text-lg text-[#252525]">{item.question}</span>
+                  <span
+                    className={`ml-4 transform transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
+                  >
+                    <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clipRule="evenodd" d="M9.0184 6.66934L2.44856 0.367431L0.325472 2.57995L9.01823 10.893L17.6895 2.57995L15.5664 0.367432L9.0184 6.66934Z" fill="black"/>
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  className={`transition-all duration-500 ease-in-out px-6 ${
+                    isOpen ? "max-h-40 opacity-100 py-2" : "max-h-0 opacity-0 py-0"
+                  } overflow-hidden`}
+                >
+                  <div className="text-[#252525] text-base opacity-80">
+                    {item.answer}
+                    </div>
+                </div>
+          </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 };
-
-export default Faq

@@ -17,11 +17,12 @@ import ExchangeSection from "./ExchangeSection";
 import TabsBlockWithLogic from "./TabsBlockWithLogic";
 import LanguageHeader from "./LanguageHeader";
 import Hero from "./Hero";
-import Feature from "./Feature";
-import Faq from "./Faq";
-import Steps from "./Steps";
-import Backgrounds from "./Backgrounds";
-import Footer from "./Footer";
+import { Features } from "./Features";
+import { HowToUse } from "./HowToUse";
+import { Faq } from "./Faq";
+import { Reviews } from "./Reviews";
+import { Blog } from "./Blog";
+import { Footer } from "./Footer";
 import GradientLoader from "./GradientLoader";
 import {router} from "next/client";
 
@@ -141,16 +142,16 @@ export default function ExchangeForm() {
     return (
         <div className="main-wrapper overflow-hidden relative">
             <LanguageHeader/>
-            <div className="flex flex-row justify-center w-full px-4" style={{maxWidth: "425px", margin: "0 auto",}}>
+            <div className="flex flex-row justify-center w-full px-0 mx-auto">
                 <div className="relative size-full">
-                    <Hero/>
 
                     <section className="mb-4 hidden" id="wallet">
+                       
                         <div
                             className="rounded-lg p-4"
                             style={{backgroundColor: "#000000c7"}}
                         >
-                            <div className="header text-white">
+                            <div className="header text-black">
                                 <div
                                     className="flex items-center justify-between mb-2"
                                     style={{width: "100%"}}
@@ -221,7 +222,20 @@ export default function ExchangeForm() {
                         </div>
                     </section>
 
-                    <section className="mb-4">
+                    <section id="exchange" className="mb-4  flex flex-wrap bg-[#015BBB1A] rounded-2xl max-w-7xl xl:mx-auto justify-around mx-3 mt-20 md:px-0 py-10 px-4 md:py-14">
+                        <div className="text-center space-y-3 relative">
+                            <h2 className="font-bold text-left mb-6 text-[32px] md:text-[42px] max-w-sm relative z-10">
+                                <span className="text-black">
+                                    {t("hero_buy_text")}{" "}
+                                </span>
+                            </h2>
+                            <img
+                                className="absolute top-[10%] -left-[19%] z-0 max-w-[604px] invisible md:visible"
+                                alt="Calculator"
+                                src="icons/calc.png"
+                            />
+                        </div>
+                        <div className="flex w-full max-w-[517px]">
                         <TabsBlockWithLogic
                             exchangeSection={
                                 <ExchangeSection
@@ -238,6 +252,7 @@ export default function ExchangeForm() {
                                 />
                             }
                         />
+                        </div>
                     </section>
 
                     <div id="messageBox" className="message-box">
@@ -359,13 +374,14 @@ export default function ExchangeForm() {
                         </div>
                     </div>
 
-                    <Steps/>
+                    <Features />
+                    <HowToUse />
+                    <Reviews />
                     <Faq />
-                    <Feature />
+                    <Blog />
                 </div>
             </div>
             <Footer />
-            <Backgrounds/>
         </div>
     );
 }

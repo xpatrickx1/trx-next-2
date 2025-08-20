@@ -3,32 +3,32 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: Space Grotesk;
-  src: url("/icons/SpaceGrotesk-Light.ttf") format("truetype");
+  font-family: Public Sans;
+  src: url("/icons/PublicSans-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Space Grotesk;
-  src: url("/icons/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-family: Public Sans;
+  src: url("/icons/PublicSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Space Grotesk;
-  src: url("/icons/SpaceGrotesk-Medium.ttf") format("truetype");
+  font-family: Public Sans;
+  src: url("/icons/PublicSans-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Space Grotesk;
-  src: url("/icons/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-family: Public Sans;
+  src: url("/icons/PublicSans-Bold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -171,13 +171,14 @@
 }
 
 body {
-  font-family: Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  font-family: Public Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Helvetica, Arial, sans-serif;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-color: #262626;
+  background-color: #F3F3F3;
   color: #e2e8f2;
+  outline: none;
 }
 
 h2 {
@@ -229,30 +230,18 @@ color: #ef0027;
 
 input[type="text"],
 input[type="number"] {
-  color: white;
+  color: #000;
   border: 0px solid #000;
   border-radius: 12px;
-  padding: 0.75rem 1rem;
+  padding: 1.8rem 1rem 0.75rem 1rem;
   outline: none;
   transition: all 0.3s ease;
-  height: 60px;
+  height: 72px;
   font-size: 28px;
 }
 
-.theme-primary input[type="text"]:focus,
-.theme-primary input[type="number"]:focus {
-  border-color: #ef0027;
-  box-shadow: 0 0 0 2px #ef0027;
-}
-
-.theme-green input[type="text"]:focus,
-.theme-green input[type="number"]:focus {
-  border-color: #21ED0E;
-  box-shadow: 0 0 0 2px #21ED0E;
-}
-
 .purchase-btn {
-  color: #ffffff;
+  color: #000fff;
   font-size: 18px;
   border: 1px solid #000;
   padding: 0.8rem 0.75rem;
@@ -262,20 +251,20 @@ input[type="number"] {
 
 .purchase-btn:hover {
   background-color: #374151;
-  color: white;
+  color: #000;
 }
 
 .selected-btn {
   background-color: #374151 !important;
-  color: white !important;
+  color: #000 !important;
 }
 
 .purchase-energy-btn {
-  background-color: #ffffff;
-  color: #0b0b0b;
+  background-color: #2E77DA;
+  color: #fff;
   border: none;
   border-radius: 0.5rem;
-  padding: 12px 24px;
+  padding: 18px 24px;
   width: 100%;
   cursor: pointer;
   font-weight: bold;
@@ -285,9 +274,15 @@ input[type="number"] {
 }
 
 .purchase-energy-btn:hover {
-  font-weight: bold;
-  background-color: #dbdbdb;
+  background-color: rgba(1, 91, 187, 1);
 }
+
+.purchase-energy-btn:active,
+.purchase-energy-btn:focus {
+  background-color: #2E77DA;
+}
+
+
 .custom-wallet-icon {
   width: 1.5em; /* 调整图标大小 */
   height: 1.5em;
@@ -306,6 +301,10 @@ input[type="number"] {
   height: 3px;
   background-color: #007fe9;
   transition: transform 0.3s ease;
+}
+
+button:focus {
+  outline: none;
 }
 
 .switch-currency-button {
@@ -364,7 +363,7 @@ input[type="number"] {
 }
 
 .i-local\:energy-s2 {
-  background: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_9_1021)'%3E%3Cpath d='M11.064 0.766479C16.8627 0.766479 21.564 5.46775 21.564 11.2665C21.564 17.0652 16.8625 21.7665 11.064 21.7665C5.26544 21.7665 0.563965 17.0665 0.563965 11.2665C0.563965 5.46649 5.2646 0.766479 11.064 0.766479Z' fill='%230094FF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.8761 5.56893L11.0063 9.96122H15.4535C15.7395 9.96122 15.9841 10.1118 16.114 10.3665C16.2438 10.6212 16.2203 10.9077 16.0518 11.1384L10.7824 18.3613C10.5753 18.6457 10.2087 18.7442 9.88628 18.6031C9.56442 18.4621 9.38865 18.1257 9.45695 17.7803L10.3268 13.3886H5.87962C5.59358 13.3886 5.34898 13.238 5.21911 12.9833C5.08981 12.7286 5.11276 12.4421 5.28124 12.2109L10.5506 4.98792C10.7578 4.70356 11.1244 4.60505 11.4468 4.74611C11.7687 4.88716 11.9444 5.22357 11.8761 5.56838V5.56893Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_9_1021'%3E%3Crect width='21' height='21' fill='white' transform='translate(0.563965 0.766479)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+  background: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_9_1021)'%3E%3Cpath d='M11.064 0.766479C16.8627 0.766479 21.564 5.46775 21.564 11.2665C21.564 17.0652 16.8625 21.7665 11.064 21.7665C5.26544 21.7665 0.563965 17.0665 0.563965 11.2665C0.563965 5.46649 5.2646 0.766479 11.064 0.766479Z' fill='%230094FF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.8761 5.56893L11.0063 9.96122H15.4535C15.7395 9.96122 15.9841 10.1118 16.114 10.3665C16.2438 10.6212 16.2203 10.9077 16.0518 11.1384L10.7824 18.3613C10.5753 18.6457 10.2087 18.7442 9.88628 18.6031C9.56442 18.4621 9.38865 18.1257 9.45695 17.7803L10.3268 13.3886H5.87962C5.59358 13.3886 5.34898 13.238 5.21911 12.9833C5.08981 12.7286 5.11276 12.4421 5.28124 12.2109L10.5506 4.98792C10.7578 4.70356 11.1244 4.60505 11.4468 4.74611C11.7687 4.88716 11.9444 5.22357 11.8761 5.56838V5.56893Z' fill='#000'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_9_1021'%3E%3Crect width='21' height='21' fill='#000' transform='translate(0.563965 0.766479)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
     no-repeat;
   background-color: transparent;
   background-size: 100% 100%;
@@ -378,9 +377,9 @@ input[type="number"] {
 }
 
 .i-local\:reverse-currency\?mask {
-  --un-icon: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.37898 7.30966C12.3592 2.33067 20.3442 2.17296 25.5316 6.80891L24.8102 7.53029C24.6218 7.71746 24.5549 7.99262 24.6342 8.24549C24.7136 8.49835 24.9255 8.68551 25.1858 8.73263L28.5957 9.34867C28.6378 9.3561 28.68 9.35982 28.7209 9.35982C28.9081 9.35982 29.0903 9.28545 29.2241 9.15034C29.389 8.98549 29.4621 8.74999 29.42 8.52314L28.8039 5.11454C28.7568 4.853 28.5697 4.64228 28.3168 4.56295C28.0652 4.48486 27.79 4.55055 27.6016 4.73896L26.8269 5.51365C20.9242 0.164035 11.7766 0.320154 6.08241 6.01317C2.55957 9.536 1.0079 14.5658 1.93383 19.468C2.01688 19.908 2.40114 20.2154 2.8337 20.2154C2.88948 20.2154 2.9465 20.2092 3.00475 20.1993C3.5018 20.1051 3.82904 19.6266 3.73607 19.1284C2.92419 14.8224 4.28642 10.4047 7.38012 7.30963L7.37898 7.30966Z' fill='white'/%3E%3Cpath d='M31.5533 13.8654C31.4702 13.4253 31.086 13.1179 30.6534 13.1179C30.5976 13.1179 30.5406 13.1229 30.4824 13.134C29.9853 13.227 29.6581 13.7067 29.7511 14.205C30.5629 18.5109 29.2007 22.9286 26.107 26.0237C21.1267 31.0027 13.1418 31.1604 7.95435 26.5245L8.67574 25.8031C8.86414 25.6159 8.93108 25.3407 8.85175 25.0879C8.77242 24.835 8.56046 24.6478 8.30016 24.6007L4.89029 23.9847C4.84815 23.9773 4.806 23.9735 4.7651 23.9735C4.57793 23.9735 4.39571 24.0479 4.26187 24.183C4.09701 24.3479 4.02388 24.5821 4.06602 24.8102L4.68206 28.2188C4.72916 28.4804 4.91633 28.6911 5.1692 28.7704C5.42082 28.8485 5.69601 28.7828 5.8844 28.5944L6.65909 27.8197C12.5627 33.1693 21.7094 33.0132 27.4036 27.3189C30.9264 23.7961 32.4781 18.7664 31.5522 13.8641L31.5533 13.8654Z' fill='white'/%3E%3C/svg%3E%0A");
+  --un-icon: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.37898 7.30966C12.3592 2.33067 20.3442 2.17296 25.5316 6.80891L24.8102 7.53029C24.6218 7.71746 24.5549 7.99262 24.6342 8.24549C24.7136 8.49835 24.9255 8.68551 25.1858 8.73263L28.5957 9.34867C28.6378 9.3561 28.68 9.35982 28.7209 9.35982C28.9081 9.35982 29.0903 9.28545 29.2241 9.15034C29.389 8.98549 29.4621 8.74999 29.42 8.52314L28.8039 5.11454C28.7568 4.853 28.5697 4.64228 28.3168 4.56295C28.0652 4.48486 27.79 4.55055 27.6016 4.73896L26.8269 5.51365C20.9242 0.164035 11.7766 0.320154 6.08241 6.01317C2.55957 9.536 1.0079 14.5658 1.93383 19.468C2.01688 19.908 2.40114 20.2154 2.8337 20.2154C2.88948 20.2154 2.9465 20.2092 3.00475 20.1993C3.5018 20.1051 3.82904 19.6266 3.73607 19.1284C2.92419 14.8224 4.28642 10.4047 7.38012 7.30963L7.37898 7.30966Z' fill='#000'/%3E%3Cpath d='M31.5533 13.8654C31.4702 13.4253 31.086 13.1179 30.6534 13.1179C30.5976 13.1179 30.5406 13.1229 30.4824 13.134C29.9853 13.227 29.6581 13.7067 29.7511 14.205C30.5629 18.5109 29.2007 22.9286 26.107 26.0237C21.1267 31.0027 13.1418 31.1604 7.95435 26.5245L8.67574 25.8031C8.86414 25.6159 8.93108 25.3407 8.85175 25.0879C8.77242 24.835 8.56046 24.6478 8.30016 24.6007L4.89029 23.9847C4.84815 23.9773 4.806 23.9735 4.7651 23.9735C4.57793 23.9735 4.39571 24.0479 4.26187 24.183C4.09701 24.3479 4.02388 24.5821 4.06602 24.8102L4.68206 28.2188C4.72916 28.4804 4.91633 28.6911 5.1692 28.7704C5.42082 28.8485 5.69601 28.7828 5.8844 28.5944L6.65909 27.8197C12.5627 33.1693 21.7094 33.0132 27.4036 27.3189C30.9264 23.7961 32.4781 18.7664 31.5522 13.8641L31.5533 13.8654Z' fill='#000'/%3E%3C/svg%3E%0A");
   background-color: currentColor;
-  color: #fff;
+  color: #000;
   display: inline-block;
   flex: none;
   height: 1em;
@@ -408,7 +407,7 @@ input[type="number"] {
   background: #0c1530;
   border-radius: 14px;
   padding: 24px;
-  color: white;
+  color: #000;
 
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   width: 100%;
@@ -421,7 +420,7 @@ input[type="number"] {
   align-items: center;
   gap: 15px;
   text-decoration: none;
-  color: white;
+  color: #000;
   padding-left: 20px;
 }
 
@@ -454,7 +453,7 @@ input[type="number"] {
   margin-top: 24px;
   width: 100%;
   background: #1f2a48;
-  color: white;
+  color: #000;
   padding: 10px;
   border: none;
   border-radius: 10px;
@@ -524,7 +523,7 @@ input[type="number"] {
   background: #0c1530;
   border-radius: 12px;
   padding: 20px;
-  color: white;
+  color: #000;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 更柔和的内容投影 */
   width: auto; /* 宽度自动调整，依内容自适应 */
@@ -536,7 +535,7 @@ input[type="number"] {
 /* p 内容样式 */
 .confirm-modal-content p {
   background-color: #142546;
-  color: #fff;
+  color: #000;
   padding: 8px 12px;
   border-radius: 6px;
   margin-bottom: 8px;
@@ -552,7 +551,7 @@ input[type="number"] {
   margin-left: 6px; /* 添加左间隔 */
   margin-right: 6px; /* 添加右间隔 */
   background: #1f2a48;
-  color: white;
+  color: #000;
   padding: 10px;
   border: none;
   border-radius: 10px;
@@ -581,7 +580,7 @@ input[type="number"] {
   padding: 12px 16px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  color: #fff;
+  color: #000;
 }
 
 .message-content span {
@@ -619,12 +618,12 @@ input[type="number"] {
 .anticon {
   font-size: 20px;
   margin-right: 8px;
-  color: #fff;
+  color: #000;
 }
 
 .message-content span {
   font-size: 14px;
-  color: #fff;
+  color: #000;
 }
 
 /* 自动隐藏动画效果 */
@@ -699,8 +698,8 @@ input[type="number"] {
 }
 
 #language-select {
-  background-color: black; /* 深灰色背景 */
-  color: white; /* 白色字体 */
+  background-color: transparent; /* 深灰色背景 */
+  color: black; /* 白色字体 */
   border: 0px solid #4b5563; /* 边框颜色 */
   padding: 6px 12px;
   border-radius: 6px;
@@ -742,7 +741,7 @@ input[type="number"] {
   background: #111;
   padding: 30px;
   border-radius: 20px;
-  color: white;
+  color: #000;
   text-align: center;
   max-width: 90%;
   width: 320px;
@@ -766,7 +765,7 @@ input[type="number"] {
 .modal-content button {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #ffffff;
+  background-color: #000fff;
   color: #111;
   border: none;
   border-radius: 8px;
@@ -783,7 +782,7 @@ input[type="number"] {
 .trust-wallet-button {
   margin-top: 20px;
   background-color: #00b8a9;
-  color: white;
+  color: #000;
   padding: 12px 20px;
   border: none;
   border-radius: 10px;
@@ -907,6 +906,57 @@ input[type="number"] {
   .walletText {
     margin-left: 0;
   }
+}
+
+.blog-bg {
+  position: relative;
+  
+}
+
+.blog-bg:before {
+  content: '';
+  position: absolute;
+  width: 530px;
+  height: 438px;
+  background: url("/icons/blocks.png") no-repeat center;
+  top: -140px;
+  right: -15px;
+}
+
+@media (max-width: 1280px) {
+  .blog-bg:before {
+    display: none;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.3s ease-out;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.3s ease-out;
 }
 
 .theme-primary .style_for_energy {
@@ -1035,4 +1085,132 @@ input[type="number"] {
   to {
     background-position: 100% 50%;
   }
+}
+
+
+.switch-currency-button {
+  position: relative;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0px 0px 13px 1px #E6EFF8;
+  background-color: #fff;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.square, .arrow {
+  position: absolute;
+  transition: all 0.1s ease; /* Плавний старт/стоп анімації */
+}
+
+.square {
+  width: 15px;
+  height: 15px;
+  background-color: #015BBB4D;
+  border-radius: 4px;
+}
+
+.square1 {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.square2 {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid #ffffff;
+}
+
+.arrow1 {
+  top: 30%;
+  left: 25px;
+}
+
+.arrow2 {
+  top: 30%;
+  right: 25px;
+}
+
+/* Анімація для квадратів і стрілок */
+.square.animate, .arrow.animate {
+  animation: moveSquare 4s linear forwards;
+}
+
+.square1.animate {
+  animation: moveSquare1 4s linear forwards;
+}
+
+.square2.animate {
+  animation: moveSquare2 4s linear forwards;
+}
+
+.arrow1.animate {
+  animation: moveArrow1 4s linear forwards;
+}
+
+.arrow2.animate {
+  animation: moveArrow2 4s linear forwards;
+}
+
+/* Траєкторія квадрата з заокругленими кутами */
+@keyframes moveSquare {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(0, -30px) rotate(90deg); border-radius: 12px; }
+  50% { transform: translate(40px, -30px) rotate(180deg); border-radius: 12px; }
+  75% { transform: translate(40px, 0) rotate(270deg); border-radius: 12px; }
+  100% { transform: translate(0, 0) rotate(360deg); border-radius: 4px; }
+}
+
+/* Траєкторія для square1 (рухається вліво-вправо) */
+@keyframes moveSquare1 {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(0, -30px) rotate(90deg); border-radius: 12px; }
+  50% { transform: translate(40px, -30px) rotate(180deg); border-radius: 12px; }
+  75% { transform: translate(40px, 0) rotate(270deg); border-radius: 12px; }
+  100% { transform: translate(0, 0) rotate(360deg); border-radius: 4px; }
+}
+
+/* Траєкторія для square2 (рухається вправо-вліво) */
+@keyframes moveSquare2 {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(0, -30px) rotate(-90deg); border-radius: 12px; }
+  50% { transform: translate(-40px, -30px) rotate(-180deg); border-radius: 12px; }
+  75% { transform: translate(-40px, 0) rotate(-270deg); border-radius: 12px; }
+  100% { transform: translate(0, 0) rotate(-360deg); border-radius: 4px; }
+}
+
+/* Траєкторія для arrow1 (рухається разом із square1) */
+@keyframes moveArrow1 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(0, -30px) rotate(90deg); }
+  50% { transform: translate(40px, -30px) rotate(180deg); }
+  75% { transform: translate(40px, 0) rotate(270deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Траєкторія для arrow2 (рухається разом із square2) */
+@keyframes moveArrow2 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(0, -30px) rotate(-90deg); }
+  50% { transform: translate(-40px, -30px) rotate(-180deg); }
+  75% { transform: translate(-40px, 0) rotate(-270deg); }
+  100% { transform: translate(0, 0) rotate(-360deg); }
 }

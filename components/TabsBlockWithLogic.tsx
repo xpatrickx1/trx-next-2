@@ -88,13 +88,12 @@ const TabsBlockWithLogic: React.FC<TabsBlockWithLogicProps> = ({
   }, []);
   // ДЛЯ ИНТЕГРАЦИИ: energySection/exchangeSection — это твои реакт-компоненты/разметка секций
   return (
-    <div>
-      <div className="flex relative mb-4 gap-x-4">
+    <div className="w-full">
+      <div className="flex relative mb-4 gap-x-4 max-w-[346px] ml-auto">
         <button
           id="exchange-btn"
-          style={selectedTab !== "exchange" ? { backgroundColor: "#191919", color: "rgba(255, 255, 255, 0.5)" } : {}}
-          className={`uppercase text-xl rounded-3xl text-white border border-solid border-transparent px-6 py-2.5 font-medium  ${
-            selectedTab === "exchange" ? "text-white opacity-100 bg-transparent border-white" : ""
+          className={`uppercase text-xl rounded-xl text-[#2E78DB]  border border-solid px-2 md:px-5 py-2.5 font-medium  ${
+            selectedTab === "exchange" ? "text-[#2E78DB] opacity-100 bg-transparent border-[#015BBB]" : "border-[#015BBB33] opacity-60"
           } focus:outline-none`}
           
           onClick={() => setSelectedTab("exchange")}
@@ -103,9 +102,8 @@ const TabsBlockWithLogic: React.FC<TabsBlockWithLogicProps> = ({
         </button>
         <button
           id="energy-btn"
-          style={selectedTab !== "energy" ? { backgroundColor: "#191919", color: "rgba(255, 255, 255, 0.5)" } : {}}
-          className={`w-3/5 uppercase py-2 rounded-3xl text-xl font-medium transition-all duration-200 text-white border border-solid border-transparent ${
-            selectedTab === "energy" ? "text-white opacity-100 bg-transparent border-white" : ""
+          className={`w-3/5 uppercase py-2 rounded-xl text-xl font-medium transition-all text-[#2E78DB] px-2 md:px-2 duration-200 border border-solid ${
+            selectedTab === "energy" ? "text-[#2E78DB] opacity-100 bg-transparent border-[#015BBB]" : "border-[#015BBB33] opacity-60"
           } focus:outline-none`}
           onClick={() => setSelectedTab("energy")}
         >
@@ -114,12 +112,12 @@ const TabsBlockWithLogic: React.FC<TabsBlockWithLogicProps> = ({
       </div>
 
       {/* Секции */}
-      <div className=" rounded-lg p-8" 
+      <div className="w-full" 
       style={{
         width: '100%',
-        backgroundColor: '#0000004c',
+        backgroundColor: 'transparent',
         borderRadius: '0.75rem',
-        backdropFilter: 'blur(42px) brightness(100%)',
+        // backdropFilter: 'blur(42px) brightness(100%)',
         border: 'none',
         marginTop: '12px',
         marginBottom: '12px',

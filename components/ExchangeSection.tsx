@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useBinanceRate } from "../hooks/useBinanceRate";
 import {
@@ -39,7 +39,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
   const [fromToken, setFromToken] = useState(tokens[0]);
   const [toToken, setToToken] = useState(tokens[1]);
   const [openedList, setOpenedList] = useState<null | "from" | "to">(null);
-  const [rotation, setRotation] = useState(0);
+  const [rotation, setRotation] = useState(false);
 
   const [fromAmount, setFromAmount] = useState<string>("1");
 
@@ -48,6 +48,29 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
 
   const [isOpenAddress, setIsOpenAddress] = useState(false);
   const [address, setAddress] = useState("TXYZ1234567890ABCDEF");
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedCount = Number(e.target.value);
+    // const match = ENERGY_OPTIONS.find((opt) => opt.count === selectedCount);
+    // if (match) setEnergyValue(match.energy);
+  };
+
+  const selectedOption = 4;
+  const selectedCount = 2;
+
+  // Custom select state (dropdown)
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
+  const selectRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
+        setIsSelectOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
 
   const toggle = () => setIsOpenAddress((prev) => !prev);
 
@@ -93,7 +116,11 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
     setFromToken(toToken);
     setToToken(prevFrom);
     setOpenedList(null);
-    setRotation((prev) => prev + 360);
+    // setRotation((prev) => prev + 360);
+    setRotation(true);
+    setTimeout(() => {
+      setRotation(false);
+    }, 1000);
   };
 
   // --- Новый useEffect для закрытия при клике вне списка ---
@@ -125,17 +152,18 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
     <div id="exchange-section" className={`${
       theme === 'green' ? 'theme-green' : 'theme-primary'
     }`}>
-      <div className="mb-4 relative">
-        <label className="block mb-1 font-normal text-white opacity-60 uppercase" style={{ paddingLeft: "0.7rem" }}>
-          {t("payLabel")}
-        </label>
+      <div className="mb-2 relative">
+        
         <div className="input-group relative">
+          <label className="absolute top-3 left-0 text-xs block mb-1 font-normal text-black opacity-40" style={{ paddingLeft: "1.5rem" }}>
+            {t("payLabel")}
+          </label>
           <input
             id="from-amount"
             type="text"
             autoComplete="off"
             placeholder={t("inputAmountPlaceholder")}
-            className="w-full pr-24 py-3 h-11 rounded-lg bg-black text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#007fe9]"
+            className="w-full pr-24 pt-[20px] py-3 h-11 pl-5 font-bold rounded-lg bg-white text-black border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#007fe9]"
             style={{ paddingLeft: "1.5rem" }}
             value={fromAmount}
             onChange={(e) => setFromAmount(e.target.value.replace(",", "."))}
@@ -153,7 +181,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
             >
               <span
                 id="from-token-text "
-                className="text-white min-w-[40px] text-center text-opacity-70"
+                className="text-black min-w-[40px] text-center text-opacity-70"
               >
                 {fromToken.label}
               </span>
@@ -168,7 +196,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
             {openedList === "from" && (
               <div
                 id="from-token-list"
-                className="absolute top-full right-0 text-white rounded-lg mt-2 z-50 w-max min-w-[120px] shadow-lg"
+                className="absolute top-full right-0 text-black rounded-lg mt-2 z-50 w-max min-w-[120px] shadow-lg"
                 style={{ backgroundColor: "#142546" }}
               >
                 <ul>
@@ -212,31 +240,80 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
         <button
           type="button"
           onClick={swapTokens}
-          className="switch-currency-button text-white hover:text-blue-400 transition focus:outline-none"
+          className="switch-currency-button text-black hover:text-blue-400 transition focus:outline-none"
           style={{ transform: `rotate(${rotation}deg)` }}
         >
-          <i
-            className="i-local:reverse-currency?mask"
-            style={{ width: "31px", height: "31px" }}
-          ></i>
+          <div
+          className={`square square1 ${
+            rotation ? 'animate' : ''
+          }`}
+        ></div>
+        <div
+          className={`square square2 ${
+            rotation ? 'animate' : ''
+          }`}
+        ></div>
+        <div
+          className={`square arrow1 ${
+            rotation ? 'animate' : ''
+          }`}
+        ></div>
+        <div
+           className={`square arrow2 ${
+            rotation ? 'animate' : ''
+          }`}
+        ></div>
         </button>
       </div>
 
-      <div className="mb-4 relative -mt-5">
-        <label className="block mb-1 font-normal text-white opacity-60 uppercase" style={{ paddingLeft: "0.7rem" }}>
+      <div className="mb-4 relative">
+        
+        <div className="input-group relative">
+        <label className="absolute top-3 left-0 block mb-1 text-xs font-normal text-black opacity-40" style={{ paddingLeft: "1.5rem" }}>
           {t("receiveLabel")}
         </label>
-        <div className="input-group relative">
           <input
             id="to-amount"
             type="text"
             autoComplete="off"
             placeholder={t("outputAmountPlaceholder")}
-            className="w-full pr-24 py-3 h-11 rounded-lg bg-black text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#007fe9]"
+            className="w-full pr-24 py-3 h-11 rounded-lg bg-white font-bold text-black border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#007fe9]"
             style={{ paddingLeft: "1.5rem" }}
             readOnly
             value={toAmount}
           />
+          <div ref={selectRef} className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center rounded-lg gap-2 bg-[#E6EFF8] py-1  px-2">
+              <img src="icons/energy.svg" alt="energy" className="w-4 h-4"/>
+              <button
+                type="button"
+                aria-haspopup="listbox"
+                aria-expanded={isSelectOpen}
+                onClick={() => setIsSelectOpen((v) => !v)}
+                className="bg-transparent text-black font-bold text-sm border border-transparent rounded-md py-2 pl-1 pr-6 focus:outline-none relative min-w-[70px] text-right"
+              >
+                {t(`btn${selectedCount || 1}`)}
+              </button>
+              {isSelectOpen && (
+                <ul
+                  role="listbox"
+                  className="absolute right-0 top-full mt-2 w-44 bg-white text-black border border-gray-200 rounded-md shadow-lg z-20 overflow-hidden"
+                >
+                    <li
+                      role="option"
+                      onClick={() => {
+                        // setEnergyValue(opt.energy);
+                        setIsSelectOpen(false);
+                      }}
+                      className={`px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 ${
+                        selectedCount === opt.count ? "bg-gray-50 font-semibold" : ""
+                      }`}
+                    >
+                    </li>
+                </ul>
+              )}
+            </div>
+
+
           <div
             className="select-currency absolute top-1 right-0 flex items-center pr-4 rounded-lg z-20"
             style={{ height: "90%" }}
@@ -248,7 +325,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
             >
               <span
                 id="to-token-text"
-                className="text-white min-w-[40px] text-center text-opacity-70"
+                className="text-black min-w-[40px] text-center text-opacity-70"
               >
                 {toToken.label}
               </span>
@@ -264,7 +341,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
             {openedList === "to" && (
               <div
                 id="to-token-list"
-                className="absolute top-full right-0 text-white rounded-lg mt-2 z-50 w-max min-w-[120px] shadow-lg"
+                className="absolute top-full right-0 text-black rounded-lg mt-2 z-50 w-max min-w-[120px] shadow-lg"
                 style={{ backgroundColor: "#142546" }}
               >
                 <ul>
@@ -304,50 +381,26 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
         </div>
       </div>
 
-      <div className="mt-[27px] mb-[44px]">
-      <button
-        className="flex items-center justify-between w-full mx-8 my-4 mt-5"
-        onClick={toggle}
-        style={{
-          maxWidth: "270px",
-        }}
-      >
-        <div className="opacity-60 font-normal text-white text-sm"
-        >
-          {t("show_receiver_address")}
-        </div>
-        <div className="w-[14.28px] h-[14.28px] transition-transform duration-300">
-          <img
-            className={`w-3.5 h-2 transform transition-transform duration-300 ${
-              isOpenAddress ? "rotate-180" : ""
-            }`}
-            alt="Toggle arrow"
-            src="/icons/down.svg"
-          />
-        </div>
-      </button>
-
       <div
-        className={`transition-all duration-500 overflow-hidden ${
-          isOpenAddress ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className="flex flex-col justify-between items-center text-sm mb-2 mt-2"
       >
-          <input
-              type="text"
-              autoComplete="off"
-              placeholder={t("pre_receiver_address")}
-              className="w-full pr-24 py-3 h-11 rounded-lg bg-black text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#007fe9] "
-              style={{ paddingLeft: "1.5rem" }}
-          />
+        <div className="flex justify-between flex-row items-left w-full mb-2 text-lg">
+          {/* <span id="exchange-label"  className="font-bold" style={{color: "#ACACAC",}}>{t("exchangeRate")}</span> */}
+          <span id="exchange-value"  className="text-black text-opacity-50 text-xs font-medium">
+            {rate !== null
+              ? `1 ${fromToken.symbol} = ${+rate.toFixed(8)} ${toToken.symbol}`
+              : t("loadingExchange")}
+          </span>
+          <span id="exchange-value"  className="text-black text-opacity-50 text-xs font-medium">
+            +3.1 USDT Fee
+          </span>
+        </div>
       </div>
-    </div>
-
-
 
       <div className="flex justify-center mt-6">
         <button
           onClick={connectWallet}
-          className={`purchase-energy-btn font-bold w-full py-3 bg-white-600 hover:bg-white-700 text-black text-white rounded-lg transition-all
+          className={`purchase-energy-btn font-semibold w-full py-3 bg-white-600 hover:bg-white-700 text-white rounded-lg transition-all
             ${
               isConnecting
                 ? "bg-gray-500 cursor-not-allowed"
@@ -360,36 +413,21 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
           ) : (
             t("exchangeNow")
           )}
-          {" "} {toAmount || "0"}
+          {/* {" "} {toAmount || "0"} */}
         </button>
       </div>
 
-      <div
-        className="flex flex-col justify-between items-center text-sm mb-2 mt-10"
-        style={{
-          padding: "8px 16px",
-          borderRadius: "8px",
-        }}
-      >
-        <div className="flex justify-between flex-col items-center w-full mb-2 text-lg">
-          <span id="exchange-label"  className="font-bold" style={{color: "#ACACAC",}}>{t("exchangeRate")}</span>
-          <span id="exchange-value"  className="text-white font-bold">
-            {rate !== null
-              ? `1 ${fromToken.symbol} ≈ ${+rate.toFixed(8)} ${toToken.symbol}`
-              : t("loadingExchange")}
-          </span>
-        </div>
-      </div>
+    
 
-      <div className="text-center space-y-2 px-5 py-2 mt-20">
+      <div className="text-center space-y-2  py-2 mt-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-2.5 h-2.5 p-0 rounded-full"  style={{ background: "#74eb69",}}/>
-            <div className="font-normal text-[#ababab] text-[17.4px] text-center leading-[25px]">
+            <div className="font-normal text-[#4F4A4A] text-[16px] text-center leading-[25px]">
               {t("last_purchase_label")}:
             </div>
           </div>
-          <div className="font-bold text-[#ababab] text-[17.4px] text-center leading-[25px]">
+          <div className="font-bold text-[#4F4A4A] text-[16px] text-center leading-[25px]">
             {t("last_purchase_text")}
           </div>
         </div>

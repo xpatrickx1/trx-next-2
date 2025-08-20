@@ -11,11 +11,6 @@ const Hero = () => {
           <div className="text-center space-y-3">
           <h2 className="font-bold text-center mb-6">
               <span className="text-white">
-                  {/*hero_buy
-hero_trx
-hero_buy_text
-hero_buy_text_bottom*/}
-
                   {t("hero_buy")}{" "}
               </span>
               <span className={`${
