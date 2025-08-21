@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from '../components/ThemeContext';
 import { Button } from "../components/ui/button";
+import { useRouter } from "next/router";
 
 interface NavItem {
   label: string;
@@ -12,6 +13,7 @@ interface NavItem {
 const LanguageHeader: React.FC = () => {
 	const { i18n } = useTranslation();
 	const { theme } = useTheme();
+	const router = useRouter();
 
 	const changeLanguage = (lng: string) => {
 		i18n.changeLanguage(lng);
@@ -19,16 +21,21 @@ const LanguageHeader: React.FC = () => {
 	};
 
 	const [navigationItems, setNavigationItems] = useState<NavItem[]>([
-		{ label: "Exchange", id: "exchange", active: true },
-		{ label: "How To", id: "howTo", active: false },
-		{ label: "Reviews", id: "reviews", active: false },
-		{ label: "FAQ", id: "faq", active: false },
-		{ label: "Blog", id: "blog", active: false },
+		{ label: "exchange", id: "exchange", active: true },
+		{ label: "how To", id: "howTo", active: false },
+		{ label: "reviews", id: "reviews", active: false },
+		{ label: "faq", id: "faq", active: false },
+		{ label: "blog", id: "blog", active: false },
 	]);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
 	const handleScroll = (id: string) => {
+		if (id === "blog") {
+			router.push("/blog");
+			setIsMenuOpen(false);
+			return;
+		}
 		const element = document.getElementById(id);
 		if (element) {
 			element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -102,7 +109,9 @@ const LanguageHeader: React.FC = () => {
 		<header className="flex w-full items-center justify-between px-6 py-2 mb-[15px] fixed top-0 z-50  backdrop-blur" >
 			<div className="flex flex-1 justify-between items-center px-3 mx-auto max-w-[1392px]" >
 				<div className="flex items-center relative">
-					<img src="icons/logo.png" alt="Logo" style={{maxHeight: "40px",}} />
+					<button onClick={() => router.push('/')} aria-label="Go to home" className="flex items-center">
+					  <img src="icons/logo.png" alt="Logo" style={{maxHeight: "40px",}} />
+					</button>
 				</div>
 
 				<div className="hidden md:inline-flex items-center gap-12 relative flex-[0_0_auto] ml-auto mr-[19px]">
@@ -111,7 +120,7 @@ const LanguageHeader: React.FC = () => {
 							<Button
 								key={index}
 								variant="ghost"
-								className={`h-auto p-0 font-normal text-base tracking-[0] leading-normal whitespace-nowrap ${
+								className={`h-auto p-0 font-normal text-base tracking-[0] leading-normal whitespace-nowrap focus:outline-none ${
 									item.active
 										? "text-[#2e77da] hover:text-[#2e77da]"
 										: "text-black opacity-50 hover:text-[#c1c1c1] hover:opacity-75"
@@ -133,7 +142,7 @@ const LanguageHeader: React.FC = () => {
 				>
 					<div className="flex flex-col gap-1.5">
 						<div className={`w-6 h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
-						<div className={`w-6 h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
+						<div className={`w-6 h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? '' : ''}`}></div>
 						<div className={`w-6 h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
 					</div>
 				</button>
@@ -173,7 +182,7 @@ const LanguageHeader: React.FC = () => {
 										changeLanguage(lang.code);
 										setIsLanguageOpen(false);
 									}}
-									className={`px-3 py-2 text-sm  cursor-pointer outline-none hover:bg-gray-50 transition-colors duration-150 ${
+									className={`px-3 py-2 text-sm  cursor-pointer outline-none hover:text-blue-600 transition-colors duration-150 ${
 										i18n.language === lang.code ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'
 									}`}
 								>

@@ -102,7 +102,7 @@ const EnergySection: React.FC<EnergySectionProps> = ({
 
         <div className="mt-4 relative">
           <div className="flex justify-between items-center mt-5">
-            <label className="absolute top-3 left-0 font-normal text-xs z-10 opacity-40 text-black ml-2 mb-1" style={{ paddingLeft: "1.5rem" }}>{t("getEnergy")}</label>
+            <label className="absolute top-3 left-0 font-normal text-xs z-10 opacity-40 text-black ml-2 mb-1" style={{ paddingLeft: "1rem" }}>{t("getEnergy")}</label>
           </div>
           <div className="relative w-full">
             {/* Input value */}
@@ -124,8 +124,8 @@ const EnergySection: React.FC<EnergySectionProps> = ({
                 autoComplete="off"
             />
 
-            <div ref={selectRef} className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center rounded-lg gap-2 bg-[#E6EFF8] py-1  px-2">
-              <img src="icons/energy.svg" alt="energy" className="w-4 h-4"/>
+            <div ref={selectRef} className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center rounded-lg gap-2 bg-[#E6EFF8] py-1  px-3">
+              <img src="icons/energy.svg" alt="energy" className="w-5 h-5"/>
               <button
                 type="button"
                 aria-haspopup="listbox"
@@ -135,17 +135,35 @@ const EnergySection: React.FC<EnergySectionProps> = ({
               >
                 {t(`btn${selectedCount || 1}`)}
                 <svg
-                  className={`w-3 h-3 absolute right-1.5 top-1/2 -translate-y-1/2 transition-transform ${isSelectOpen ? "rotate-180" : "rotate-0"}`}
+                  className={`w-5 h-5 absolute right-1.5 top-1/2 -translate-y-1/2 transition-transform ${isSelectOpen ? "rotate-180" : "rotate-0"}`}
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   aria-hidden="true"
                 >
-                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z"/>
+                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z" clipRule="evenodd" />
                 </svg>
               </button>
               {isSelectOpen && (
                 <ul
+                  role="listbox"
+                  className="absolute right-0 top-full mt-2 w-40 max-w-[90px] bg-white text-black border border-gray-200 rounded-md shadow-lg z-20 overflow-hidden"
                 >
+                  {ENERGY_OPTIONS.map((opt) => (
+                    <li
+                      role="option"
+                      aria-selected={selectedCount === opt.count}
+                      key={opt.count}
+                      onClick={() => {
+                        setEnergyValue(opt.energy);
+                        setIsSelectOpen(false);
+                      }}
+                      className={`px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 ${
+                        selectedCount === opt.count ? "bg-gray-50 font-semibold" : ""
+                      }`}
+                    >
+                      {t(`btn${opt.count}`)}
+                    </li>
+                  ))}
                 </ul>
               )}
             </div>

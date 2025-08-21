@@ -3,6 +3,7 @@
 import { ChevronDownIcon } from "lucide-react";
 import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "../components/ui/button";
+import { useRouter } from "next/router";
 
 interface NavItem {
   label: string;
@@ -11,20 +12,28 @@ interface NavItem {
 }
 
 export const Footer = (): JSX.Element => {
+  const router = useRouter();
   const [navigationItems, setNavigationItems] = useState<NavItem[]>([
-    { label: "Exchange", id: "exchange", active: true },
-    { label: "How To", id: "how-to", active: false },
-    { label: "Reviews", id: "reviews", active: false },
-    { label: "FAQ", id: "faq", active: false },
-    { label: "Blog", id: "blog", active: false },
+    { label: "exchange", id: "exchange", active: true },
+    { label: "how To", id: "how-to", active: false },
+    { label: "reviews", id: "reviews", active: false },
+    { label: "faq", id: "faq", active: false },
+    { label: "blog", id: "blog", active: false },
   ]);
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const handleScroll = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    } 
-  };
+		if (id === "blog") {
+			router.push("/blog");
+			return;
+		}
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth", block: "start" });
+		}
+	};
+
 
   const updateActiveItem = useCallback(() => {
     const observer = new IntersectionObserver(
@@ -67,15 +76,12 @@ export const Footer = (): JSX.Element => {
 
   return (
     <footer className="w-full bg-[#252525] py-[52px]">
-      <div className="max-w-[1392px] mx-auto px-6 flex items-center justify-between">
-        <img
-          className="w-[169.62px] h-[53.39px]"
-          alt="Frame"
-          src="https://c.animaapp.com/meffcgsqJEhpuK/img/frame-1.svg"
-        />
-
-        <div className="flex items-center gap-12">
-          <nav className="flex items-center gap-[31px]">
+      <div className="max-w-[1392px] mx-auto px-6 flex items-center justify-between flex-col md:flex-row">
+        <button onClick={() => router.push('/')} aria-label="Go to home" className="flex items-center">
+          <img src="icons/logo-light.png" alt="Logo" style={{maxHeight: "40px",}} />
+        </button>
+        <div className="flex items-center gap-12 flex-col md:flex-row">
+          <nav className="flex items-center gap-[31px] flex-col md:flex-row">
             {navigationItems.map((item, index) => (
               <Button
                 key={index}

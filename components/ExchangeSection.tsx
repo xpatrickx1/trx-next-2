@@ -163,7 +163,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
             type="text"
             autoComplete="off"
             placeholder={t("inputAmountPlaceholder")}
-            className="w-full pr-24 pt-[20px] py-3 h-11 pl-5 font-bold rounded-lg bg-white text-black border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#007fe9]"
+            className="w-full pr-24 pt-[20px] py-3 h-11 pl-5 font-bold rounded-lg bg-white text-black border border-gray-600 focus:ring-2 focus:ring-[#007fe9]"
             style={{ paddingLeft: "1.5rem" }}
             value={fromAmount}
             onChange={(e) => setFromAmount(e.target.value.replace(",", "."))}
@@ -179,19 +179,20 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
                 setOpenedList(openedList === "from" ? null : "from")
               }
             >
-              <span
-                id="from-token-text "
-                className="text-black min-w-[40px] text-center text-opacity-70"
-              >
-                {fromToken.label}
-              </span>
-              <i className="i-ant-design:down-outlined ml-2"></i>
               <img
                 id="from-token-icon"
                 src={fromToken.icon}
                 style={{ width: "24px", height: "24px", marginRight: "8px" }}
                 alt=""
               />
+              <span
+                id="from-token-text "
+                className="text-black min-w-[40px] font-bold text-center text-opacity-70"
+              >
+                {fromToken.label}
+              </span>
+              <i className="i-ant-design:down-outlined ml-2"></i>
+              
             </div>
             {openedList === "from" && (
               <div
@@ -282,8 +283,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
             readOnly
             value={toAmount}
           />
-          <div ref={selectRef} className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center rounded-lg gap-2 bg-[#E6EFF8] py-1  px-2">
-              <img src="icons/energy.svg" alt="energy" className="w-4 h-4"/>
+          <div ref={selectRef} className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center rounded-lg gap-2 bg-[#E6EFF8] py-3  px-4">
               <button
                 type="button"
                 aria-haspopup="listbox"
@@ -291,7 +291,6 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
                 onClick={() => setIsSelectOpen((v) => !v)}
                 className="bg-transparent text-black font-bold text-sm border border-transparent rounded-md py-2 pl-1 pr-6 focus:outline-none relative min-w-[70px] text-right"
               >
-                {t(`btn${selectedCount || 1}`)}
               </button>
               {isSelectOpen && (
                 <ul
@@ -315,7 +314,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
 
 
           <div
-            className="select-currency absolute top-1 right-0 flex items-center pr-4 rounded-lg z-20"
+            className="select-currency absolute top-1 right-0 flex items-center pr-6 rounded-lg z-20"
             style={{ height: "90%" }}
           >
             <div
@@ -323,20 +322,28 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
               id="to-token-selector"
               onClick={() => setOpenedList(openedList === "to" ? null : "to")}
             >
+              <img
+                id="to-token-icon"
+                src={toToken.icon}
+                style={{ width: "24px", height: "24px", marginRight: "3px" }}
+                alt=""
+              />
               <span
                 id="to-token-text"
-                className="text-black min-w-[40px] text-center text-opacity-70"
+                className="text-black min-w-[40px] font-bold text-center text-opacity-70"
               >
                 {toToken.label}
               </span>
               <i className="i-ant-design:down-outlined ml-2"></i>
-              <img
-                id="to-token-icon"
-                src={toToken.icon}
-                style={{ width: "24px", height: "24px", marginRight: "8px" }}
-                alt=""
-              />
-
+              
+              <svg
+                  className={`w-5 h-5 absolute right-1.5 top-1/2 -translate-y-1/2 transition-transform ${isSelectOpen ? "rotate-180" : "rotate-0"}`}
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z" clipRule="evenodd" />
+                </svg>
             </div>
             {openedList === "to" && (
               <div
@@ -348,19 +355,19 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
                   {tokens.map((token) => (
                     <li
                       key={token.symbol}
-                      className={`token-item flex items-center p-2 hover:bg-gray-700 cursor-pointer
+                      className={`token-item flex items-center p-2 hover:bg-white cursor-pointer
                       ${
                         token.symbol === toToken.symbol
-                          ? "opacity-60 pointer-events-none"
+                          ? "opacity-60"
                           : ""
                       }
                       ${
                         token.symbol === fromToken.symbol
-                          ? "opacity-60 pointer-events-none"
+                          ? "opacity-60"
                           : ""
                       }
                     `}
-                      onClick={() => handleToTokenSelect(token)}
+                      onClick={swapTokens}
                     >
                       <img
                         src={token.icon}

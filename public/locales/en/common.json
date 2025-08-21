@@ -148,5 +148,63 @@
     "heading": "Thank you for your submission!",
     "description": "We have received your request and will get back to you shortly.",
     "back": "Back to Home"
+  },
+
+  "blog": {
+    "heading": "Learn About Crypto with TRX Prime",
+    "readMore": "Read article...",
+
+    "hero": {
+      "date": "04 August",
+      "readTime": "5 min.",
+      "title": "Why TRX is More Than Just Another Cryptocurrency",
+      "description": "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
+      "imageUrl": "icons/blogHero.png"
+    },
+
+    "posts": [
+      {
+        "date": "17 August",
+        "readTime": "3 min.",
+        "title": "TRON (TRX): A Gateway to Web3 Adoption",
+        "excerpt": "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
+        "imageUrl": "icons/blog1.png"
+      },
+      {
+        "date": "04 August",
+        "readTime": "5 min.",
+        "title": "Why TRX is More Than Just Another Cryptocurrency",
+        "excerpt": "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
+        "imageUrl": "icons/blog2.png"
+      },
+      {
+        "date": "29 July",
+        "readTime": "7 min.",
+        "title": "The Future of TRON and TRX in the Crypto Market",
+        "excerpt": "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
+        "imageUrl": "icons/blog3.png"
+      },
+      {
+        "date": "17 August",
+        "readTime": "3 min.",
+        "title": "TRON (TRX): A Gateway to Web3 Adoption",
+        "excerpt": "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
+        "imageUrl": "icons/blog4.png"
+      },
+      {
+        "date": "04 August",
+        "readTime": "5 min.",
+        "title": "Why TRX is More Than Just Another Cryptocurrency",
+        "excerpt": "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
+        "imageUrl": "icons/blog5.png"
+      },
+      {
+        "date": "29 July",
+        "readTime": "7 min.",
+        "title": "The Future of TRON and TRX in the Crypto Market",
+        "excerpt": "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
+        "imageUrl": "icons/blog6.png"
+      }
+    ]
   }
 }
