@@ -39,8 +39,8 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
   const [fromToken, setFromToken] = useState(tokens[0]);
   const [toToken, setToToken] = useState(tokens[1]);
   const [openedList, setOpenedList] = useState<null | "from" | "to">(null);
-  const [rotation, setRotation] = useState(false);
-
+  const [rotation, setRotation] = useState(0);
+  console.log(rotation)
   const [fromAmount, setFromAmount] = useState<string>("1");
 
   const { t, i18n } = useTranslation();
@@ -100,8 +100,8 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
 
   // Закрытие при выборе токена
   const handleFromTokenSelect = (token: (typeof tokens)[0]) => {
-    if (token.symbol === toToken.symbol) setToToken(fromToken);
     setFromToken(token);
+    setToToken(tokens.find((t) => t.symbol !== token.symbol)!);
     setOpenedList(null);
   };
 
@@ -116,14 +116,9 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
     setFromToken(toToken);
     setToToken(prevFrom);
     setOpenedList(null);
-    // setRotation((prev) => prev + 360);
-    setRotation(true);
-    setTimeout(() => {
-      setRotation(false);
-    }, 1000);
+    setRotation((prev) => prev + 180);
   };
 
-  // --- Новый useEffect для закрытия при клике вне списка ---
   React.useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       const selectWrappers = document.querySelectorAll(".select-currency");
@@ -135,8 +130,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
     }
     if (openedList) {
       document.addEventListener("mousedown", handleClickOutside);
-      return () =>
-        document.removeEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
     }
   }, [openedList]);
 
@@ -163,17 +157,14 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
             type="text"
             autoComplete="off"
             placeholder={t("inputAmountPlaceholder")}
-            className="w-full pr-24 pt-[20px] py-3 h-11 pl-5 font-bold rounded-lg bg-white text-black border border-gray-600 focus:ring-2 focus:ring-[#007fe9]"
+            className="w-full pr-24 pt-[20px] py-3 h-11 pl-5 font-bold rounded-lg bg-white text-black border border-gray-600"
             style={{ paddingLeft: "1.5rem" }}
             value={fromAmount}
             onChange={(e) => setFromAmount(e.target.value.replace(",", "."))}
           />
-          <div
-            className="select-currency absolute top-1 right-0 flex items-center pr-4 rounded-lg"
-            style={{ height: "90%" }}
-          >
+          <div className="select-currency absolute top-3 w-[112px] right-3 flex items-center pr-6 pl-2 rounded-lg h-[45px] bg-[#E6EFF8]">
             <div
-              className="ant-select-selector flex items-center cursor-pointer"
+              className="ant-select-selector flex items-center cursor-pointer rounded-lg"
               id="from-token-selector"
               onClick={() =>
                 setOpenedList(openedList === "from" ? null : "from")
@@ -182,7 +173,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
               <img
                 id="from-token-icon"
                 src={fromToken.icon}
-                style={{ width: "24px", height: "24px", marginRight: "8px" }}
+                style={{ width: "24px", height: "24px", marginRight: "4px" }}
                 alt=""
               />
               <span
@@ -192,44 +183,42 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
                 {fromToken.label}
               </span>
               <i className="i-ant-design:down-outlined ml-2"></i>
-              
+              <svg
+                  className={`w-5 h-5 absolute right-1.5 top-1/2 -translate-y-1/2 transition-transform ${isSelectOpen ? "rotate-180" : "rotate-0"}`}
+                  viewBox="0 0 20 20"
+                  fill="#000"
+                  aria-hidden="true"
+                >
+                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z" clipRule="evenodd" />
+                </svg>
             </div>
             {openedList === "from" && (
               <div
                 id="from-token-list"
-                className="absolute top-full right-0 text-black rounded-lg mt-2 z-50 w-max min-w-[120px] shadow-lg"
-                style={{ backgroundColor: "#142546" }}
+                className="absolute top-full right-0 text-white rounded-lg mt-2 z-50 w-max min-w-[120px] shadow-lg"
+                style={{ backgroundColor: "#262626" }}
               >
                 <ul>
-                  {tokens.map((token) => (
-                    <li
-                      key={token.symbol}
-                      className={`token-item flex items-center p-2 hover:bg-gray-700 cursor-pointer
-                      ${
-                        token.symbol === fromToken.symbol
-                          ? "opacity-60 pointer-events-none"
-                          : ""
-                      }
-                      ${
-                        token.symbol === toToken.symbol
-                          ? "opacity-60 pointer-events-none"
-                          : ""
-                      }
-                    `}
-                      onClick={() => handleFromTokenSelect(token)}
-                    >
-                      <img
-                        src={token.icon}
-                        style={{
-                          width: "24px",
-                          height: "24px",
-                          marginRight: "8px",
-                        }}
-                        alt=""
-                      />
-                      <span>{token.label}</span>
-                    </li>
-                  ))}
+                  {tokens
+                    .filter((token) => token.symbol !== fromToken.symbol) // Показуємо лише протилежний токен
+                    .map((token) => (
+                      <li
+                        key={token.symbol}
+                        className="token-item flex items-center p-2 hover:bg-gray-700 rounded-lg cursor-pointer"
+                        onClick={() => handleFromTokenSelect(token)}
+                      >
+                        <img
+                          src={token.icon}
+                          style={{
+                            width: "24px",
+                            height: "24px",
+                            marginRight: "8px",
+                          }}
+                          alt={token.label}
+                        />
+                        <span>{token.label}</span>
+                      </li>
+                    ))}
                 </ul>
               </div>
             )}
@@ -242,28 +231,11 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
           type="button"
           onClick={swapTokens}
           className="switch-currency-button text-black hover:text-blue-400 transition focus:outline-none"
-          style={{ transform: `rotate(${rotation}deg)` }}
         >
-          <div
-          className={`square square1 ${
-            rotation ? 'animate' : ''
-          }`}
+          <div className="button-arrows"
+          style={{ transform: `rotate(${rotation}deg)` }}
         ></div>
-        <div
-          className={`square square2 ${
-            rotation ? 'animate' : ''
-          }`}
-        ></div>
-        <div
-          className={`square arrow1 ${
-            rotation ? 'animate' : ''
-          }`}
-        ></div>
-        <div
-           className={`square arrow2 ${
-            rotation ? 'animate' : ''
-          }`}
-        ></div>
+        
         </button>
       </div>
 
@@ -278,55 +250,24 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
             type="text"
             autoComplete="off"
             placeholder={t("outputAmountPlaceholder")}
-            className="w-full pr-24 py-3 h-11 rounded-lg bg-white font-bold text-black border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#007fe9]"
+            className="w-full pr-24 py-3 h-11 rounded-lg bg-white font-bold text-black"
             style={{ paddingLeft: "1.5rem" }}
             readOnly
             value={toAmount}
           />
-          <div ref={selectRef} className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center rounded-lg gap-2 bg-[#E6EFF8] py-3  px-4">
-              <button
-                type="button"
-                aria-haspopup="listbox"
-                aria-expanded={isSelectOpen}
-                onClick={() => setIsSelectOpen((v) => !v)}
-                className="bg-transparent text-black font-bold text-sm border border-transparent rounded-md py-2 pl-1 pr-6 focus:outline-none relative min-w-[70px] text-right"
-              >
-              </button>
-              {isSelectOpen && (
-                <ul
-                  role="listbox"
-                  className="absolute right-0 top-full mt-2 w-44 bg-white text-black border border-gray-200 rounded-md shadow-lg z-20 overflow-hidden"
-                >
-                    <li
-                      role="option"
-                      onClick={() => {
-                        // setEnergyValue(opt.energy);
-                        setIsSelectOpen(false);
-                      }}
-                      className={`px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 ${
-                        selectedCount === opt.count ? "bg-gray-50 font-semibold" : ""
-                      }`}
-                    >
-                    </li>
-                </ul>
-              )}
-            </div>
-
-
-          <div
-            className="select-currency absolute top-1 right-0 flex items-center pr-6 rounded-lg z-20"
-            style={{ height: "90%" }}
-          >
+  
             <div
-              className="ant-select-selector flex items-center cursor-pointer"
+             className="select-currency absolute top-3 right-3 w-[112px] flex items-center pr-6 pl-2 rounded-lg h-[45px] bg-[#E6EFF8]">
+            <div
+              className="ant-select-selector flex items-center cursor-pointer rounded-lg"
               id="to-token-selector"
               onClick={() => setOpenedList(openedList === "to" ? null : "to")}
             >
               <img
                 id="to-token-icon"
                 src={toToken.icon}
-                style={{ width: "24px", height: "24px", marginRight: "3px" }}
-                alt=""
+                style={{ width: "24px", height: "24px", marginRight: "4px" }}
+                alt={toToken.label}
               />
               <span
                 id="to-token-text"
@@ -334,12 +275,10 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
               >
                 {toToken.label}
               </span>
-              <i className="i-ant-design:down-outlined ml-2"></i>
-              
               <svg
                   className={`w-5 h-5 absolute right-1.5 top-1/2 -translate-y-1/2 transition-transform ${isSelectOpen ? "rotate-180" : "rotate-0"}`}
                   viewBox="0 0 20 20"
-                  fill="currentColor"
+                  fill="#000"
                   aria-hidden="true"
                 >
                   <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z" clipRule="evenodd" />
@@ -348,39 +287,30 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
             {openedList === "to" && (
               <div
                 id="to-token-list"
-                className="absolute top-full right-0 text-black rounded-lg mt-2 z-50 w-max min-w-[120px] shadow-lg"
-                style={{ backgroundColor: "#142546" }}
+                className="absolute top-full right-0 text-white rounded-lg mt-2 z-50 w-max min-w-[120px] shadow-lg"
+                style={{ backgroundColor: "#262626" }}
               >
                 <ul>
-                  {tokens.map((token) => (
-                    <li
-                      key={token.symbol}
-                      className={`token-item flex items-center p-2 hover:bg-white cursor-pointer
-                      ${
-                        token.symbol === toToken.symbol
-                          ? "opacity-60"
-                          : ""
-                      }
-                      ${
-                        token.symbol === fromToken.symbol
-                          ? "opacity-60"
-                          : ""
-                      }
-                    `}
-                      onClick={swapTokens}
-                    >
-                      <img
-                        src={token.icon}
-                        style={{
-                          width: "24px",
-                          height: "24px",
-                          marginRight: "8px",
-                        }}
-                        alt=""
-                      />
-                      <span>{token.label}</span>
-                    </li>
-                  ))}
+                  {tokens
+                    .filter((token) => token.symbol !== toToken.symbol) // Показуємо лише протилежний токен
+                    .map((token) => (
+                      <li
+                        key={token.symbol}
+                        className="token-item flex items-center p-2 hover:bg-gray-700 rounded-lg cursor-pointer"
+                        onClick={() => handleToTokenSelect(token)}
+                      >
+                        <img
+                          src={token.icon}
+                          style={{
+                            width: "24px",
+                            height: "24px",
+                            marginRight: "8px",
+                          }}
+                          alt={token.label}
+                        />
+                        <span>{token.label}</span>
+                      </li>
+                    ))}
                 </ul>
               </div>
             )}

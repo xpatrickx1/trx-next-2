@@ -206,5 +206,36 @@
         "imageUrl": "icons/blog6.png"
       }
     ]
-  }
+  },
+  
+  "features": [
+      {
+        "text": "Unlimited, non-custodial cryptocurrency platform"
+      },
+      {
+        "text": "No account creation or sign-up necessary"
+      },
+      {
+        "text": "Protecting your privacy comes first for us"
+      }
+    ],
+
+    "exchangeSteps": [
+      {
+        "title": "Pick a Crypto",
+        "description": "Choose the exchange pair"
+      },
+      {
+        "title": "Enter Wallet Address",
+        "description": "Provide the wallet address for us to send exchanged funds"
+      },
+      {
+        "title": "Send the Deposit",
+        "description": "Send in the amount of crypto needed for exchange"
+      },
+      {
+        "title": "Receive Funds",
+        "description": "Get exchanged cryptocurrency"
+      }
+   ]
 }

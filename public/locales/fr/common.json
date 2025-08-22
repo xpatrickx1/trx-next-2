@@ -136,5 +136,90 @@
       "question": "Y a-t-il une vérification KYC ?",
       "answer": "Aucune vérification KYC n'est requise pour utiliser notre plateforme."
     }
-  ]
+  ],
+
+  "blog": {
+      "heading": "Découvrez les cryptomonnaies avec TRX Prime",
+      "readMore": "Lire l'article...",
+      "hero": {
+        "date": "04 Août",
+        "readTime": "5 min.",
+        "title": "Pourquoi TRX est plus qu'une simple cryptomonnaie",
+        "description": "TRON (TRX) s'est positionné comme l'un des réseaux blockchain les plus influents au monde...",
+        "imageUrl": "icons/blogHero.png"
+      },
+      "posts": [
+        {
+          "date": "17 Août",
+          "readTime": "3 min.",
+          "title": "TRON (TRX) : Une passerelle vers l'adoption de Web3",
+          "excerpt": "TRON (TRX) s'est positionné comme l'un des réseaux blockchain les plus influents au monde...",
+          "imageUrl": "icons/blog1.png"
+        },
+        {
+          "date": "04 Août",
+          "readTime": "5 min.",
+          "title": "Pourquoi TRX est plus qu'une simple cryptomonnaie",
+          "excerpt": "TRON (TRX) s'est positionné comme l'un des réseaux blockchain les plus influents au monde...",
+          "imageUrl": "icons/blog2.png"
+        },
+        {
+          "date": "29 Juillet",
+          "readTime": "7 min.",
+          "title": "L'avenir de TRON et TRX sur le marché des cryptomonnaies",
+          "excerpt": "TRON (TRX) s'est positionné comme l'un des réseaux blockchain les plus influents au monde...",
+          "imageUrl": "icons/blog3.png"
+        },
+        {
+          "date": "17 Août",
+          "readTime": "3 min.",
+          "title": "TRON (TRX) : Une passerelle vers l'adoption de Web3",
+          "excerpt": "TRON (TRX) s'est positionné comme l'un des réseaux blockchain les plus influents au monde...",
+          "imageUrl": "icons/blog4.png"
+        },
+        {
+          "date": "04 Août",
+          "readTime": "5 min.",
+          "title": "Pourquoi TRX est plus qu'une simple cryptomonnaie",
+          "excerpt": "TRON (TRX) s'est positionné comme l'un des réseaux blockchain les plus influents au monde...",
+          "imageUrl": "icons/blog5.png"
+        },
+        {
+          "date": "29 Juillet",
+          "readTime": "7 min.",
+          "title": "L'avenir de TRON et TRX sur le marché des cryptomonnaies",
+          "excerpt": "TRON (TRX) s'est positionné comme l'un des réseaux blockchain les plus influents au monde...",
+          "imageUrl": "icons/blog6.png"
+        }
+      ]
+    },
+    "features": [
+      {
+        "text": "Plateforme de cryptomonnaies illimitée et non-custodiale"
+      },
+      {
+        "text": "Aucune création de compte ou inscription nécessaire"
+      },
+      {
+        "text": "La protection de votre vie privée est notre priorité"
+      }
+    ],
+    "exchangeSteps": [
+      {
+        "title": "Choisissez une cryptomonnaie",
+        "description": "Sélectionnez la paire d'échange"
+      },
+      {
+        "title": "Entrez l'adresse du portefeuille",
+        "description": "Fournissez l'adresse du portefeuille pour envoyer les fonds échangés"
+      },
+      {
+        "title": "Envoyez le dépôt",
+        "description": "Envoyez le montant de cryptomonnaie nécessaire pour l'échange"
+      },
+      {
+        "title": "Recevez les fonds",
+        "description": "Recevez la cryptomonnaie échangée"
+      }
+    ]
 }

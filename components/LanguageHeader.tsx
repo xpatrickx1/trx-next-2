@@ -22,7 +22,7 @@ const LanguageHeader: React.FC = () => {
 
 	const [navigationItems, setNavigationItems] = useState<NavItem[]>([
 		{ label: "exchange", id: "exchange", active: true },
-		{ label: "how To", id: "howTo", active: false },
+		{ label: "how to", id: "howTo", active: false },
 		{ label: "reviews", id: "reviews", active: false },
 		{ label: "faq", id: "faq", active: false },
 		{ label: "blog", id: "blog", active: false },
@@ -32,16 +32,27 @@ const LanguageHeader: React.FC = () => {
 
 	const handleScroll = (id: string) => {
 		if (id === "blog") {
-			router.push("/blog");
-			setIsMenuOpen(false);
-			return;
+		  router.push("/blog");
+		  setIsMenuOpen(false);
+		  return;
 		}
-		const element = document.getElementById(id);
-		if (element) {
+	
+		if (window.location.pathname !== "/") {
+		  router.push(`/#${id}`);
+		  setTimeout(() => {
+			const element = document.getElementById(id);
+			if (element) {
+			  element.scrollIntoView({ behavior: "smooth", block: "start" });
+			}
+		  }, 100);
+		} else {
+		  const element = document.getElementById(id);
+		  if (element) {
 			element.scrollIntoView({ behavior: "smooth", block: "start" });
+		  }
 		}
 		setIsMenuOpen(false);
-	};
+	  };
 
 	const updateActiveItem = useCallback(() => {
 		const observer = new IntersectionObserver(
@@ -82,7 +93,18 @@ const LanguageHeader: React.FC = () => {
 		return cleanup;
 	}, [updateActiveItem]);
 
-	// Close language dropdown when clicking outside
+	useEffect(() => {
+		const isBlogPage = router.pathname === "/blog";
+		setNavigationItems((prevItems) =>
+		  prevItems.map((item) => ({
+			...item,
+			active: isBlogPage
+			  ? item.id === "blog"
+			  : item.id === "exchange" && router.pathname === "/",
+		  })
+		))
+	  }, [router.pathname]);
+
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
 			const target = event.target as Element;
@@ -106,7 +128,7 @@ const LanguageHeader: React.FC = () => {
 	const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
 
 	return (
-		<header className="flex w-full items-center justify-between px-6 py-2 mb-[15px] fixed top-0 z-50  backdrop-blur" >
+		<header className="flex w-full items-center justify-between px-6 py-2 mb-[15px] fixed top-0 z-50 bg-[#e5e7eb]  backdrop-blur" >
 			<div className="flex flex-1 justify-between items-center px-3 mx-auto max-w-[1392px]" >
 				<div className="flex items-center relative">
 					<button onClick={() => router.push('/')} aria-label="Go to home" className="flex items-center">

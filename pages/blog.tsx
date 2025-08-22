@@ -4,7 +4,7 @@ import { BlogHero } from "../components/blog/BlogHero";
 import { BlogArticle } from "../components/blog/BlogArticle";
 import { Footer } from "../components/Footer";
 
-export const Blog = (): JSX.Element => {
+export const Blog = (): React.ReactElement => {
   return (
     <div
       className="bg-[#f3f3f3] flex flex-col items-center w-full"

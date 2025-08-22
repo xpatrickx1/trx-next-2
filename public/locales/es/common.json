@@ -137,5 +137,90 @@
       "question": "¿Hay KYC?",
       "answer": "No se requiere KYC para usar nuestra plataforma."
     }
-  ]
+  ],
+
+  "blog": {
+      "heading": "Aprende sobre Cripto con TRX Prime",
+      "readMore": "Leer artículo...",
+      "hero": {
+        "date": "04 Agosto",
+        "readTime": "5 min.",
+        "title": "Por qué TRX es más que solo otra criptomoneda",
+        "description": "TRON (TRX) se ha posicionado como una de las redes blockchain más influyentes del mundo...",
+        "imageUrl": "icons/blogHero.png"
+      },
+      "posts": [
+        {
+          "date": "17 Agosto",
+          "readTime": "3 min.",
+          "title": "TRON (TRX): Una puerta de entrada a la adopción de Web3",
+          "excerpt": "TRON (TRX) se ha posicionado como una de las redes blockchain más influyentes del mundo...",
+          "imageUrl": "icons/blog1.png"
+        },
+        {
+          "date": "04 Agosto",
+          "readTime": "5 min.",
+          "title": "Por qué TRX es más que solo otra criptomoneda",
+          "excerpt": "TRON (TRX) se ha posicionado como una de las redes blockchain más influyentes del mundo...",
+          "imageUrl": "icons/blog2.png"
+        },
+        {
+          "date": "29 Julio",
+          "readTime": "7 min.",
+          "title": "El futuro de TRON y TRX en el mercado cripto",
+          "excerpt": "TRON (TRX) se ha posicionado como una de las redes blockchain más influyentes del mundo...",
+          "imageUrl": "icons/blog3.png"
+        },
+        {
+          "date": "17 Agosto",
+          "readTime": "3 min.",
+          "title": "TRON (TRX): Una puerta de entrada a la adopción de Web3",
+          "excerpt": "TRON (TRX) se ha posicionado como una de las redes blockchain más influyentes del mundo...",
+          "imageUrl": "icons/blog4.png"
+        },
+        {
+          "date": "04 Agosto",
+          "readTime": "5 min.",
+          "title": "Por qué TRX es más que solo otra criptomoneda",
+          "excerpt": "TRON (TRX) se ha posicionado como una de las redes blockchain más influyentes del mundo...",
+          "imageUrl": "icons/blog5.png"
+        },
+        {
+          "date": "29 Julio",
+          "readTime": "7 min.",
+          "title": "El futuro de TRON y TRX en el mercado cripto",
+          "excerpt": "TRON (TRX) se ha posicionado como una de las redes blockchain más influyentes del mundo...",
+          "imageUrl": "icons/blog6.png"
+        }
+      ]
+    },
+    "features": [
+      {
+        "text": "Plataforma de criptomonedas ilimitada y no custodial"
+      },
+      {
+        "text": "No es necesario crear una cuenta ni registrarse"
+      },
+      {
+        "text": "Proteger tu privacidad es lo primero para nosotros"
+      }
+    ],
+    "exchangeSteps": [
+      {
+        "title": "Elige una criptomoneda",
+        "description": "Selecciona el par de intercambio"
+      },
+      {
+        "title": "Ingresa la dirección de la billetera",
+        "description": "Proporciona la dirección de la billetera para enviar los fondos intercambiados"
+      },
+      {
+        "title": "Envía el depósito",
+        "description": "Envía la cantidad de cripto necesaria para el intercambio"
+      },
+      {
+        "title": "Recibe los fondos",
+        "description": "Obtén la criptomoneda intercambiada"
+      }
+    ]
 }

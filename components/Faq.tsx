@@ -1,23 +1,10 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-  const faqData = [
-    {
-    question: "What is TRX Exchanger?",
-    answer:
-      "TRX Exchanger is a non-custodial platform for fast and secure crypto swaps without registration.",
-    },
-    {
-    question: "Do I need to create an account?",
-    answer:
-      "No, you can use the platform without any sign-up or account creation.",
-    },
-    {
-    question: "How is my privacy protected?",
-    answer:
-      "We do not store your personal data. All transactions are private and secure.",
-  },
-];
+type FaqItem = {
+  question: string;
+  answer: string;
+};
 
 export const Faq = (): React.ReactElement => {
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
@@ -59,7 +46,7 @@ export const Faq = (): React.ReactElement => {
                     className={`ml-4 transform transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
                   >
                     <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clipRule="evenodd" d="M9.0184 6.66934L2.44856 0.367431L0.325472 2.57995L9.01823 10.893L17.6895 2.57995L15.5664 0.367432L9.0184 6.66934Z" fill="black"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M9.0184 6.66934L2.44856 0.367431L0.325472 2.57995L9.01823 10.893L17.6895 2.57995L15.5664 0.367432L9.0184 6.66934Z" fill="black"/>
                     </svg>
                   </span>
                 </button>

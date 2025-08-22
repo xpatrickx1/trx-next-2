@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 
-export const Reviews = (): JSX.Element => {
+export const Reviews = (): React.ReactElement => {
   const reviews = [
     {
       name: "DICE",

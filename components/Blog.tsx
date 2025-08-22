@@ -1,17 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
+import Link from "next/link";
 
-export const Blog = (): JSX.Element => {
+const truncateText = (text: string, maxLength: number = 100): string => {
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength).trim() + "...";
+};
+
+
+export const Blog = (): React.ReactElement => {
+  const { t } = useTranslation();
+  const [selectedPost, setSelectedPost] = useState<any | null>(null);
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      setSelectedPost(null);
+    }
+  };
     const articleData = [
         {
         id: "item-1",
         date: "17 August",
         readTime: "3 min.",
         title: "TRON (TRX): A Gateway to Web3 Adoption",
-        description:
+        excerpt:
           "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
-        readMoreText: "Read article...",
         imageUrl: "icons/blog1.png",
       },
       {
@@ -19,9 +33,8 @@ export const Blog = (): JSX.Element => {
         date: "04 August",
         readTime: "5 min.",
         title: "Why TRX is More Than Just Another Cryptocurrency",
-        description:
+        excerpt:
           "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
-        readMoreText: "Read article...",
         imageUrl: "icons/blog2.png",
       },
       {
@@ -29,9 +42,8 @@ export const Blog = (): JSX.Element => {
         date: "29 July",
         readTime: "7 min.",
         title: "The Future of TRON and TRX in the Crypto Market",
-        description:
+        excerpt:
           "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
-        readMoreText: "Read article...",
         imageUrl: "icons/blog3.png",
       }
     ];
@@ -70,31 +82,77 @@ export const Blog = (): JSX.Element => {
                         {article.title}
                     </h3>
                     <p className="font-normal text-[#252525] text-base tracking-[0] leading-6">
-                        {article.description}
+                      {truncateText(article.excerpt, 100)} 
                     </p>
                     </div>
                 </div>
         
                 <a
                     href="#"
-                    className="font-normal text-[#2e77da] text-base tracking-[0] leading-[25px] hover:underline"
-                >
-                    {article.readMoreText}
-                </a>
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setSelectedPost(article);
+                    }}
+                    className="[font-family:'Public_Sans',Helvetica] font-normal text-[#2e77da] text-base tracking-[0] leading-[25px] hover:underline transition-colors"
+                  >
+                    {t("blog.readMore")}
+                  </a>
                 </CardContent>
             </Card>
             ))}
           </div>
 
           <div className="flex justify-center">
+          <Link href="/blog">
             <Button
               variant="outline"
               className="w-[410px] h-[68px] rounded-xl border border-solid border-[#2e77da] bg-transparent hover:bg-[#2e77da] font-normal text-[#2e77da] text-lg tracking-[0.36px] leading-[47.7px] hover:text-white"
             >
-                EXPLORE MORE IN BLOG
+              EXPLORE MORE IN BLOG
             </Button>
+          </Link>
           </div>
         </div>
+        {selectedPost && (
+        <div
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50"
+          onClick={handleBackdropClick}
+        >
+          <div
+            className="relative bg-white w-[90%] max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-xl p-10"
+            onClick={(e) => e.stopPropagation()} // Prevent clicks inside modal from closing it
+          >
+            <button
+              className="absolute top-4 right-4 w-6 h-6 cursor-pointer 
+                before:content-[''] before:absolute before:top-1/2 before:left-0 
+                before:w-full before:h-[2px] before:bg-gray-700 before:rotate-45 
+                after:content-[''] after:absolute after:top-1/2 after:left-0 
+                after:w-full after:h-[2px] after:bg-gray-700 after:-rotate-45 
+                hover:before:bg-[#2E77DA] hover:after:bg-[#2E77DA]"
+              aria-label="Close"
+              onClick={() => setSelectedPost(null)}
+            />
+            <div>
+              <img
+                src={selectedPost.imageUrl}
+                alt={selectedPost.title}
+                className="w-full h-64 object-cover rounded-lg mb-6"
+              />
+              <h1 className="text-3xl text-black font-bold mb-4">
+                {selectedPost.title}
+              </h1>
+              <div className="flex gap-4 text-gray-500 text-sm mb-6">
+                <time>{selectedPost.date}</time>
+                <span>{selectedPost.readTime}</span>
+              </div>
+              <div
+                className="prose max-w-none text-black"
+                dangerouslySetInnerHTML={{ __html: selectedPost.excerpt }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
       </section>
   );
 };

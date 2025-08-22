@@ -1,33 +1,21 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent } from "../components/ui/card";
 
+type ExchangeItem = {
+  title: string;
+  description: string;
+};
+
 export const HowToUse = (): React.ReactElement => {
-  const exchangeSteps = [
-    {
-      number: "1",
-      title: "Pick a Crypto",
-      description: "Choose the exchange pair",
-      maxWidth: "max-w-3xs",
-    },
-    {
-      number: "2",
-      title: "Enter Wallet Address",
-      description: "Provide the wallet address for us to send exchanged funds",
-      maxWidth: "max-w-2xs",
-    },
-    {
-      number: "3",
-      title: "Send the Deposit",
-      description: "Send in the amount of crypto needed for exchange",
-      maxWidth: "max-w-2xs",
-    },
-    {
-      number: "4",
-      title: "Receive Funds",
-      description: "Get exchanged cryptocurrency",
-      maxWidth: "max-w-xs",
-    },
-  ];
+  const { t } = useTranslation();
+  const steps = t("exchangeSteps", { returnObjects: true }) as ExchangeItem[];
+  const exchangeSteps = steps.map((step, index) => ({
+    number: (index + 1).toString(),
+    title: step.title,
+    description: step.description,
+    maxWidth: ["max-w-3xs", "max-w-2xs", "max-w-2xs", "max-w-xs"][index], // як у тебе було
+  }));
 
   return (
     <section id="howTo" className="w-full bg-[#252525] py-20 px-4 md:px-6 lg:px-8">

@@ -136,6 +136,91 @@
       "question": "Gibt es ein KYC?",
       "answer": "Für die Nutzung unserer Plattform ist kein KYC erforderlich."
     }
-  ]
+  ],
+
+  "blog": {
+      "heading": "Lernen Sie Crypto mit TRX Prime kennen",
+      "readMore": "Artikel lesen...",
+      "hero": {
+        "date": "04 August",
+        "readTime": "5 Min.",
+        "title": "Warum TRX mehr als nur eine weitere Kryptowährung ist",
+        "description": "TRON (TRX) hat sich als eines der einflussreichsten Blockchain-Netzwerke der Welt positioniert...",
+        "imageUrl": "icons/blogHero.png"
+      },
+      "posts": [
+        {
+          "date": "17 August",
+          "readTime": "3 Min.",
+          "title": "TRON (TRX): Ein Tor zur Web3-Einführung",
+          "excerpt": "TRON (TRX) hat sich als eines der einflussreichsten Blockchain-Netzwerke der Welt positioniert...",
+          "imageUrl": "icons/blog1.png"
+        },
+        {
+          "date": "04 August",
+          "readTime": "5 Min.",
+          "title": "Warum TRX mehr als nur eine weitere Kryptowährung ist",
+          "excerpt": "TRON (TRX) hat sich als eines der einflussreichsten Blockchain-Netzwerke der Welt positioniert...",
+          "imageUrl": "icons/blog2.png"
+        },
+        {
+          "date": "29 Juli",
+          "readTime": "7 Min.",
+          "title": "Die Zukunft von TRON und TRX auf dem Kryptomarkt",
+          "excerpt": "TRON (TRX) hat sich als eines der einflussreichsten Blockchain-Netzwerke der Welt positioniert...",
+          "imageUrl": "icons/blog3.png"
+        },
+        {
+          "date": "17 August",
+          "readTime": "3 Min.",
+          "title": "TRON (TRX): Ein Tor zur Web3-Einführung",
+          "excerpt": "TRON (TRX) hat sich als eines der einflussreichsten Blockchain-Netzwerke der Welt positioniert...",
+          "imageUrl": "icons/blog4.png"
+        },
+        {
+          "date": "04 August",
+          "readTime": "5 Min.",
+          "title": "Warum TRX mehr als nur eine weitere Kryptowährung ist",
+          "excerpt": "TRON (TRX) hat sich als eines der einflussreichsten Blockchain-Netzwerke der Welt positioniert...",
+          "imageUrl": "icons/blog5.png"
+        },
+        {
+          "date": "29 Juli",
+          "readTime": "7 Min.",
+          "title": "Die Zukunft von TRON und TRX auf dem Kryptomarkt",
+          "excerpt": "TRON (TRX) hat sich als eines der einflussreichsten Blockchain-Netzwerke der Welt positioniert...",
+          "imageUrl": "icons/blog6.png"
+        }
+      ]
+    },
+    "features": [
+      {
+        "text": "Unbegrenzte, nicht-verwahrende Kryptowährungsplattform"
+      },
+      {
+        "text": "Keine Kontoerstellung oder Anmeldung erforderlich"
+      },
+      {
+        "text": "Der Schutz Ihrer Privatsphäre steht für uns an erster Stelle"
+      }
+    ],
+    "exchangeSteps": [
+      {
+        "title": "Wählen Sie eine Kryptowährung",
+        "description": "Wählen Sie das Austauschpaar"
+      },
+      {
+        "title": "Geben Sie die Wallet-Adresse ein",
+        "description": "Geben Sie die Wallet-Adresse an, an die wir die getauschten Gelder senden sollen"
+      },
+      {
+        "title": "Senden Sie die Einzahlung",
+        "description": "Senden Sie den Betrag an Krypto, der für den Austausch benötigt wird"
+      },
+      {
+        "title": "Erhalten Sie Gelder",
+        "description": "Erhalten Sie die getauschte Kryptowährung"
+      }
+    ]
   
 }
