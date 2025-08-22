@@ -80,7 +80,7 @@ export const BlogArticle = (): React.ReactElement => {
                 />
               </div>
 
-              <CardContent className="p-14 pt-[34px]">
+              <CardContent className="p-6 md:p-14 pt-[34px]">
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-9">
                     <div className="flex items-center justify-between">
@@ -125,7 +125,7 @@ export const BlogArticle = (): React.ReactElement => {
           onClick={handleBackdropClick}
         >
           <div
-            className="relative bg-white w-[90%] max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-xl p-10"
+            className="relative bg-white w-[90%] max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-xl p-4 md:p-10"
             onClick={(e) => e.stopPropagation()} // Prevent clicks inside modal from closing it
           >
             <button
@@ -144,9 +144,9 @@ export const BlogArticle = (): React.ReactElement => {
                 alt={selectedPost.title}
                 className="w-full h-64 object-cover rounded-lg mb-6"
               />
-              <h1 className="text-3xl text-black font-bold mb-4">
+              <h3 className="text-xl md:text-3xl text-black font-bold mb-4">
                 {selectedPost.title}
-              </h1>
+              </h3>
               <div className="flex gap-4 text-gray-500 text-sm mb-6">
                 <time>{selectedPost.date}</time>
                 <span>{selectedPost.readTime}</span>

@@ -26,7 +26,7 @@ export const Faq = (): React.ReactElement => {
       </div>
       <div className="container mx-auto relative z-10 ">
         <h2 className="text-3xl font-bold text-center mb-8 text-[#252525]">FAQ</h2>
-        <div className="space-y-4 max-w-[842px] mx-auto">
+        <div className="space-y-3 max-w-[842px] mx-auto">
           {faqItems.map((item, idx) => {
             const isOpen = openIndexes.includes(idx);
             return (
@@ -37,11 +37,11 @@ export const Faq = (): React.ReactElement => {
                 }`}
               >
                 <button
-                  className="w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none select-none"
+                  className="w-full flex justify-between items-center px-6 py-7 text-left focus:outline-none select-none"
                   onClick={() => toggle(idx)}
                   aria-expanded={isOpen}
                 >
-                  <span className="font-semibold text-lg text-[#252525]">{item.question}</span>
+                  <span className="font-semibold text-xl text-[#252525]">{item.question}</span>
                   <span
                     className={`ml-4 transform transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
                   >
@@ -52,7 +52,7 @@ export const Faq = (): React.ReactElement => {
                 </button>
                 <div
                   className={`transition-all duration-500 ease-in-out px-6 ${
-                    isOpen ? "max-h-40 opacity-100 py-2" : "max-h-0  py-0"
+                    isOpen ? "max-h-40 opacity-100 pb-10" : "max-h-0  py-0"
                   } overflow-hidden`}
                 >
                   <div className="text-[#252525] text-base opacity-80">

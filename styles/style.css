@@ -1081,7 +1081,29 @@ button:focus {
   );
 }
 
+.calc {
+  background-repeat: no-repeat;
+  background-position: right 0;
+  animation-name: swimAnimation;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  transition: 1s;
+}
 
+@keyframes swimAnimation {
+  0%{
+    transform: translateY(0);
+  }
+  
+  50% {
+    transform: translateY(30px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
 
 @keyframes moveGradient {
   to {

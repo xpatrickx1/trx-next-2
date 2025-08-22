@@ -230,7 +230,7 @@ export default function ExchangeForm() {
                                 </span>
                             </h2>
                             <img
-                                className="absolute top-[10%] -left-[19%] z-0 max-w-[604px] invisible lg:visible"
+                                className="calc absolute top-[10%] -left-[19%] z-0 max-w-[604px] invisible lg:visible"
                                 alt="Calculator"
                                 src="icons/calc.png"
                             />

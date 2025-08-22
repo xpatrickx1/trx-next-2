@@ -122,7 +122,7 @@ export const Footer = (): React.ReactElement => {
           <img src="icons/logo-light.png" alt="Logo" style={{maxHeight: "40px",}} />
         </button>
         <div className="flex items-center gap-12 flex-col md:flex-row">
-          <nav className="flex items-center gap-[31px] flex-col md:flex-row">
+          <nav className="flex items-center gap-[31px] mt-6 md:mt-0 flex-col md:flex-row">
             {navigationItems.map((item, index) => (
               <Button
                 key={index}

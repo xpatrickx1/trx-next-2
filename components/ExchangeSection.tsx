@@ -40,7 +40,6 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
   const [toToken, setToToken] = useState(tokens[1]);
   const [openedList, setOpenedList] = useState<null | "from" | "to">(null);
   const [rotation, setRotation] = useState(0);
-  console.log(rotation)
   const [fromAmount, setFromAmount] = useState<string>("1");
 
   const { t, i18n } = useTranslation();
@@ -150,7 +149,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
         
         <div className="input-group relative">
           <label className="absolute top-3 left-0 text-xs block mb-1 font-normal text-black opacity-40" style={{ paddingLeft: "1.5rem" }}>
-            {t("payLabel")}
+            {t("payLabel")}{fromToken.label}
           </label>
           <input
             id="from-amount"
@@ -243,7 +242,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
         
         <div className="input-group relative">
         <label className="absolute top-3 left-0 block mb-1 text-xs font-normal text-black opacity-40" style={{ paddingLeft: "1.5rem" }}>
-          {t("receiveLabel")}
+          {t("receiveLabel")} {toToken.label}
         </label>
           <input
             id="to-amount"

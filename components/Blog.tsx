@@ -103,10 +103,10 @@ export const Blog = (): React.ReactElement => {
           </div>
 
           <div className="flex justify-center">
-          <Link href="/blog">
+          <Link href="/blog" className="w-full max-w-[410px]">
             <Button
               variant="outline"
-              className="w-[410px] h-[68px] rounded-xl border border-solid border-[#2e77da] bg-transparent hover:bg-[#2e77da] font-normal text-[#2e77da] text-lg tracking-[0.36px] leading-[47.7px] hover:text-white"
+              className="w-full h-[68px] rounded-xl border border-solid border-[#2e77da] bg-transparent hover:bg-[#2e77da] font-normal text-[#2e77da] text-lg tracking-[0.36px] leading-[47.7px] hover:text-white"
             >
               EXPLORE MORE IN BLOG
             </Button>
@@ -119,7 +119,7 @@ export const Blog = (): React.ReactElement => {
           onClick={handleBackdropClick}
         >
           <div
-            className="relative bg-white w-[90%] max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-xl p-10"
+            className="relative bg-white w-[90%] max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-xl p-4 md:p-10"
             onClick={(e) => e.stopPropagation()} // Prevent clicks inside modal from closing it
           >
             <button
@@ -138,9 +138,9 @@ export const Blog = (): React.ReactElement => {
                 alt={selectedPost.title}
                 className="w-full h-64 object-cover rounded-lg mb-6"
               />
-              <h1 className="text-3xl text-black font-bold mb-4">
+              <h3 className="text-xl md:text-3xl text-black font-bold mb-4">
                 {selectedPost.title}
-              </h1>
+              </h3>
               <div className="flex gap-4 text-gray-500 text-sm mb-6">
                 <time>{selectedPost.date}</time>
                 <span>{selectedPost.readTime}</span>
