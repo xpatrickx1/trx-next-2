@@ -229,11 +229,18 @@ export default function ExchangeForm() {
                                     {t("hero_buy_text")}{" "}
                                 </span>
                             </h2>
-                            <img
-                                className="calc absolute top-[10%] -left-[19%] z-0 max-w-[604px] invisible lg:visible"
-                                alt="Calculator"
-                                src="icons/calc.png"
-                            />
+                            <div className="absolute top-[10%] -left-[19%]">
+                                <img
+                                    className=" z-0 max-w-[604px] invisible lg:visible"
+                                    alt="Calculator"
+                                    src="icons/calcbg.png"
+                                />
+                                <img
+                                    className="calc absolute top-[10%] left-[0] z-0 max-w-[604px] invisible lg:visible"
+                                    alt="Calculator"
+                                    src="icons/calc.png"
+                                />
+                            </div>
                         </div>
                         <div className="flex w-full max-w-[517px]">
                         <TabsBlockWithLogic
