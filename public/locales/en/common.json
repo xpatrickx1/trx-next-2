@@ -107,6 +107,8 @@
   "text_picture_one_seven": "24/7 Support",
   "text_picture_one_eut": "Our team",
   "text_picture_one_ten": "is always ready to help",
+
+  "explore_more": "EXPLORE MORE IN BLOG",
   
   "message": {
     "invalidPaymentAddress": "Invalid payment address! Please reconnect your wallet",
@@ -148,6 +150,12 @@
     "heading": "Thank you for your submission!",
     "description": "We have received your request and will get back to you shortly.",
     "back": "Back to Home"
+  },
+
+  "banner": {
+    "percent": "0%",
+    "commission": "Commission",
+    "text": "on Your First Exchange!"
   },
 
   "blog": {

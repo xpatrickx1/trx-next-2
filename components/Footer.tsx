@@ -27,12 +27,6 @@ export const Footer = (): React.ReactElement => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = (id: string) => {
-		if (id === "blog") {
-		  router.push("/blog");
-		  setIsMenuOpen(false);
-		  return;
-		}
-	
 		if (window.location.pathname !== "/") {
 		  router.push(`/#${id}`);
 		  setTimeout(() => {

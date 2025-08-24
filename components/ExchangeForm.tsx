@@ -22,6 +22,7 @@ import { HowToUse } from "./HowToUse";
 import { Faq } from "./Faq";
 import { Reviews } from "./Reviews";
 import { Blog } from "./Blog";
+import { Banner } from "./Banner";
 import { Footer } from "./Footer";
 import GradientLoader from "./GradientLoader";
 import {router} from "next/client";
@@ -231,12 +232,12 @@ export default function ExchangeForm() {
                             </h2>
                             <div className="absolute top-[10%] -left-[19%]">
                                 <img
-                                    className=" z-0 max-w-[604px] invisible lg:visible"
+                                    className=" z-0 max-w-[385px] invisible lg:visible"
                                     alt="Calculator"
                                     src="icons/calcbg.png"
                                 />
                                 <img
-                                    className="calc absolute top-[10%] left-[0] z-0 max-w-[604px] invisible lg:visible"
+                                    className="calc absolute top-[10%] left-[0] z-0 max-w-[290px] invisible lg:visible"
                                     alt="Calculator"
                                     src="icons/calc.png"
                                 />
@@ -386,6 +387,7 @@ export default function ExchangeForm() {
                     <Reviews />
                     <Faq />
                     <Blog />
+                    <Banner />
                 </div>
             </div>
             <Footer />

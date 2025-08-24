@@ -62,7 +62,7 @@
   "referral_text": "Присоединяйтесь к нашей реферальной программе и получайте до 8% от их покупок!",
   "hero_buy": "Купить",
   "hero_trx": "TRX",
-  "hero_buy_text": "по выгодному курсу",
+  "hero_buy_text": "Обменивай TRX по лучшему курсу",
   "hero_buy_text_bottom": "Даже если у вас еще нет TRX.",
   "show_receiver_address": "ПОКАЗАТЬ АДРЕС ПОЛУЧАТЕЛЯ",
   "pre_receiver_address": "АДРЕС ПОЛУЧАТЕЛЯ",
@@ -104,6 +104,7 @@
   "text_picture_one_eut":"Наша команда",
   "text_picture_one_ten":"всегда готова помочь",
 
+  "explore_more": "ИССЛЕДУЙТЕ БОЛЬШЕ В БЛОГЕ",
 
   "message": {
     "installWallet": "Пожалуйста, убедитесь, что приложение {{walletName}} установлено",
@@ -147,7 +148,7 @@
       "posts": [
         {
           "id": 1,
-          "slug": "pochemu-trx-bolshe-chem-prosto-esche-odna-kriptovaluta",
+          "slug": "why-trx-is-more-than-just-another-cryptocurrency",
           "date": "4 августа",
           "readTime": "5 мин.",
           "title": "Почему TRX больше, чем просто еще одна криптовалюта",
@@ -187,7 +188,7 @@
         },
         {
           "id": 2,
-          "slug": "tron-trx-vorota-k-adopcii-web3",
+          "slug": "tron-trx-a-gateway-to-web3-adoption",
           "date": "17 августа",
           "readTime": "3 мин.",
           "title": "TRON (TRX): ворота к принятию Web3",
@@ -218,7 +219,7 @@
         },
         {
           "id": 3,
-          "slug": "revolyuciya-tron-v-decentralizovannyh-finansah-defi",
+         "slug": "tron-revolution-in-decentralized-finance",
           "date": "4 августа",
           "readTime": "5 мин.",
           "title": "Революция TRON в децентрализованных финансах (DeFi)",
@@ -249,7 +250,7 @@
         },
         {
           "id": 4,
-          "slug": "budushhee-tron-i-trx-na-kriptorynke",
+         "slug": "the-future-of-tron-and-trx-in-the-crypto-market",
           "date": "29 июля",
           "readTime": "7 мин.",
           "title": "Будущее TRON и TRX на крипторынке",
@@ -288,7 +289,7 @@
         },
         {
           "id": 5,
-          "slug": "vliyanie-tron-na-ekonomiku-nft-i-sozdatelej",
+          "slug": "tron-impact-on-nft-and-creator-economies",
           "date": "17 августа",
           "readTime": "3 мин.",
           "title": "Влияние TRON на экономику NFT и создателей",
@@ -319,7 +320,7 @@
         },
         {
           "id": 6,
-          "slug": "energoeffektivnost-i-preimushhestva-ustojchivosti-tron",
+          "slug": "trons-energy-efficiency-and-sustainability-edge",
           "date": "4 августа",
           "readTime": "5 мин.",
           "title": "Почему TRX больше, чем просто еще одна криптовалюта",
@@ -366,7 +367,7 @@
         },
         {
           "id": 7,
-          "slug": "rol-tron-v-revolyucii-igrovogo-mira-i-metavselennoj",
+          "slug": "tron-gaming-and-metaverse-revolution",
           "date": "29 июля",
           "readTime": "7 мин.",
           "title": "Роль TRON в революции игрового мира и метавселенной",

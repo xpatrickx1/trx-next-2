@@ -14,14 +14,21 @@ export const Reviews = (): React.ReactElement => {
       name: "John Trox",
       content:
         "If you're having problems finding ways to bridge assets from niche sectors of web3 to other niche areas and can't find a one step, plug and play option, TRX is your new best friend. This is my preferred way to get EVM tokens to non-EVM chains by avoiding CEX's or any other custodial option. With TRX you are in control, you minimize middle-men, and ultimately reduce capital inefficiencies.\n\n🚀",
-        rating: "icons/rating.png",
+      rating: "icons/rating.png",
     },
     {
       name: "DICE",
       content:
         "Fast swaps and a huge selection of coins. Support is excellent, resolving any issues quickly. I've used the service over 50 times — always great!",
-        rating: "icons/rating.png",
+      rating: "icons/rating.png",
     },
+    {
+      name: "DICE",
+      content:
+        "Fast swaps and a huge selection of coins. Support is excellent, resolving any issues quickly. I've used the service over 50 times — always great!",
+      rating: "icons/rating.png",
+    },
+   
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,14 +36,12 @@ export const Reviews = (): React.ReactElement => {
 
   const goToNext = useCallback(() => {
     setSlideDirection('left');
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, reviews.length - 1));
   }, [reviews.length]);
 
   const goToPrevious = useCallback(() => {
     setSlideDirection('right');
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   }, [reviews.length]);
 
   useEffect(() => {
@@ -93,29 +98,13 @@ export const Reviews = (): React.ReactElement => {
     if (typeof window === 'undefined') return reviews.slice(0, 3);
     
     const width = window.innerWidth;
-    if (width < 640) {
-      return [reviews[currentIndex]];
-    } else if (width < 1024) {
-      let startIndex = currentIndex;
-      let endIndex = startIndex + 2;
-      
-      if (endIndex > reviews.length) {
-        startIndex = Math.max(0, reviews.length - 2);
-        endIndex = reviews.length;
-      }
-      
-      return reviews.slice(startIndex, endIndex);
-    } else {
-      let startIndex = currentIndex;
-      let endIndex = startIndex + 3;
-      
-      if (endIndex > reviews.length) {
-        startIndex = Math.max(0, reviews.length - 3);
-        endIndex = reviews.length;
-      }
-      
-      return reviews.slice(startIndex, endIndex);
-    }
+    let visibleCount = 1;
+    if (width >= 1024) visibleCount = 3;
+    else if (width >= 640) visibleCount = 2;
+
+    const startIndex = currentIndex;
+    const endIndex = Math.min(startIndex + visibleCount, reviews.length);
+    return reviews.slice(startIndex, endIndex);
   }, [currentIndex]);
 
   const visibleReviews = getVisibleReviews();
@@ -124,13 +113,13 @@ export const Reviews = (): React.ReactElement => {
     if (typeof window === 'undefined') return 'w-full';
     
     const width = window.innerWidth;
-    if (width < 640) return 'w-full'; 
+    if (width < 640) return 'w-[411px]'; 
     if (width < 1024) return 'w-[800px]'; 
     return 'w-[1300px]'; 
   };
 
   const isAtStart = currentIndex === 0;
-  const isAtEnd = currentIndex === reviews.length - 1;
+  const isAtEnd = currentIndex >= reviews.length - (typeof window !== 'undefined' && window.innerWidth >= 1024 ? 3 : typeof window !== 'undefined' && window.innerWidth >= 640 ? 2 : 1);
 
   return (
     <section id="reviews" className="flex flex-col w-full items-center gap-10 relative py-20 px-4">
@@ -151,11 +140,11 @@ export const Reviews = (): React.ReactElement => {
           }`}
           aria-label="Previous review"
         >
-          <img
-            className="w-full h-full rotate-180"
-            alt="Previous"
-            src="icons/arrow.svg"
-          />
+          <svg width="43" height="33" viewBox="0 0 43 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.105713 14.2545H36.818V18.9909H0.105713V14.2545Z" fill="black"/>
+            <path d="M26.6346 32.4942L23.3171 29.1767L35.8722 16.624L23.3171 4.07126L26.6346 0.753784L42.5026 16.6241L26.6346 32.4942Z" fill="black"/>
+          </svg>
+
         </Button>
 
         <div 

@@ -70,7 +70,7 @@
   "referral_text": "Participe do nosso programa de indicação e ganhe até 8% de desconto nas compras deles!",
   "hero_buy": "Compre",
   "hero_trx": "TRX",
-  "hero_buy_text": "a uma taxa favorável",
+  "hero_buy_text": "Troque TRX com a melhor taxa",
   "hero_buy_text_bottom": "Mesmo que você ainda não tenha nenhum TRX.",
   "show_receiver_address": "MOSTRAR ENDEREÇO DO RECEPTOR",
   "pre_receiver_address": "ENDEREÇO DO RECEPTOR",
@@ -101,6 +101,8 @@
   "text_picture_one_eut": "Nossa equipe",
   "text_picture_one_ten": "está sempre pronta para ajudar",
   
+  "explore_more": "EXPLORAR MAIS NO BLOG",
+
   "message": {
     "installWallet": "Verifique se o aplicativo {{walletName}} está instalado",
     "invalidPaymentAddress": "Endereço de pagamento inválido! Reconecte a carteira",
@@ -143,7 +145,7 @@
       "posts": [
         {
           "id": 1,
-          "slug": "por-que-o-trx-e-mais-do-que-apenas-mais-uma-criptomoeda",
+          "slug": "why-trx-is-more-than-just-another-cryptocurrency",
           "date": "04 de agosto",
           "readTime": "5 min.",
           "title": "Por que o TRX é mais do que apenas mais uma criptomoeda",
@@ -183,7 +185,7 @@
         },
         {
           "id": 2,
-          "slug": "tron-trx-um-portal-para-a-adocao-do-web3",
+          "slug": "tron-trx-a-gateway-to-web3-adoption",
           "date": "17 de agosto",
           "readTime": "3 min.",
           "title": "TRON (TRX): Um portal para a adoção do Web3",
@@ -214,7 +216,7 @@
         },
         {
           "id": 3,
-          "slug": "a-revolucao-da-tron-nas-financas-descentralizadas-defi",
+          "slug": "tron-revolution-in-decentralized-finance",
           "date": "04 de agosto",
           "readTime": "5 min.",
           "title": "A revolução da TRON nas finanças descentralizadas (DeFi)",
@@ -245,7 +247,7 @@
         },
         {
           "id": 4,
-          "slug": "o-futuro-da-tron-e-do-trx-no-mercado-cripto",
+          "slug": "the-future-of-tron-and-trx-in-the-crypto-market",
           "date": "29 de julho",
           "readTime": "7 min.",
           "title": "O futuro da TRON e do TRX no mercado cripto",
@@ -284,7 +286,7 @@
         },
         {
           "id": 5,
-          "slug": "o-impacto-da-tron-nas-economias-de-nft-e-criadores",
+          "slug": "tron-impact-on-nft-and-creator-economies",
           "date": "17 de agosto",
           "readTime": "3 min.",
           "title": "O impacto da TRON nas economias de NFT e criadores",
@@ -315,7 +317,7 @@
         },
         {
           "id": 6,
-          "slug": "a-eficiencia-energetica-e-vantagem-de-sustentabilidade-da-tron",
+          "slug": "trons-energy-efficiency-and-sustainability-edge",
           "date": "04 de agosto",
           "readTime": "5 min.",
           "title": "Por que o TRX é mais do que apenas outra criptomoeda",
@@ -362,7 +364,7 @@
         },
         {
           "id": 7,
-          "slug": "o-papel-da-tron-na-revolucao-dos-jogos-e-do-metaverso",
+          "slug": "tron-gaming-and-metaverse-revolution",
           "date": "29 de julho",
           "readTime": "7 min.",
           "title": "O papel da TRON na revolução dos jogos e do metaverso",

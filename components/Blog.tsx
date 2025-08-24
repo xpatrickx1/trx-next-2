@@ -18,7 +18,7 @@ export const Blog = (): React.ReactElement => {
 
   return (
     <section className="w-full pt-16">
-        <div className="blog-bg container mx-auto px-4 md:px-6 bg-[#ffffff] max-w-[1615px] pt-16 pb-28">
+        <div id="blog" className="blog-bg container mx-auto px-4 md:px-6 bg-[#ffffff] max-w-[1615px] pt-16 pb-28">
           <h2 className="font-bold text-[#252525] text-4xl text-center tracking-[0] leading-[59.1px] mb-12">
             Our Blog
           </h2>
@@ -26,7 +26,7 @@ export const Blog = (): React.ReactElement => {
           <div className="flex flex-wrap md:flex-nowrap justify-center gap-8 mb-12">
           {posts.slice(1, 4).map((article) => (
             
-            <Card className="w-full max-w-[411px] h-[534px] bg-[#f3f3f3e6] rounded-2xl border-0 overflow-hidden" key={article.id}>
+            <Card className="w-full flex flex-col max-w-[411px]  bg-[#f3f3f3e6] rounded-2xl border-0 overflow-hidden" key={article.id}>
                 <div className="relative">
                     <img
                         className="w-full h-[206px] object-cover"
@@ -35,24 +35,24 @@ export const Blog = (): React.ReactElement => {
                     />
                 </div>
         
-                <CardContent className="flex flex-col gap-6 p-4 xl:p-14 pt-9">
-                <div className="flex flex-col gap-9">
+                <CardContent className="flex flex-col justify-between gap-6 p-4 xl:p-14 pt-9 flex-1">
+                  <div className="flex flex-col gap-9">
                     <div className="flex items-center justify-between">
-                    <div className="opacity-50 font-normal text-[#4e4a4a] text-base text-center tracking-[0] leading-[25px] whitespace-nowrap">
-                        {article.date}
+                      <div className="opacity-50 font-normal text-[#4e4a4a] text-base text-center tracking-[0] leading-[25px] whitespace-nowrap">
+                          {article.date}
+                      </div>
+                      <div className="opacity-50 font-normal text-[#4e4a4a] text-base text-center tracking-[0] leading-[25px] whitespace-nowrap">
+                          {article.readTime}
+                      </div>
                     </div>
-                    <div className="opacity-50 font-normal text-[#4e4a4a] text-base text-center tracking-[0] leading-[25px] whitespace-nowrap">
-                        {article.readTime}
-                    </div>
-                    </div>
-        
+                    
                     <div className="flex flex-col gap-3">
-                    <h3 className="w-[292.05px] font-bold text-[#252525] text-[21px] tracking-[0] leading-[normal]">
-                        {article.title}
-                    </h3>
-                    <p className="font-normal text-[#252525] text-base tracking-[0] leading-6">
-                      {truncateText(article.excerpt, 100)} 
-                    </p>
+                      <h3 className="w-[292.05px] font-bold text-[#252525] text-[21px] tracking-[0] leading-[normal]">
+                          {article.title}
+                      </h3>
+                      <p className="font-normal text-[#252525] text-base tracking-[0] leading-6">
+                        {truncateText(article.excerpt, 100)} 
+                      </p>
                     </div>
                 </div>
         
@@ -64,8 +64,8 @@ export const Blog = (): React.ReactElement => {
                     {t("blog.readMore")}
                 </Link>
                 </CardContent>
-            </Card>
-            ))}
+          </Card>
+        ))}
           </div>
 
           <div className="flex justify-center">
@@ -74,7 +74,7 @@ export const Blog = (): React.ReactElement => {
               variant="outline"
               className="w-full h-[68px] rounded-xl border border-solid border-[#2e77da] bg-transparent hover:bg-[#2e77da] font-normal text-[#2e77da] text-lg tracking-[0.36px] leading-[47.7px] hover:text-white"
             >
-              EXPLORE MORE IN BLOG
+              {t("explore_more")}
             </Button>
           </Link>
           </div>

@@ -328,7 +328,9 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
               : t("loadingExchange")}
           </span>
           <span id="exchange-value"  className="text-black text-opacity-50 text-xs font-medium">
-            +3.1 USDT Fee
+            {rate !== null
+              ? `+${+Math.floor(rate * Math.pow(10, 2)) / Math.pow(10, 2)}`
+              : t("loadingExchange")} USDT Fee
           </span>
         </div>
       </div>
