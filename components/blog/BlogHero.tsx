@@ -29,11 +29,11 @@ export const BlogHero = (): React.ReactElement => {
           <Card className="bg-[#ffffffe6] backdrop-blur-[7px] backdrop-brightness-[100%] border-0 rounded-2xl overflow-hidden">
             <CardContent className="p-0 h-auto">
               <div className="flex flex-col sm:flex-row h-full">
-              <div className="w-full sm:max-w-[300px] lg:max-w-[478px] h-[180px] sm:h-full flex-shrink-0 animate-fade-in overflow-hidden rounded-b-0 rounded-t-2xl sm:rounded-l-2xl sm:rounded-r-none">
+                <div className="w-full sm:max-w-[300px] lg:max-w-[478px] h-[180px] sm:h-full flex-shrink-0 animate-fade-in overflow-hidden rounded-b-0 rounded-t-2xl sm:rounded-l-2xl sm:rounded-r-none">
                   <img
                     className="w-full h-full object-cover"
                     alt={firstPost.title}
-                    src={firstPost.imageUrl}
+                    src="icons/blogHero.png"
                   />
                 </div>
                 <div className="flex-1 p-4 sm:p-6 lg:p-[34px_34px_34px_62px] animate-fade-in">

@@ -132,7 +132,7 @@ const LanguageHeader: React.FC = () => {
 			<div className="flex flex-1 justify-between items-center px-3 mx-auto max-w-[1392px]" >
 				<div className="flex items-center relative">
 					<button onClick={() => router.push('/')} aria-label="Go to home" className="flex items-center">
-					  <img src="icons/logo.png" alt="Logo" style={{maxHeight: "40px",}} />
+					  <img src="/icons/logo.png" alt="Logo" style={{maxHeight: "40px",}} />
 					</button>
 				</div>
 
@@ -142,10 +142,10 @@ const LanguageHeader: React.FC = () => {
 							<Button
 								key={index}
 								variant="ghost"
-								className={`h-auto p-0 font-normal text-base tracking-[0] leading-normal whitespace-nowrap focus:outline-none ${
+								className={`h-auto p-0 font-normal text-base tracking-[0] transition-all duration-300 leading-normal whitespace-nowrap focus:outline-none ${
 									item.active
 										? "text-[#2e77da] hover:text-[#2e77da]"
-										: "text-black opacity-50 hover:text-[#c1c1c1] hover:opacity-75"
+										: "text-black opacity-50 hover:text-[#2e77da] hover:opacity-75"
 								}`}
 								onClick={() => handleScroll(item.id)}
 							>

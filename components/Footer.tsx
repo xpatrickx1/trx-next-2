@@ -119,7 +119,7 @@ export const Footer = (): React.ReactElement => {
     <footer className="w-full bg-[#252525] py-[52px]">
       <div className="max-w-[1392px] mx-auto px-6 flex items-center justify-between flex-col md:flex-row">
         <button onClick={() => router.push('/')} aria-label="Go to home" className="flex items-center">
-          <img src="icons/logo-light.png" alt="Logo" style={{maxHeight: "40px",}} />
+          <img src="/icons/logo-light.png" alt="Logo" style={{maxHeight: "40px",}} />
         </button>
         <div className="flex items-center gap-12 flex-col md:flex-row">
           <nav className="flex items-center gap-[31px] mt-6 md:mt-0 flex-col md:flex-row">
