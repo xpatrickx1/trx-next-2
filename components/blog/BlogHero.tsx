@@ -33,7 +33,7 @@ export const BlogHero = (): React.ReactElement => {
                   <img
                     className="w-full h-full object-cover"
                     alt={firstPost.title}
-                    src="icons/blogHero.png"
+                    src={firstPost.imageUrl}
                   />
                 </div>
                 <div className="flex-1 p-4 sm:p-6 lg:p-[34px_34px_34px_62px] animate-fade-in">

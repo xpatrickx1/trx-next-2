@@ -119,8 +119,8 @@ const TabsBlockWithLogic: React.FC<TabsBlockWithLogicProps> = ({
         borderRadius: '0.75rem',
         // backdropFilter: 'blur(42px) brightness(100%)',
         border: 'none',
-        marginTop: '12px',
-        marginBottom: '12px',
+        marginTop: '28px',
+        marginBottom: '0',
         overflow: 'hidden',
       }}>
         <div

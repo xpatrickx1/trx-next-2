@@ -55,11 +55,11 @@ export const BlogArticle = (): React.ReactElement => {
     <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6 px-4 xl:px-0 py-4 pb-16 mb-20">
       {posts.slice(1).map((post, idx) => {
         const englishPost = englishSlugs.find((p) => p.id === post.id);
-        const slug = englishPost?.slug || `post-${post.id}`; // Fallback slug
+        const slug = englishPost?.slug || `post-${post.id}`;
 
         return (
           <article key={idx} className="w-full max-w-[411px] justify-self-center">
-            <Card className="bg-[#ffffffe6] rounded-2xl border-0 overflow-hidden">
+            <Card className="bg-[#ffffffe6] rounded-2xl h-full border-0 overflow-hidden">
               <div className="relative">
                 <img
                   className="w-full h-[206px] object-cover"

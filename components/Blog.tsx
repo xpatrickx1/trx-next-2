@@ -4,45 +4,17 @@ import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import Link from "next/link";
 import { truncateText } from "../utils/truncateText";
+import { BlogPost } from "../types/BlogPost";
 
 export const Blog = (): React.ReactElement => {
   const { t } = useTranslation();
-  const blog = t("blog", { returnObjects: true });
+  const posts = t("blog.posts", { returnObjects: true }) as BlogPost[];
   const [selectedPost, setSelectedPost] = useState<any | null>(null);
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       setSelectedPost(null);
     }
   };
-    const articleData = [
-        {
-        id: "item-1",
-        date: "17 August",
-        readTime: "3 min.",
-        title: "TRON (TRX): A Gateway to Web3 Adoption",
-        excerpt:
-          "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
-        imageUrl: "icons/blog1.png",
-      },
-      {
-        id: "item-2",
-        date: "04 August",
-        readTime: "5 min.",
-        title: "Why TRX is More Than Just Another Cryptocurrency",
-        excerpt:
-          "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
-        imageUrl: "icons/blog2.png",
-      },
-      {
-        id: "item-3",
-        date: "29 July",
-        readTime: "7 min.",
-        title: "The Future of TRON and TRX in the Crypto Market",
-        excerpt:
-          "TRON (TRX) has positioned itself as one of the most influential blockchain networks in the world...",
-        imageUrl: "icons/blog3.png",
-      }
-    ];
 
   return (
     <section className="w-full pt-16">
@@ -52,7 +24,8 @@ export const Blog = (): React.ReactElement => {
           </h2>
           
           <div className="flex flex-wrap md:flex-nowrap justify-center gap-8 mb-12">
-          {articleData.map((article) => (
+          {posts.slice(1, 4).map((article) => (
+            
             <Card className="w-full max-w-[411px] h-[534px] bg-[#f3f3f3e6] rounded-2xl border-0 overflow-hidden" key={article.id}>
                 <div className="relative">
                     <img
@@ -83,16 +56,13 @@ export const Blog = (): React.ReactElement => {
                     </div>
                 </div>
         
-                <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setSelectedPost(article);
-                    }}
+                <Link
+                    href={`/blog/${article.slug}`}
                     className="[font-family:'Public_Sans',Helvetica] font-normal text-[#2e77da] text-base tracking-[0] leading-[25px] hover:underline transition-colors"
+                    aria-label={`Read more about ${article.title}`}
                   >
                     {t("blog.readMore")}
-                  </a>
+                </Link>
                 </CardContent>
             </Card>
             ))}

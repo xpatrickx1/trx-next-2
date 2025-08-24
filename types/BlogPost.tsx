@@ -1,15 +1,14 @@
 export interface BlogPost {
-    id: number;
-    date: string;
-    readTime: string;
+  id: number;
+  slug: string;
+  date: string;
+  readTime: string;
+  title: string;
+  excerpt: string;
+  imageUrl: string;
+  subheadings?: {
     title: string;
-    excerpt: string;
-    imageUrl: string;
-    subheadings?: {
-      title: string;
-      content: {
-        text: string;
-        list?: string[];
-      };
-    }[];
-  }
+    content: string;
+    list?: string[];
+  }[];
+}

@@ -355,7 +355,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
 
     
 
-      <div className="text-center space-y-2  py-2 mt-2">
+      <div className="text-center space-y-2  pt-2 mt-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-2.5 h-2.5 p-0 rounded-full"  style={{ background: "#74eb69",}}/>

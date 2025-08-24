@@ -87,7 +87,7 @@ const EnergySection: React.FC<EnergySectionProps> = ({
   return (
       <div id="energy-section" className="rounded-lg">
         <div className="mt-0">
-          <div className="flex font-normal justify-between mb-4 flex-col">
+          <div className="flex font-normal justify-between mb-8 flex-col">
             <label className="font-normal text-black">{t("buyCount")}</label>
             <span className="text-black opacity-50 text-sm text-orange">{t("tip")}</span>
           </div>
