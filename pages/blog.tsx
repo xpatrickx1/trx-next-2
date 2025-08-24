@@ -9,12 +9,12 @@ export const Blog = (): React.ReactElement => {
     <div
       className="bg-[#f3f3f3] flex flex-col items-center w-full"
     >
-      <div className="bg-[#f3f3f3] w-full max-w-[1512px] flex flex-col">
-        <LanguageHeader/>
+      <LanguageHeader/>
+      <div className="bg-[#f3f3f3] w-full max-w-[1512px] flex flex-col ">
         <BlogHero/>
         <BlogArticle />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };
