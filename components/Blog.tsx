@@ -3,15 +3,11 @@ import { useTranslation } from "react-i18next";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import Link from "next/link";
-
-const truncateText = (text: string, maxLength: number = 100): string => {
-  if (text.length <= maxLength) return text;
-  return text.slice(0, maxLength).trim() + "...";
-};
-
+import { truncateText } from "../utils/truncateText";
 
 export const Blog = (): React.ReactElement => {
   const { t } = useTranslation();
+  const blog = t("blog", { returnObjects: true });
   const [selectedPost, setSelectedPost] = useState<any | null>(null);
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
