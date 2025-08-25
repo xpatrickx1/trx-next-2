@@ -109,6 +109,7 @@
   "text_picture_one_ten": "is always ready to help",
 
   "explore_more": "EXPLORE MORE IN BLOG",
+  "back_to_blog": "Back to Blog",
   
   "message": {
     "invalidPaymentAddress": "Invalid payment address! Please reconnect your wallet",
@@ -120,6 +121,14 @@
     "paymentFailure": "Payment failed",
     "paymentError": "An error occurred during payment, please check wallet status",
     "orderCancelled": "Order has been cancelled"
+  },
+
+  "menu": {
+    "exchange": "exchange",
+    "howto": "how to",
+    "reviews": "reviews",
+    "faq": "faq",
+    "blog": "blog"
   },
 
   "faq": [
@@ -153,10 +162,15 @@
   },
 
   "banner": {
-    "percent": "0%",
-    "commission": "Commission",
-    "text": "on Your First Exchange!"
-  },
+      "get_your": "Get your",
+      "percent": "0%",
+      "commission": "Commission",
+      "text": "on Your First Exchange!"
+    },
+    "section_title_blog": "Our Blog",
+    "section_title_reviews": "Reviews",
+    "section_title_how_to_1": "How to use",
+    "section_title_how_to_2": "TRX Exchanger",
 
   "blog": {
     "heading": "Learn About Crypto with TRX Prime",

@@ -105,7 +105,7 @@
   "text_picture_one_ten": "siempre está listo para ayudarte",
 
   "explore_more": "EXPLORA MÁS EN EL BLOG",
-
+  "back_to_blog": "Volver al Blog",
   "message": {
     "installWallet": "Confirme que tiene instalada la aplicación {{walletName}}",
     "invalidPaymentAddress": "¡Dirección de pago inválida! Reconecte su billetera",
@@ -118,6 +118,32 @@
     "paymentError": "Error durante el pago. Verifique su billetera.",
     "orderCancelled": "Pedido cancelado"
   },
+
+  "menu": {
+      "exchange": "intercambiar",
+      "howto": "cómo hacerlo",
+      "reviews": "reseñas",
+      "faq": "preguntas frecuentes",
+      "blog": "blog"
+    },
+
+    "thankYou": {
+      "title": "Gracias",
+      "heading": "¡Gracias por tu envío!",
+      "description": "Hemos recibido tu solicitud y nos pondremos en contacto contigo en breve.",
+      "back": "Volver al inicio"
+    },
+
+    "banner": {
+      "get_your": "Obtén tu",
+      "percent": "0%",
+      "commission": "Comisión",
+      "text": "en tu primer intercambio!"
+    },
+    "section_title_blog": "Nuestro Blog",
+    "section_title_reviews": "Reseñas",
+    "section_title_how_to_1": "Cómo usar",
+    "section_title_how_to_2": "Intercambiador TRX",
 
   "faq": [
     {

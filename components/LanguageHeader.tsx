@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useTheme } from '../components/ThemeContext';
 import { Button } from "../components/ui/button";
 import { useRouter } from "next/router";
 
@@ -11,8 +10,7 @@ interface NavItem {
 }
 
 const LanguageHeader: React.FC = () => {
-	const { i18n } = useTranslation();
-	const { theme } = useTheme();
+	const { t, i18n } = useTranslation();
 	const router = useRouter();
 
 	const changeLanguage = (lng: string) => {
@@ -20,13 +18,17 @@ const LanguageHeader: React.FC = () => {
 		localStorage.setItem("i18nextLng", lng);
 	};
 
-	const [navigationItems, setNavigationItems] = useState<NavItem[]>([
-		{ label: "exchange", id: "exchange", active: true },
-		{ label: "how to", id: "howTo", active: false },
-		{ label: "reviews", id: "reviews", active: false },
-		{ label: "faq", id: "faq", active: false },
-		{ label: "blog", id: "blog", active: false },
+	const [navigationItems, setNavigationItems] = useState<NavItem[]>([]);
+
+	useEffect(() => {
+	setNavigationItems([
+		{ label: t("menu.exchange"), id: "exchange", active: true },
+		{ label: t("menu.howto"), id: "howTo", active: false },
+		{ label: t("menu.reviews"), id: "reviews", active: false },
+		{ label: t("menu.faq"), id: "faq", active: false },
+		{ label: t("menu.blog"), id: "blog", active: false },
 	]);
+	}, [t, i18n.language]);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 

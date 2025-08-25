@@ -104,7 +104,7 @@
   "text_picture_one_ten": "ist jederzeit bereit zu helfen",
 
   "explore_more": "MEHR IM BLOG ERKUNDEN",
-
+  "back_to_blog": "Zurück zum Blog",
   "message": {
     "installWallet": "Bitte stellen Sie sicher, dass die {{walletName}} App installiert ist",
     "invalidPaymentAddress": "Ungültige Zahlungsadresse! Bitte Wallet neu verbinden.",
@@ -117,6 +117,32 @@
     "paymentError": "Fehler während der Zahlung. Bitte überprüfen Sie den Wallet-Status.",
     "orderCancelled": "Bestellung wurde abgebrochen"
   },
+
+  "thankYou": {
+      "title": "Vielen Dank",
+      "heading": "Vielen Dank für Ihre Einsendung!",
+      "description": "Wir haben Ihre Anfrage erhalten und werden uns in Kürze bei Ihnen melden.",
+      "back": "Zurück zur Startseite"
+    },
+
+    "banner": {
+      "get_your": "Hol dir deine",
+      "percent": "0%",
+      "commission": "Provision",
+      "text": "bei deinem ersten Tausch!"
+    },
+    "section_title_blog": "Unser Blog",
+    "section_title_reviews": "Bewertungen",
+    "section_title_how_to_1": "Wie man benutzt",
+    "section_title_how_to_2": "TRX Tauscher",
+
+  "menu": {
+      "exchange": "tauschen",
+      "howto": "anleitung",
+      "reviews": "bewertungen",
+      "faq": "faq",
+      "blog": "blog"
+    },
 
   "faq": [
     {

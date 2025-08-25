@@ -13,18 +13,21 @@ interface NavItem {
 }
 
 export const Footer = (): React.ReactElement => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const router = useRouter();
-  const [navigationItems, setNavigationItems] = useState<NavItem[]>([
-    { label: "exchange", id: "exchange", active: true },
-    { label: "how to", id: "how-to", active: false },
-    { label: "reviews", id: "reviews", active: false },
-    { label: "faq", id: "faq", active: false },
-    { label: "blog", id: "blog", active: false },
-  ]);
-
+  const [navigationItems, setNavigationItems] = useState<NavItem[]>([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+	useEffect(() => {
+	setNavigationItems([
+		{ label: t("menu.exchange"), id: "exchange", active: true },
+		{ label: t("menu.howto"), id: "howTo", active: false },
+		{ label: t("menu.reviews"), id: "reviews", active: false },
+		{ label: t("menu.faq"), id: "faq", active: false },
+		{ label: t("menu.blog"), id: "blog", active: false },
+	]);
+	}, [t, i18n.language]);
 
   const handleScroll = (id: string) => {
 		if (window.location.pathname !== "/") {

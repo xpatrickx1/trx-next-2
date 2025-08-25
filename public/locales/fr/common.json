@@ -104,7 +104,7 @@
   "text_picture_one_ten": "est toujours prête à aider",
 
   "explore_more": "DÉCOUVREZ PLUS DANS LE BLOG",
-
+  "back_to_blog": "Retour au Blog",
   "message": {
     "installWallet": "Veuillez confirmer que l'application {{walletName}} est bien installée.",
     "invalidPaymentAddress": "Adresse de paiement invalide. Veuillez reconnecter le portefeuille.",
@@ -117,6 +117,32 @@
     "paymentError": "Erreur pendant le paiement, veuillez vérifier le portefeuille.",
     "orderCancelled": "Commande annulée"
   },
+
+  "menu": {
+      "exchange": "échanger",
+      "howto": "comment faire",
+      "reviews": "avis",
+      "faq": "faq",
+      "blog": "blog"
+    },
+    
+    "thankYou": {
+      "title": "Merci",
+      "heading": "Merci pour votre soumission !",
+      "description": "Nous avons bien reçu votre demande et nous vous répondrons sous peu.",
+      "back": "Retour à l'accueil"
+    },
+
+    "banner": {
+      "get_your": "Obtenez votre",
+      "percent": "0%",
+      "commission": "Commission",
+      "text": "sur votre premier échange!"
+    },
+    "section_title_blog": "Notre Blog",
+    "section_title_reviews": "Avis",
+    "section_title_how_to_1": "Comment utiliser",
+    "section_title_how_to_2": "Échangeur TRX",
 
   "faq": [
     {

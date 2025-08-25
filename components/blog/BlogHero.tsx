@@ -29,7 +29,7 @@ export const BlogHero = (): React.ReactElement => {
           <Card className="bg-[#ffffffe6] backdrop-blur-[7px] backdrop-brightness-[100%] border-0 rounded-2xl overflow-hidden">
             <CardContent className="p-0 h-auto">
               <div className="flex flex-col sm:flex-row h-full">
-                <div className="w-full sm:max-w-[300px] lg:max-w-[478px] h-[180px] sm:h-full flex-shrink-0 animate-fade-in overflow-hidden rounded-b-0 rounded-t-2xl sm:rounded-l-2xl sm:rounded-r-none">
+                <div className="w-full sm:max-w-[300px] lg:max-w-[478px] h-full overflow-hidden rounded-b-0 rounded-t-2xl sm:rounded-l-2xl sm:rounded-r-none">
                   <img
                     className="w-full h-full object-cover"
                     alt={firstPost.title}
@@ -48,7 +48,7 @@ export const BlogHero = (): React.ReactElement => {
                         </div>
                       </div>
                       <div className="flex flex-col gap-3">
-                        <h3 className="font-['Public_Sans',Helvetica] font-bold text-[#252525] text-[18px] sm:text-[20px] lg:text-[21px] tracking-[0] leading-tight max-w-[80%] sm:max-w-[292px]">
+                        <h3 className="font-['Public_Sans',Helvetica] font-bold text-[#252525] text-[18px] sm:text-[20px] lg:text-[21px] tracking-[0] leading-tight max-w-[80%] sm:max-w-[340px]">
                           {firstPost.title}
                         </h3>
                         <p className="font-['Public_Sans',Helvetica] font-normal text-[#252525] text-sm sm:text-base tracking-[0] leading-5 sm:leading-6">

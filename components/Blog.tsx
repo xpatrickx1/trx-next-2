@@ -17,13 +17,13 @@ export const Blog = (): React.ReactElement => {
   };
 
   return (
-    <section className="w-full pt-16">
-        <div id="blog" className="blog-bg container mx-auto px-4 md:px-6 bg-[#ffffff] max-w-[1615px] pt-16 pb-28">
+    <section className="w-full pt-4 mt-20 bg-[#ffffff]">
+        <div id="blog" className="blog-bg w-full container mx-auto px-4 md:px-6  max-w-[1615px] pt-16 pb-28">
           <h2 className="font-bold text-[#252525] text-4xl text-center tracking-[0] leading-[59.1px] mb-12">
-            Our Blog
+            {t("section_title_blog")}
           </h2>
           
-          <div className="flex flex-wrap md:flex-nowrap justify-center gap-8 mb-12">
+          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-[20px] mb-12">
           {posts.slice(1, 4).map((article) => (
             
             <Card className="w-full flex flex-col max-w-[411px]  bg-[#f3f3f3e6] rounded-2xl border-0 overflow-hidden" key={article.id}>
@@ -54,15 +54,15 @@ export const Blog = (): React.ReactElement => {
                         {truncateText(article.excerpt, 100)} 
                       </p>
                     </div>
-                </div>
-        
-                <Link
-                    href={`/blog/${article.slug}`}
-                    className="[font-family:'Public_Sans',Helvetica] font-normal text-[#2e77da] text-base tracking-[0] leading-[25px] hover:underline transition-colors"
-                    aria-label={`Read more about ${article.title}`}
-                  >
-                    {t("blog.readMore")}
-                </Link>
+                  </div>
+          
+                  <Link
+                      href={`/blog/${article.slug}`}
+                      className="font-normal text-[#2e77da] text-base tracking-[0] leading-[25px] hover:underline transition-colors"
+                      aria-label={`Read more about ${article.title}`}
+                    >
+                      {t("blog.readMore")}
+                  </Link>
                 </CardContent>
           </Card>
         ))}
@@ -79,46 +79,6 @@ export const Blog = (): React.ReactElement => {
           </Link>
           </div>
         </div>
-        {selectedPost && (
-        <div
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50"
-          onClick={handleBackdropClick}
-        >
-          <div
-            className="relative bg-white w-[90%] max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-xl p-4 md:p-10"
-            onClick={(e) => e.stopPropagation()} // Prevent clicks inside modal from closing it
-          >
-            <button
-              className="absolute top-4 right-4 w-6 h-6 cursor-pointer 
-                before:content-[''] before:absolute before:top-1/2 before:left-0 
-                before:w-full before:h-[2px] before:bg-gray-700 before:rotate-45 
-                after:content-[''] after:absolute after:top-1/2 after:left-0 
-                after:w-full after:h-[2px] after:bg-gray-700 after:-rotate-45 
-                hover:before:bg-[#2E77DA] hover:after:bg-[#2E77DA]"
-              aria-label="Close"
-              onClick={() => setSelectedPost(null)}
-            />
-            <div>
-              <img
-                src={selectedPost.imageUrl}
-                alt={selectedPost.title}
-                className="w-full h-64 object-cover rounded-lg mb-6"
-              />
-              <h3 className="text-xl md:text-3xl text-black font-bold mb-4">
-                {selectedPost.title}
-              </h3>
-              <div className="flex gap-4 text-gray-500 text-sm mb-6">
-                <time>{selectedPost.date}</time>
-                <span>{selectedPost.readTime}</span>
-              </div>
-              <div
-                className="prose max-w-none text-black"
-                dangerouslySetInnerHTML={{ __html: selectedPost.excerpt }}
-              />
-            </div>
-          </div>
-        </div>
-      )}
       </section>
   );
 };

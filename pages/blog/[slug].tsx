@@ -79,7 +79,7 @@ export default function BlogPostPage({ post, translations }: BlogPostPageProps) 
         href="/blog"
         className="mt-6 inline-block text-[#2e77da] hover:underline [font-family:'Public_Sans',Helvetica] font-normal text-base"
       >
-        {t("blog.backToBlog", { defaultValue: currentTranslations.backToBlog })}
+        {t("back_to_blog", { defaultValue: currentTranslations.backToBlog })}
       </Link>
     </div>
     <Footer />
@@ -137,6 +137,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       try {
         const jsonData = await fs.readFile(filePath, "utf-8");
         const data = JSON.parse(jsonData);
+        console.log('data')
+        console.log(data)
         translations[lng] = {
           blog: {
             posts: data?.blog?.posts || [],

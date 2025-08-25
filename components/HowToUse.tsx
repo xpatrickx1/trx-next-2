@@ -21,8 +21,8 @@ export const HowToUse = (): React.ReactElement => {
     <section id="howTo" className="w-full bg-[#252525] py-20 px-4 md:px-6 lg:px-8">
       <div className="container mx-auto max-w-[1273px]">
         <h2 className="text-center md:text-left mb-8 md:mb-12 font-bold text-2xl md:text-3xl lg:text-4xl tracking-[0] leading-tight md:leading-[59.1px]">
-          <span className="text-[#ffffff]">How to use </span>
-          <span className="text-[#4491fb]">TRX Exchanger</span>
+          <span className="text-[#ffffff]">{t("section_title_how_to_1")}</span>
+          <span className="text-[#4491fb] px-2">{t("section_title_how_to_2")}</span>
         </h2>
         
         <div className="flex justify-center">

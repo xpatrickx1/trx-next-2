@@ -58,8 +58,8 @@ export const BlogArticle = (): React.ReactElement => {
         const slug = englishPost?.slug || `post-${post.id}`;
 
         return (
-          <article key={idx} className="w-full max-w-[411px] justify-self-center">
-            <Card className="bg-[#ffffffe6] rounded-2xl h-full border-0 overflow-hidden">
+          // <article key={idx} className="w-full max-w-[411px] justify-self-center">
+            <Card className="w-full flex flex-col max-w-[411px]  bg-[#f3f3f3e6] rounded-2xl border-0 overflow-hidden" key={post.id}>
               <div className="relative">
                 <img
                   className="w-full h-[206px] object-cover"
@@ -67,37 +67,37 @@ export const BlogArticle = (): React.ReactElement => {
                   src={post.imageUrl}
                 />
               </div>
-              <CardContent className="p-14 pt-[34px]">
-                <div className="flex flex-col gap-6">
+              <CardContent className="flex flex-col justify-between gap-6 p-4 xl:p-14 pt-9 flex-1">
                   <div className="flex flex-col gap-9">
                     <div className="flex items-center justify-between">
-                      <time className="opacity-50 [font-family:'Public_Sans',Helvetica] font-normal text-[#4e4a4a] text-base tracking-[0] leading-[25px] whitespace-nowrap">
-                        {post.date}
-                      </time>
-                      <span className="opacity-50 [font-family:'Public_Sans',Helvetica] font-normal text-[#4e4a4a] text-base tracking-[0] leading-[25px] whitespace-nowrap">
-                        {post.readTime}
-                      </span>
+                      <div className="opacity-50 font-normal text-[#4e4a4a] text-base text-center tracking-[0] leading-[25px] whitespace-nowrap">
+                          {post.date}
+                      </div>
+                      <div className="opacity-50 font-normal text-[#4e4a4a] text-base text-center tracking-[0] leading-[25px] whitespace-nowrap">
+                          {post.readTime}
+                      </div>
                     </div>
+                    
                     <div className="flex flex-col gap-3">
-                      <h3 className="w-[292.05px] [font-family:'Public_Sans',Helvetica] font-bold text-[#252525] text-[21px] tracking-[0] leading-[normal]">
-                        {post.title}
+                      <h3 className="w-[292.05px] font-bold text-[#252525] text-[21px] tracking-[0] leading-[normal]">
+                          {post.title}
                       </h3>
-                      <p className="[font-family:'Public_Sans',Helvetica] font-normal text-[#252525] text-base tracking-[0] leading-6">
-                        {truncateText(post.excerpt, 100)}
+                      <p className="font-normal text-[#252525] text-base tracking-[0] leading-6">
+                        {truncateText(post.excerpt, 100)} 
                       </p>
                     </div>
                   </div>
+          
                   <Link
-                    href={`/blog/${slug}`}
-                    className="[font-family:'Public_Sans',Helvetica] font-normal text-[#2e77da] text-base tracking-[0] leading-[25px] hover:underline transition-colors"
-                    aria-label={`Read more about ${post.title}`}
-                  >
-                    {t("blog.readMore")}
+                      href={`/blog/${post.slug}`}
+                      className="font-normal text-[#2e77da] text-base tracking-[0] leading-[25px] hover:underline transition-colors"
+                      aria-label={`Read more about ${post.title}`}
+                    >
+                      {t("blog.readMore")}
                   </Link>
-                </div>
-              </CardContent>
+                </CardContent>
             </Card>
-          </article>
+          // </article>
         );
       })}
     </div>
