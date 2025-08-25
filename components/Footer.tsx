@@ -21,7 +21,7 @@ export const Footer = (): React.ReactElement => {
   
 	useEffect(() => {
 	setNavigationItems([
-		{ label: t("menu.exchange"), id: "exchange", active: true },
+		{ label: t("menu.exchange"), id: "exchange", active: false },
 		{ label: t("menu.howto"), id: "howTo", active: false },
 		{ label: t("menu.reviews"), id: "reviews", active: false },
 		{ label: t("menu.faq"), id: "faq", active: false },
@@ -52,9 +52,7 @@ export const Footer = (): React.ReactElement => {
       setNavigationItems((prevItems) =>
         prevItems.map((item) => ({
         ...item,
-        active: isBlogPage
-          ? item.id === "blog"
-          : item.id === "exchange" && router.pathname === "/",
+        active: isBlogPage ? false : item.id === "exchange" && router.pathname === "/"
         })
       ))
       }, [router.pathname]);
