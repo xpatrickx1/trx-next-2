@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
@@ -23,6 +21,23 @@ export const BlogHero = (): React.ReactElement => {
     <section className="w-full animate-fade-in overflow-hidden mx-auto px-4 sm:px-6 lg:px-8">
       <div className="w-full animate-fade-in mb-6 flex flex-wrap blog-bg blog-bg-hero bg-[#015BBB1A] rounded-2xl max-w-7xl mx-auto mt-20 py-6 sm:py-8 lg:py-14 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto flex flex-col gap-4 sm:gap-5 lg:gap-6">
+        <nav className="w-full max-w-7xl mx-auto text-sm sm:text-base text-[#4e4a4a] mb-4 sm:mb-2" aria-label="Breadcrumb">
+          <ol className="list-none flex flex-wrap gap-1 sm:gap-1">
+            <li>
+              <Link href="/" className="hover:text-[#2e77da] text-xs transition-colors">
+                {t("breadcrumbs.home")}
+              </Link>
+            </li>
+            <li>
+              <span className="mx-2">/</span>
+            </li>
+            <li className=" text-[#252525]">
+              <Link href="/blog" className="hover:text-[#2e77da] text-xs transition-colors">
+                {t("breadcrumbs.blog")}
+              </Link>
+            </li>
+          </ol>
+        </nav>
           <h2 className="font-bold text-left text-[#252525] text-[28px] sm:text-[34px] lg:text-[42px] leading-tight">
             {t("blog.heading")}
           </h2>

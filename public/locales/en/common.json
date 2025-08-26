@@ -172,6 +172,11 @@
     "section_title_how_to_1": "How to use",
     "section_title_how_to_2": "TRX Exchanger",
 
+    "breadcrumbs": {
+      "home": "home",
+      "blog": "blog"
+    },
+    
   "blog": {
     "heading": "Learn About Crypto with TRX Prime",
     "readMore": "Read article...",

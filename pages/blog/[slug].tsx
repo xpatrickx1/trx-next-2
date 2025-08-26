@@ -47,7 +47,30 @@ export default function BlogPostPage({ post, translations }: BlogPostPageProps) 
     </Head>
     <LanguageHeader/>
     <div className="w-full max-w-3xl mx-auto px-4 xl:px-0 py-8 my-20">
-      <article>
+      <nav className="w-full max-w-7xl mx-auto text-sm sm:text-base text-[#4e4a4a] mb-4 sm:mb-2" aria-label="Breadcrumb">
+        <ol className="list-none flex flex-wrap gap-1 sm:gap-1">
+          <li>
+            <Link href="/" className="hover:text-[#2e77da] text-xs transition-colors">
+              {t("breadcrumbs.home")}
+            </Link>
+          </li>
+          <li>
+            <span className="mx-2">/</span>
+          </li>
+          <li className=" text-[#252525]">
+            <Link href="/blog" className="hover:text-[#2e77da] text-xs transition-colors">
+              {t("breadcrumbs.blog")}
+            </Link>
+          </li>
+          <li>
+            <span className="mx-2">/</span>
+          </li>
+          <li className="text-xs leading-[26px] text-[#252525]">
+            {translatedPost.title}
+          </li>
+        </ol>
+      </nav>
+      <article className="mt-6">
         <img
           src={translatedPost.imageUrl}
           alt={translatedPost.title}

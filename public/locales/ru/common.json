@@ -169,6 +169,11 @@
     }
   ],
 
+  "breadcrumbs": {
+      "home": "главная",
+      "blog": "блог"
+    },
+
   "blog": {
       "heading": "Учись криптовалютам с TRX Prime",
       "readMore": "Читать статью...",

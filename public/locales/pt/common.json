@@ -166,6 +166,11 @@
     }
   ],
 
+  "breadcrumbs": {
+      "home": "início",
+      "blog": "blog"
+    },
+
   "blog": {
       "heading": "Aprenda sobre Cripto com TRX Prime",
       "readMore": "Ler artigo...",
