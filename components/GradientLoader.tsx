@@ -94,7 +94,7 @@ function GradientLoader({size = 100, center = true, openWallet = null}: { size?:
   const { theme } = useTheme();
   return (
     <div
-        className="fixed inset-0 z-[2000] bg-black/90 flex items-center justify-center"
+        className="loader fixed inset-0 z-[2000] bg-black/90 flex items-center justify-center"
         >
         <div
         className={`loaderWrapper center ${

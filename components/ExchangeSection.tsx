@@ -39,7 +39,7 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
   const [fromToken, setFromToken] = useState(tokens[0]);
   const [toToken, setToToken] = useState(tokens[1]);
   const [openedList, setOpenedList] = useState<null | "from" | "to">(null);
-  const [rotation, setRotation] = useState(0);
+  const [animate, setAnimate] = useState(false);
   const [fromAmount, setFromAmount] = useState<string>("1");
 
   const { t, i18n } = useTranslation();
@@ -115,7 +115,8 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
     setFromToken(toToken);
     setToToken(prevFrom);
     setOpenedList(null);
-    setRotation((prev) => prev + 180);
+    setAnimate(true);
+    setTimeout(() => setAnimate(false), 3000);
   };
 
   React.useEffect(() => {
@@ -231,9 +232,9 @@ const ExchangeSection: React.FC<ExchangeySectionProps> = ({
           onClick={swapTokens}
           className="switch-currency-button text-black hover:text-blue-400 transition focus:outline-none"
         >
-          <div className="button-arrows"
-          style={{ transform: `rotate(${rotation}deg)` }}
-        ></div>
+          <div className={`button-arrows ${animate ? "animate" : ""}`}>
+            <div className="button-squars"></div>
+          </div>
         
         </button>
       </div>

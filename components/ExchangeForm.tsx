@@ -223,14 +223,14 @@ export default function ExchangeForm() {
                         </div>
                     </section>
 
-                    <section id="exchange" className="mb-4 flex flex-wrap bg-[#015BBB1A] rounded-2xl max-w-7xl xl:mx-auto justify-around mx-3 mt-20 md:px-0 py-10 px-4 md:py-14">
-                        <div className="text-center space-y-3 relative">
-                            <h2 className="font-bold text-left mb-6 text-[32px] md:text-[42px] max-w-sm relative z-10">
+                    <section id="exchange" className="mb-4 flex flex-col items-center lg:flex-row lg:items-start bg-[#015BBB1A] rounded-2xl max-w-7xl xl:mx-auto justify-around mx-3 mt-20 md:px-0 py-10 px-4 md:py-10 lg:px-20">
+                        <div className="w-full max-w-[517px] text-center space-y-3 relative">
+                            <h2 className=" font-bold text-left mb-6 text-[32px] md:text-[42px] max-w-sm relative z-10">
                                 <span className="text-black">
                                     {t("hero_buy_text")}{" "}
                                 </span>
                             </h2>
-                            <div className="absolute top-[10%] -left-[19%]">
+                            <div className="absolute top-[40%] -left-[19%]">
                                 <img
                                     className=" z-0 max-w-[385px] invisible lg:visible"
                                     alt="Calculator"
