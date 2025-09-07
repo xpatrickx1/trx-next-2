@@ -119,13 +119,45 @@
     "orderCancelled": "Pedido cancelado"
   },
 
-  "menu": {
-      "exchange": "intercambiar",
-      "howto": "cómo hacerlo",
-      "reviews": "reseñas",
-      "faq": "preguntas frecuentes",
-      "blog": "blog"
+  "connect_wallet": "Conectar wallet",
+
+  "card_text": "Los rendimientos consisten en recompensas de votación de gobernanza de TRON y rendimientos de alquiler de Energy",
+"stake": "Apostar",
+"unstake": "Retirar",
+"amount": "Cantidad",
+"amount_reward": "Cantidad de recompensa sTRX APY",
+"introduction": "Introducción",
+"introduction_text_1": "stUSDT es un token de recibo que se gana al hacer staking de stablecoins USD. A través del Contrato stUSDT-RWA, los usuarios pueden retirar y canjear stUSDT de vuelta a USDT en una proporción 1:1 (sujeto a condiciones específicas). Un mecanismo Rebase asegura la distribución continua de recompensas. Los fondos en el contrato se asignan a bonos gubernamentales a corto plazo, lo que significa que cuanto más tiempo mantengas stUSDT, mayores serán las recompensas potenciales.",
+"introduction_text_2": "La seguridad es siempre nuestra máxima prioridad. Sin embargo, los tokens utilizados para staking aquí son emitidos y gestionados por empresas terceras. Puede visitar los sitios web de USDT y TUSD para obtener más información sobre los tokens y tomar decisiones mejor informadas.",
+"fees": "Tarifas y Parámetros",
+"fees_list": [
+    {
+      "fee_left": "Tarifa de Staking",
+      "fee_right": "Gratis"
     },
+    {
+      "fee_left": "Tarifa de Unstaking",
+      "fee_right": "0.1%"
+    },
+    {
+      "fee_left": "Disponible en",
+      "fee_right": "T+0 ~ T+3"
+    },
+    {
+      "fee_left": "Frecuencia de Rebase",
+      "fee_right": "Diariamente a las 17:00 (SGT)"
+    }
+],
+"finance_reports": "Informes Financieros",
+"stusdt_apy": "APY de stUSDT",
+"last_7_days": "Últimos 7 Días",
+"last_30_days": "Últimos 30 Días",
+"since_inception": "Desde el Inicio",
+
+  "menu": {
+    "USDT": "Apostar USDT",
+    "TRX": "Apostar TRX"
+  },
 
     "thankYou": {
       "title": "Gracias",

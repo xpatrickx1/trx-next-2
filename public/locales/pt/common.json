@@ -116,12 +116,43 @@
     "orderCancelled": "Pedido cancelado"
   },
 
+  "connect_wallet": "Conectar carteira",
+  "card_text": "Os rendimentos consistem em recompensas de votação da governança TRON e rendimentos de aluguel de Energy",
+"stake": "Apostar",
+"unstake": "Retirar",
+"amount": "Quantidade",
+"amount_reward": "Quantidade de recompensa sTRX APY",
+"introduction": "Introdução",
+"introduction_text_1": "stUSDT é um token de recibo ganho ao fazer staking de stablecoins USD. Através do Contrato stUSDT-RWA, os usuários podem retirar e resgatar stUSDT de volta para USDT em uma proporção 1:1 (sujeito a condições específicas). Um mecanismo Rebase garante distribuição contínua de recompensas. Os fundos no contrato são alocados em títulos governamentais de curto prazo, o que significa que quanto mais tempo você mantiver stUSDT, maiores serão as recompensas potenciais.",
+"introduction_text_2": "A segurança é sempre nossa prioridade máxima. No entanto, os tokens usados para staking aqui são emitidos e gerenciados por empresas terceiras. Você pode visitar os sites da USDT e TUSD para saber mais sobre os tokens e tomar decisões mais bem informadas.",
+"fees": "Taxas e Parâmetros",
+"fees_list": [
+    {
+      "fee_left": "Taxa de Staking",
+      "fee_right": "Grátis"
+    },
+    {
+      "fee_left": "Taxa de Unstaking",
+      "fee_right": "0.1%"
+    },
+    {
+      "fee_left": "Disponível em",
+      "fee_right": "T+0 ~ T+3"
+    },
+    {
+      "fee_left": "Frequência de Rebase",
+      "fee_right": "Diariamente às 17:00 (SGT)"
+    }
+],
+"finance_reports": "Relatórios Financeiros",
+"stusdt_apy": "APY stUSDT",
+"last_7_days": "Últimos 7 Dias",
+"last_30_days": "Últimos 30 Dias",
+"since_inception": "Desde o Início",
+
   "menu": {
-    "exchange": "trocar",
-    "howto": "como fazer",
-    "reviews": "avaliações",
-    "faq": "faq",
-    "blog": "blog"
+    "USDT": "Apostar USDT",
+    "TRX": "Apostar TRX"
   },
 
   "thankYou": {

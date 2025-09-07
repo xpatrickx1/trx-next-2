@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Card, CardContent } from "../components/ui/card";
 
 type ExchangeItem = {
   title: string;
@@ -14,46 +13,64 @@ export const HowToUse = (): React.ReactElement => {
     number: (index + 1).toString(),
     title: step.title,
     description: step.description,
-    maxWidth: ["max-w-3xs", "max-w-2xs", "max-w-2xs", "max-w-xs"][index], // як у тебе було
+    maxWidth: ["max-w-3xs", "max-w-2xs", "max-w-2xs", "max-w-xs"][index],
   }));
 
   return (
-    <section id="howTo" className="w-full bg-[#252525] py-20 px-4 md:px-6 lg:px-8">
-      <div className="container mx-auto max-w-[1273px]">
-        <h2 className="text-center md:text-left mb-8 md:mb-12 font-bold text-2xl md:text-3xl lg:text-4xl tracking-[0] leading-tight md:leading-[59.1px]">
+    <section id="howTo" className="relative mx-auto max-w-7xl mt-4 rounded-lg pt-8 sm:pt-12 pb-12 sm:pb-20 backdrop-blur-[14.2px] backdrop-brightness-[100%] bg-[radial-gradient(51.86%_173.38%_at_97%_5.83%,rgba(25,163,255,0.6)_14.9%,rgba(0,0,0,0.6)_52.88%)] rounded-lg relative">
+
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl max-w-[637px] mx-auto font-normal text-center mb-14 text-[#ffffff]">
           <span className="text-[#ffffff]">{t("section_title_how_to_1")}</span>
-          <span className="text-[#4491fb] px-2">{t("section_title_how_to_2")}</span>
         </h2>
         
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-[45px] w-full">
+        <div className="flex justify-center max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row justify-between w-full gap-12 sm:gap-6">
             {exchangeSteps.map((step, index) => (
-              <Card
-                key={index}
-                className={`relative flex flex-col h-auto min-h-[153px] items-start px-4 md:px-6 lg:px-[30px] py-4 md:py-6 bg-[#373737] rounded-2xl border border-solid border-[#2e77da] transition-all duration-300 hover:shadow-lg hover:border-[#4491fb] group lg:${step.maxWidth} `}
-              >
-                <CardContent className="p-0 w-full">
-                  <div className="absolute -top-6 lg:-right-[25px] w-12 h-12 md:w-[50px] md:h-[50px] bg-[#2e77da] rounded-2xl border-2 border-solid border-[#373737] flex items-center justify-center shadow-lg group-hover:bg-[#4491fb] transition-colors duration-300">
-                    <span className="font-bold text-white text-xl md:text-[28px] tracking-[0] leading-none">
+              <div key={index} className="relative w-full items-center lg:w-[280.37px] h-auto lg:h-[255.13px] flex flex-col lg:block">
+                <div className="w-full max-w-[284px] h-auto lg:h-[132px] flex flex-col lg:block gap-4 lg:gap-0">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-[50px]  lg:h-[50px] mx-auto sm:mx-0 rounded-2xl flex items-center justify-center shadow-lg transition-colors duration-300 mb-4 lg:mb-0">
+                    <span className="font-bold text-[78.7px] tracking-[0] leading-[normal] 
+                                    text-transparent bg-gradient-to-r from-[#006AFA] to-[#19A3FF] 
+                                    bg-clip-text [-webkit-background-clip:text]">
                       {step.number}
                     </span>
                   </div>
 
-                  <div className="pt-2">
-                    <div className="font-bold text-white text-lg md:text-xl lg:text-lg tracking-[0] leading-tight md:leading-[59.1px] mb-3 md:mb-4 text-center md:text-left">
+                  <div className="pt-0 lg:pt-2">
+                    <div className="font-bold mt-0 lg:mt-4 text-white text-md sm:text-base tracking-[0] leading-tight lg:leading-[24px] mb-3 lg:mb-4 text-center lg:text-left">
                       {step.title}
                     </div>
 
-                    <div className="opacity-70 font-normal text-white text-sm md:text-base tracking-[0] leading-tight md:leading-[22px] text-center md:text-left">
+                    <div className="opacity-70 text-sm text-white tracking-[0] leading-tight lg:leading-[22px] text-center lg:text-left">
                       {step.description}
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
+          
         </div>
+        <a href="#stakeUsdt"
+              className="relative mb-6 sm:mb-10 max-w-[296px] purchase-energy-btn text-sm sm:text-base lg:text-[19px] mt-14 sm:mt-16 lg:mt-20 w-full sm:max-w-[283px] rounded-[5px] sm:max-h-[60px] mx-auto py-3 sm:py-6 transition-all flex justify-center items-center"
+          >
+            {t("start_staking")}
+            <div
+                  className="absolute inset-0"
+                  style={{
+                    background: "linear-gradient(103.92deg, #058AAF  25.12%, #004663 79.05%)",
+                    borderRadius: "5px", 
+                    padding: "1px",
+                    WebkitMask:
+                      "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    WebkitMaskComposite: "xor",
+                    maskComposite: "exclude",
+                  }}
+                ></div>
+          </a>
       </div>
+      
     </section>
   );
 };

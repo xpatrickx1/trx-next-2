@@ -4,8 +4,8 @@
   "desc": "Through TRX-PRIME.com, you can access bi-directional conversion services between USDT and TRX, as well as TRX-based energy purchase services to meet resource demands for transactions on the TRON network.",
   "energy": "Energy : ",
   "bandwidth": "Bandwidth : ",
-  "buyEnergy": "Rent Energy",
-  "flashExchange": "Exchange",
+  "buyEnergy": "Unstake",
+  "flashExchange": "Stake",
   "addressLabel": "Receiving Address",
   "connectWallet": "Connect your wallet",
   "addressPlaceholder": "Default is current wallet address",
@@ -20,18 +20,18 @@
   "btn2": "2x",
   "btn5": "5x",
   "btn10": "10x",
-  "getEnergy": "Energy Obtained",
+  "getEnergy": "Amount",
   "expireTip": "Energy is valid for <span class='text-orange'>24 hours</span>.",
   "energyPlaceholder": "Energy Value",
   "finalPriceText": "You only pay <span class='' id='final_price' style={{color: '#74eb69'}}></span> saving you <span class='text-gray-500 mr-2' id='origin_price'></span>",
-  "purchaseBtn": "Buy Energy",
+  "purchaseBtn": "Connect Wallet",
   "inputAmountPlaceholder": "Enter amount",
   "outputAmountPlaceholder": "Expected amount",
   "payText": "Amount to Pay",
   "saveText": "You will save",
   "payLabel": "Send ",
   "receiveLabel": "Get ",
-  "exchangeNow": "exchange",
+  "exchangeNow": "Connect Wallet",
   "chooseWallet": "Choose Wallet",
   "scanToLogin": "Scan to Login",
   "confirmOrder": "Order Confirmation",
@@ -77,8 +77,8 @@
   "referral_text": "Join our referral program and get up to 8% of their purchases!",
   "hero_buy": "Buy",
   "hero_trx": "TRX",
-  "hero_buy_text": "Exchange TRX With the Best Rate",
-  "hero_buy_text_bottom": "Even if you don't have any TRX yet.",
+  "hero_staked_trx_text": "Staked TRX",
+  "hero_staked_usdt_text": "Staked USDT",
   "show_receiver_address": "SHOW RECEIVER ADDRESS",
   "pre_receiver_address": "RECEIVER ADDRESS",
 
@@ -110,6 +110,9 @@
 
   "explore_more": "EXPLORE MORE IN BLOG",
   "back_to_blog": "Back to Blog",
+  "start_staking": "Start staking",
+
+  "connect_wallet": "Connect Wallet",
   
   "message": {
     "invalidPaymentAddress": "Invalid payment address! Please reconnect your wallet",
@@ -123,13 +126,42 @@
     "orderCancelled": "Order has been cancelled"
   },
 
+  "staking_apy": "Staking APY",
+  "card_text": "The yields consist of voting rewards from TRON governance and yields from Energy rental",
+  "introduction" : "Introduction",
+  "introduction_text_1" : "stUSDT is a receipt token earned when staking USD stablecoins. Through the stUSDT-RWA Contract, users can unstake and redeem stUSDT back into USDT at a 1:1 ratio (subject to specific conditions). A Rebase mechanism ensures continuous reward distribution. Funds in the contract are allocated to short-term government bonds, meaning the longer you hold stUSDT, the higher the potential rewards.",
+  "introduction_text_2" : "Security is always our highest priority. However, tokens used for staking here are issued and managed by third-party companies. You can visit websites of USDT and TUSD to learn more about the tokens for better-informed decisions.",
+  "fees" : "Fees & Parameters",
+  "fees_list": [
+      {
+        "fee_left": "Staking Fee",
+        "fee_right": "Free"
+      },
+  {
+        "fee_left": "unStaking Fee",
+        "fee_right": "0.1%"
+      },
+  {
+        "fee_left": "Claimable in",
+        "fee_right": "T+0 ~ T+3"
+      },
+  {
+        "fee_left": "Rebase Frequency",
+        "fee_right": "Daily at 17:00 (SGT)"
+      }
+  ],
+  "finance_reports" : "Finance Reports",
+  "stusdt_apy" : "stUSDT APY",
+  "last_7_days" : "Last 7 Days",
+  "last_30_days" : "Last 30 Days",
+  "since_inception" : "Since Inception",
+
   "menu": {
-    "exchange": "exchange",
-    "howto": "how to",
-    "reviews": "reviews",
-    "faq": "faq",
-    "blog": "blog"
+    "USDT": "Stake USDT",
+    "TRX": "Stake TRX"
   },
+
+  "faq_title": "Staking FAQs",
 
   "faq": [
     {
@@ -167,9 +199,9 @@
       "commission": "Commission",
       "text": "on Your First Exchange!"
     },
-    "section_title_blog": "Our Blog",
+    "section_title_blog": "Learn more",
     "section_title_reviews": "Reviews",
-    "section_title_how_to_1": "How to use",
+    "section_title_how_to_1": "How you earn and maximize your staking rewards with us",
     "section_title_how_to_2": "TRX Exchanger",
 
     "breadcrumbs": {
@@ -455,20 +487,16 @@
 
     "exchangeSteps": [
       {
-        "title": "Pick a Crypto",
-        "description": "Choose the exchange pair"
+        "title": "Stake your tokens",
+        "description": "Safely delegate your tokens with complete control. We distributes them among the best validators, generating consistent staking rewards."
       },
       {
-        "title": "Enter Wallet Address",
-        "description": "Provide the wallet address for us to send exchanged funds"
+        "title": "Get a liquid staking token",
+        "description": "Your staked position is reflected in a token equal to your asset plus the rewards that build up daily. Enjoy immediate unstaking and full liquidity access."
       },
       {
-        "title": "Send the Deposit",
-        "description": "Send in the amount of crypto needed for exchange"
-      },
-      {
-        "title": "Receive Funds",
-        "description": "Get exchanged cryptocurrency"
+        "title": "Let your tokens work for you",
+        "description": "Boost your returns by using the value-accruing token in DeFi — join AMMs, borrow, or lend against it to expand your rewards."
       }
    ]
 }

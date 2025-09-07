@@ -12,17 +12,15 @@ import {handleWalletErrorV2} from "../utils/handleWalletError";
 import {useRouter} from "next/router";
 import {handleTransactionError, handleTransactionErrorV2} from "../utils/handleTransactionError";
 import NoticeBanner from "./NoticeBanner";
-import EnergySection from "./EnergySection";
-import ExchangeSection from "./ExchangeSection";
+import UnifiedStakeSection from "./UnifiedStakeSection";
 import TabsBlockWithLogic from "./TabsBlockWithLogic";
 import LanguageHeader from "./LanguageHeader";
-import Hero from "./Hero";
-import { Features } from "./Features";
+import { useClickOutside } from "../utils/useClickOutside";
 import { HowToUse } from "./HowToUse";
+import StakeSection from "./StakeSection";
+import { Introduction } from "./Introduction";
 import { Faq } from "./Faq";
-import { Reviews } from "./Reviews";
 import { Blog } from "./Blog";
-import { Banner } from "./Banner";
 import { Footer } from "./Footer";
 import GradientLoader from "./GradientLoader";
 import {router} from "next/client";
@@ -50,7 +48,7 @@ export default function ExchangeForm() {
     const [walletAddress, setWalletAddress] = useState<string | null>(null);
     const [usdtBalance, setUsdtBalance] = useState<string | null>(null);
     const lastConnectedAddress = useRef<string | null>(null);
-
+    const [activeSection, setActiveSection] = useState('USDT');
 
     const [ipclient, setIp] = useState<string | null>(null); // Состояние Ip
     const [isConnecting, setIsConnecting] = useState(false);
@@ -140,14 +138,46 @@ export default function ExchangeForm() {
     const openWallet = () => {
     };
 
+    const [selectedDays, setSelectedDays] = useState(30); 
+    const [isDaysOpen, setIsDaysOpen] = useState(false); 
+
+    useEffect(() => {
+        const element = document.querySelector('.day-select') as HTMLElement;
+        if (element) {
+        element.style.opacity = '0';
+        setTimeout(() => {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }, 600); // Затримка 600ms
+        }
+    }, []);
+
+    useClickOutside('.days-select-container', setIsDaysOpen);
+
+    const handleDaysSelect = (days: number) => {
+        setSelectedDays(days);
+        setIsDaysOpen(false);
+    };
+
+    const options = [
+        { value: 7, label: '7 days Avg.' },
+        { value: 30, label: '30 days Avg.' },
+    ];
+
+    const getPercentage = () => {
+        return selectedDays === 7 ? '21.51%' : '14.76%';
+    };
+
     return (
         <div className="main-wrapper overflow-hidden relative">
-            <LanguageHeader/>
+            <LanguageHeader
+                activeSection={activeSection}
+                setActiveSection={setActiveSection} // Передаємо функцію для оновлення
+            />
             <div className="flex flex-row justify-center w-full px-0 mx-auto">
                 <div className="relative size-full">
 
                     <section className="mb-4 hidden" id="wallet">
-                       
                         <div
                             className="rounded-lg p-4"
                             style={{backgroundColor: "#000000c7"}}
@@ -157,17 +187,17 @@ export default function ExchangeForm() {
                                     className="flex items-center justify-between mb-2"
                                     style={{width: "100%"}}
                                 >
-                    <span
-                        id="wallet-address"
-                        className="truncate"
-                        style={{
-                            fontSize: "14px",
-                            backgroundColor: "#142546",
-                            color: "#fff",
-                            padding: "4px 8px",
-                            borderRadius: "6px",
-                        }}
-                    ></span>
+                                <span
+                                    id="wallet-address"
+                                    className="truncate"
+                                    style={{
+                                        fontSize: "14px",
+                                        backgroundColor: "#142546",
+                                        color: "#fff",
+                                        padding: "4px 8px",
+                                        borderRadius: "6px",
+                                    }}
+                                ></span>
                                 </div>
 
                                 <div id="Resources" className="flex items-center gap-2 hidden">
@@ -222,47 +252,65 @@ export default function ExchangeForm() {
                             </div>
                         </div>
                     </section>
+          
 
-                    <section id="exchange" className="mb-4 flex flex-col items-center lg:flex-row lg:items-start bg-[#015BBB1A] rounded-2xl max-w-7xl xl:mx-auto justify-around mx-3 mt-20 md:px-0 py-10 px-4 md:py-10 lg:px-20">
-                        <div className="w-full max-w-[517px] text-center space-y-3 relative">
-                            <h2 className=" font-bold text-left mb-6 text-[32px] md:text-[42px] max-w-sm relative z-10">
-                                <span className="text-black">
-                                    {t("hero_buy_text")}{" "}
-                                </span>
-                            </h2>
-                            <div className="absolute top-[40%] -left-[19%]">
-                                <img
-                                    className=" z-0 max-w-[385px] invisible lg:visible"
-                                    alt="Calculator"
-                                    src="icons/calcbg.png"
-                                />
-                                <img
-                                    className="calc absolute top-[10%] left-[0] z-0 max-w-[290px] invisible lg:visible"
-                                    alt="Calculator"
-                                    src="icons/calc.png"
-                                />
-                            </div>
-                        </div>
-                        <div className="flex w-full max-w-[517px]">
-                        <TabsBlockWithLogic
-                            exchangeSection={
-                                <ExchangeSection
-                                    onOpenWalletModal={handleOpenWalletModal}
-                                    isConnecting={isConnecting}
-                                    connectWallet={connectWallet}
+                    {activeSection === 'USDT' ? (
+                            <StakeSection
+                            id="stakeUsdt"
+                            titleKey="hero_staked_usdt_text"
+                            description="hero_subtitle1"
+                            selectedDays={selectedDays}
+                            setIsDaysOpen={setIsDaysOpen}
+                            isDaysOpen={isDaysOpen}
+                            handleDaysSelect={handleDaysSelect}
+                            options={options}
+                            getPercentage={getPercentage}
+                            stakeSection={
+                                <UnifiedStakeSection
+                                onOpenWalletModal={handleOpenWalletModal}
+                                isConnecting={isConnecting}
+                                connectWallet={connectWallet}
+                                sectionType="USDT"
                                 />
                             }
-                            energySection={
-                                <EnergySection
-                                    onOpenWalletModal={handleOpenWalletModal}
-                                    isConnecting={isConnecting}
-                                    connectWallet={connectWallet}
+                            unstakeSection={
+                                <UnifiedStakeSection
+                                onOpenWalletModal={handleOpenWalletModal}
+                                isConnecting={isConnecting}
+                                connectWallet={connectWallet}
+                                sectionType="sUSDT"
                                 />
                             }
-                        />
-                        </div>
-                    </section>
-
+                            />
+                        ) : (
+                            <StakeSection
+                            id="stakeTrx"
+                            titleKey="hero_staked_trx_text"
+                            description="hero_subtitle1"
+                            selectedDays={selectedDays}
+                            setIsDaysOpen={setIsDaysOpen}
+                            isDaysOpen={isDaysOpen}
+                            handleDaysSelect={handleDaysSelect}
+                            options={options}
+                            getPercentage={getPercentage}
+                            stakeSection={
+                                <UnifiedStakeSection
+                                onOpenWalletModal={handleOpenWalletModal}
+                                isConnecting={isConnecting}
+                                connectWallet={connectWallet}
+                                sectionType="TRX"
+                                />
+                            }
+                            unstakeSection={
+                                <UnifiedStakeSection
+                                onOpenWalletModal={handleOpenWalletModal}
+                                isConnecting={isConnecting}
+                                connectWallet={connectWallet}
+                                sectionType="sTRX"
+                                />
+                            }
+                            />
+                        )}
                     <div id="messageBox" className="message-box">
                         <div className="message-notice">
                             <div className="message-content">
@@ -382,12 +430,15 @@ export default function ExchangeForm() {
                         </div>
                     </div>
 
-                    <Features />
-                    <HowToUse />
-                    <Reviews />
+
+                    <section className="introduction z-[2] relative mx-auto max-w-7xl mx-4 sm:mb-6 md:rounded-lg pt-12 pb-20 sm:px-8 backdrop-blur-[7px] backdrop-brightness-[100%] [background:radial-gradient(51.86%_173.38%_at_96.7%_5.83%,rgba(25,163,255,0.6)_14.9%,rgba(0,0,0,0.6)_52.88%)]">
+                        <Introduction />
+                        <div id="chart" style={{ width: '100%', height: '100%' }}></div>
+                    </section>
+                    
                     <Faq />
+                    <HowToUse />
                     <Blog />
-                    <Banner />
                 </div>
             </div>
             <Footer />

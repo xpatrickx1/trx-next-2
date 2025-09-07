@@ -6,16 +6,19 @@ type TabsBlockWithLogicProps = {
 };
 
 const TabsBlockWithLogic: React.FC<TabsBlockWithLogicProps> = ({
-  energySection,
-  exchangeSection,
+  stakeSection,
+  unstakeSection,
 }) => {
   const [selectedTab, setSelectedTab] = useState<"energy" | "exchange">(
     "exchange"
   ); // По дефолту exchange!
   const [fromAmount, setFromAmount] = useState<string>("");
   const [walletConnected, setWalletConnected] = useState<boolean>(false);
+  const [sliderStyle, setSliderStyle] = useState({ width: 0, left: 0 });
 
-  const sliderRef = useRef<HTMLDivElement | null>(null);
+  const tabsRef = useRef<HTMLDivElement | null>(null);
+  const energyBtnRef = useRef<HTMLButtonElement | null>(null);
+  const exchangeBtnRef = useRef<HTMLButtonElement | null>(null);
   const { t } = useTranslation();
   // --- Только один useEffect для инициализации selectedTab ---
   useEffect(() => {
@@ -60,9 +63,38 @@ const TabsBlockWithLogic: React.FC<TabsBlockWithLogicProps> = ({
 
   // Слайдер под активной вкладкой
   useEffect(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.style.transform =
-      selectedTab === "exchange" ? "translateX(0)" : "translateX(100%)";
+    let raf = 0;
+  
+    const recalc = () => {
+      const activeEl =
+        selectedTab === "exchange" ? exchangeBtnRef.current : energyBtnRef.current;
+  
+      const trackEl = tabsRef.current;
+      if (!activeEl || !trackEl) return; 
+  
+      const btnRect = activeEl.getBoundingClientRect();
+      const trackRect = trackEl.getBoundingClientRect();
+  
+      if (btnRect.width > 0 && trackRect.width > 0) {
+        setSliderStyle({
+          width: btnRect.width,
+          left: btnRect.left - trackRect.left, // позиція відносно треку
+        });
+      }
+    };
+  
+    const update = () => {
+      // дочекатися, поки DOM стабілізується
+      raf = requestAnimationFrame(recalc);
+    };
+  
+    setTimeout(update, 0);
+    window.addEventListener("resize", update);
+  
+    return () => {
+      window.removeEventListener("resize", update);
+      cancelAnimationFrame(raf);
+    };
   }, [selectedTab]);
 
   // WalletConnected пример (логика под себя)
@@ -89,11 +121,12 @@ const TabsBlockWithLogic: React.FC<TabsBlockWithLogicProps> = ({
   // ДЛЯ ИНТЕГРАЦИИ: energySection/exchangeSection — это твои реакт-компоненты/разметка секций
   return (
     <div className="w-full">
-      <div className="flex relative mb-4 gap-x-4 max-w-[346px] ml-auto">
+      <div ref={tabsRef} className="flex relative mb-4 gap-x-4 w-full border-b px-8 md:px-12 border-b-[#FFFFFF1A]">
         <button
+          ref={exchangeBtnRef}
           id="exchange-btn"
-          className={`uppercase text-xl rounded-xl text-[#2E78DB]  border border-solid px-2 md:px-5 py-2.5 font-medium  ${
-            selectedTab === "exchange" ? "text-[#2E78DB] opacity-100 bg-transparent border-[#015BBB]" : "border-[#015BBB33] opacity-60"
+          className={`py-4 text-sm md:text-lg font-normal transition-all text-white px-2 duration-200  ${
+            selectedTab === "exchange" ? "text-white font-bold" : "opacity-70"
           } focus:outline-none`}
           
           onClick={() => setSelectedTab("exchange")}
@@ -101,14 +134,19 @@ const TabsBlockWithLogic: React.FC<TabsBlockWithLogicProps> = ({
           {t("flashExchange")}
         </button>
         <button
+          ref={energyBtnRef}
           id="energy-btn"
-          className={`w-3/5 uppercase py-2 rounded-xl text-xl font-medium transition-all text-[#2E78DB] px-2 md:px-2 duration-200 border border-solid ${
-            selectedTab === "energy" ? "text-[#2E78DB] opacity-100 bg-transparent border-[#015BBB]" : "border-[#015BBB33] opacity-60"
+          className={`py-4 text-sm md:text-lg font-normal transition-all text-white px-2 duration-200  ${
+            selectedTab === "energy" ? "text-white font-bold" : "opacity-70"
           } focus:outline-none`}
           onClick={() => setSelectedTab("energy")}
         >
           {t("buyEnergy")}
         </button>
+        <div
+          className="slied-line absolute bottom-0 h-1 bg-[#189FFA] transition-all duration-300"
+          style={{ width: sliderStyle.width, left: sliderStyle.left }}
+        />
       </div>
 
       {/* Секции */}
@@ -119,7 +157,7 @@ const TabsBlockWithLogic: React.FC<TabsBlockWithLogicProps> = ({
         borderRadius: '0.75rem',
         // backdropFilter: 'blur(42px) brightness(100%)',
         border: 'none',
-        marginTop: '28px',
+        marginTop: '21px',
         marginBottom: '0',
         overflow: 'hidden',
       }}>
@@ -127,13 +165,13 @@ const TabsBlockWithLogic: React.FC<TabsBlockWithLogicProps> = ({
           id="energy-section"
           className={selectedTab === "energy" ? "" : "hidden"}
         >
-          {energySection}
+          {unstakeSection}
         </div>
         <div
           id="exchange-section"
           className={selectedTab === "exchange" ? "" : "hidden"}
         >
-          {exchangeSection}
+          {stakeSection}
         </div>
       </div>
     </div>

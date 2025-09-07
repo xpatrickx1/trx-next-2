@@ -118,12 +118,43 @@
     "orderCancelled": "Commande annulée"
   },
 
+  "connect_wallet": "Connecter le portefeuille",
+  "card_text": "Les rendements sont composés de récompenses de vote de la gouvernance TRON et de rendements de location d'Energy",
+"stake": "Staker",
+"unstake": "Unstaker",
+"amount": "Montant",
+"amount_reward": "Montant de récompense sTRX APY",
+"introduction": "Introduction",
+"introduction_text_1": "stUSDT est un jeton de reçu gagné lors du staking de stablecoins USD. Grâce au contrat stUSDT-RWA, les utilisateurs peuvent unstaker et échanger stUSDT contre USDT dans un ratio 1:1 (sous conditions spécifiques). Un mécanisme Rebase assure une distribution continue des récompenses. Les fonds du contrat sont alloués à des obligations gouvernementales à court terme, ce qui signifie que plus vous détenez stUSDT longtemps, plus les récompenses potentielles sont élevées.",
+"introduction_text_2": "La sécurité est toujours notre priorité absolue. Cependant, les jetons utilisés pour le staking ici sont émis et gérés par des sociétés tierces. Vous pouvez visiter les sites Web d'USDT et TUSD pour en savoir plus sur les jetons et prendre des décisions mieux informées.",
+"fees": "Frais et Paramètres",
+"fees_list": [
+    {
+      "fee_left": "Frais de Staking",
+      "fee_right": "Gratuit"
+    },
+    {
+      "fee_left": "Frais d'Unstaking",
+      "fee_right": "0,1%"
+    },
+    {
+      "fee_left": "Disponible dans",
+      "fee_right": "T+0 ~ T+3"
+    },
+    {
+      "fee_left": "Fréquence de Rebase",
+      "fee_right": "Quotidiennement à 17:00 (SGT)"
+    }
+],
+"finance_reports": "Rapports Financiers",
+"stusdt_apy": "APY stUSDT",
+"last_7_days": "7 Derniers Jours",
+"last_30_days": "30 Derniers Jours",
+"since_inception": "Depuis le Début",
+
   "menu": {
-      "exchange": "échanger",
-      "howto": "comment faire",
-      "reviews": "avis",
-      "faq": "faq",
-      "blog": "blog"
+     "USDT": "Staker USDT",
+     "TRX": "Staker TRX"
     },
     
     "thankYou": {

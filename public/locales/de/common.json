@@ -125,6 +125,39 @@
       "back": "Zurück zur Startseite"
     },
 
+    "card_text": "Die Erträge setzen sich aus Stimmrechtsbelohnungen der TRON-Governance und Erträgen aus Energievermietung zusammen",
+"stake": "Einsetzen",
+"unstake": "Auszahlen",
+"amount": "Betrag",
+"amount_reward": "Belohnungsbetrag sTRX APY",
+"introduction": "Einführung",
+"introduction_text_1": "stUSDT ist ein Quittungstoken, der beim Staking von USD-Stablecoins verdient wird. Durch den stUSDT-RWA-Vertrag können Benutzer stUSDT wieder zu einem Verhältnis von 1:1 in USDT umtauschen (unter bestimmten Bedingungen). Ein Rebase-Mechanismus sorgt für kontinuierliche Belohnungsverteilung. Die Mittel im Vertrag werden in kurzfristige Staatsanleihen investiert, was bedeutet, dass je länger Sie stUSDT halten, desto höher die potenziellen Belohnungen sind.",
+"introduction_text_2": "Sicherheit hat für uns immer höchste Priorität. Allerdings werden die hier für das Staking verwendeten Token von Drittunternehmen ausgegeben und verwaltet. Sie können die Websites von USDT und TUSD besuchen, um mehr über die Token zu erfahren und fundiertere Entscheidungen zu treffen.",
+"fees": "Gebühren & Parameter",
+"fees_list": [
+    {
+      "fee_left": "Staking-Gebühr",
+      "fee_right": "Kostenlos"
+    },
+    {
+      "fee_left": "Unstaking-Gebühr",
+      "fee_right": "0,1%"
+    },
+    {
+      "fee_left": "Auszahlbar in",
+      "fee_right": "T+0 ~ T+3"
+    },
+    {
+      "fee_left": "Rebase-Häufigkeit",
+      "fee_right": "Täglich um 17:00 (SGT)"
+    }
+],
+"finance_reports": "Finanzberichte",
+"stusdt_apy": "stUSDT APY",
+"last_7_days": "Letzte 7 Tage",
+"last_30_days": "Letzte 30 Tage",
+"since_inception": "Seit Beginn",
+
     "banner": {
       "get_your": "Hol dir deine",
       "percent": "0%",
@@ -136,12 +169,11 @@
     "section_title_how_to_1": "Wie man benutzt",
     "section_title_how_to_2": "TRX Tauscher",
 
-  "menu": {
-      "exchange": "tauschen",
-      "howto": "anleitung",
-      "reviews": "bewertungen",
-      "faq": "faq",
-      "blog": "blog"
+    "connect_wallet": "Wallet verbinden",
+
+    "menu": {
+      "USDT": "USDT setzen",
+      "TRX": "TRX setzen"
     },
 
   "faq": [

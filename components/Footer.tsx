@@ -21,11 +21,8 @@ export const Footer = (): React.ReactElement => {
   
 	useEffect(() => {
 	setNavigationItems([
-		{ label: t("menu.exchange"), id: "exchange", active: false },
-		{ label: t("menu.howto"), id: "howTo", active: false },
-		{ label: t("menu.reviews"), id: "reviews", active: false },
-		{ label: t("menu.faq"), id: "faq", active: false },
-		{ label: t("menu.blog"), id: "blog", active: false },
+		{ label: t("menu.USDT"), id: "USDT", active: false },
+		{ label: t("menu.TRX"), id: "TRX", active: false },
 	]);
 	}, [t, i18n.language]);
 
@@ -58,12 +55,12 @@ export const Footer = (): React.ReactElement => {
       }, [router.pathname]);
 
       const languages = [
-        { code: 'en', name: 'English' },
-        { code: 'de', name: 'Deutsch' },
-        { code: 'fr', name: 'Français' },
-        { code: 'ru', name: 'Русский' },
-        { code: 'es', name: 'Español' },
-        { code: 'pt', name: 'Português' }
+        { code: 'en', name: 'ENG' },
+        { code: 'de', name: 'DE' },
+        { code: 'fr', name: 'FR' },
+        { code: 'ru', name: 'RUS' },
+        { code: 'es', name: 'ES' },
+        { code: 'pt', name: 'PT' },
       ];
 
       const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
@@ -111,73 +108,69 @@ export const Footer = (): React.ReactElement => {
   }, [updateActiveItem]);
 
   return (
-    <footer className="w-full bg-[#252525] py-[52px]">
-      <div className="max-w-[1392px] mx-auto px-6 flex items-center justify-between flex-col md:flex-row">
-        <button onClick={() => router.push('/')} aria-label="Go to home" className="flex items-center">
-          <img src="/icons/logo-light.png" alt="Logo" style={{maxHeight: "40px",}} />
-        </button>
-        <div className="flex items-center gap-12 flex-col md:flex-row">
-          <nav className="flex items-center gap-[31px] mt-6 md:mt-0 flex-col md:flex-row">
-            {navigationItems.map((item, index) => (
-              <Button
-                key={index}
-                variant="ghost"
-                className={`h-auto p-0 font-normal text-base tracking-[0] leading-normal whitespace-nowrap ${
-                  item.active
-                    ? "text-[#2e77da] hover:text-[#2e77da]"
-                    : "text-[#c1c1c1] opacity-50 hover:text-[#c1c1c1] hover:opacity-75"
-                }`}
-                onClick={() => handleScroll(item.id)}
-              >
-                {item.label}
-              </Button>
-            ))}
-          </nav>
+    <footer className="w-full bg-[#131313] py-[33px] px-6 lg:px-0">
+      <div className="max-w-7xl mx-auto flex items-center flex-col md:flex-row">
+        <div className="flex items-center gap-2 mr-8 text-[#868686]">
+          <span className="rounded-[50%] bg-[#74EB69] p-[5px]"></span>
+          Latest Block: 75390285
+        </div>
 
-          <div className="relative language-selector" style={{ width: "60px" }}>
-					<button
-						onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-						className="w-full text-[#C1C1C1] px-3 py-1 pr-2  duration-200 flex items-center justify-between"
-						aria-haspopup="listbox"
-						aria-expanded={isLanguageOpen}
-					>
-						<span className="text-sm font-medium">{currentLanguage.code.toUpperCase()}</span>
-						<svg
-							className={`w-4 h-4 text-[#C1C1C1] transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`}
-							fill="none"
-							stroke="currentColor"
-							strokeWidth="2"
-							viewBox="0 0 24 24"
-						>
-							<path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-						</svg>
-            
-					</button>
-					
-					{isLanguageOpen && (
-						<ul
-							role="listbox"
-							className="absolute right-0 bottom-full mt-1 w-32 bg-white border border-gray-200 rounded-md shadow-lg z-20 overflow-hidden"
-						>
-							{languages.map((lang) => (
-								<li
-									role="option"
-									aria-selected={i18n.language === lang.code}
-									key={lang.code}
-									onClick={() => {
-										changeLanguage(lang.code);
-										setIsLanguageOpen(false);
-									}}
-									className={`px-3 py-2 text-sm  cursor-pointer outline-none hover:text-blue-600 transition-colors duration-150 ${
-										i18n.language === lang.code ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'
-									}`}
-								>
-									{lang.name}
-								</li>
-							))}
-						</ul>
-					)}
-				</div>
+       {/* Custom language selector */}
+       <div className="relative my-6 md:my-0 language-selector h-auto bg-[#0d0d0d96] rounded-md border border-[#FFFBFB14] text-white transition-opacity" style={{ width: '95px' }}>
+          <button
+            onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+            className="w-full opacity-50 justify-center gap-2 text-black px-6 py-2 duration-200 flex items-center justify-between"
+            aria-haspopup="listbox"
+            aria-expanded={isLanguageOpen}
+          >
+            <span className="text-md text-white font-medium">{currentLanguage.code.toUpperCase()}</span>
+            <svg
+              className={`w-4 h-4 text-white transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {isLanguageOpen && (
+            <ul
+              role="listbox"
+              className="absolute right-0 bottom-full mt-1 p-2 w-24 bg-[#0D0D0D96] border border-[#FFFBFB14] rounded-md shadow-lg z-20 overflow-hidden"
+            >
+              {languages.map((lang) => (
+                <li
+                  role="option"
+                  aria-selected={i18n.language === lang.code}
+                  key={lang.code}
+                  onClick={() => {
+                    changeLanguage(lang.code);
+                    setIsLanguageOpen(false);
+                  }}
+                  className={`opacity-50 px-3 py-2 text-sm cursor-pointer outline-none hover:text-blue-600 transition-colors duration-150 ${
+                    i18n.language === lang.code ? 'bg-black-50 text-blue-600 font-medium' : 'text-white-700'
+                  }`}
+                >
+                  {lang.name}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <Button
+          className="h-auto mr-4 bg-[#1f2027b2] text-[#868686] transition-colors bg-transparent ml-8"
+        >
+          Connect Wallet
+        </Button>
+
+        <div className="flex gap-4 items-center relative md:ml-auto ml-0">
+          <button onClick={() => router.push('/')} aria-label="Go to home" className="flex items-center">
+            <img src="/icons/logo.svg" alt="Logo" style={{ maxHeight: '40px' }} />
+          </button>
+          <div className="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 bg-[#58585866] text-[#19a3ff] text-sm">
+            v.4.20
+          </div>
         </div>
       </div>
     </footer>
