@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 type TabsBlockWithLogicProps = {
-  energySection: React.ReactNode;
-  exchangeSection: React.ReactNode;
+  stakeSection: React.ReactNode;
+  unstakeSection: React.ReactNode;
 };
 
 const TabsBlockWithLogic: React.FC<TabsBlockWithLogicProps> = ({
@@ -118,7 +118,7 @@ const TabsBlockWithLogic: React.FC<TabsBlockWithLogicProps> = ({
   const handleWalletBtnClick = useCallback((walletName: string) => {
     // твоя логика
   }, []);
-  // ДЛЯ ИНТЕГРАЦИИ: energySection/exchangeSection — это твои реакт-компоненты/разметка секций
+
   return (
     <div className="w-full">
       <div ref={tabsRef} className="flex relative mb-4 gap-x-4 w-full border-b px-8 md:px-12 border-b-[#FFFFFF1A]">

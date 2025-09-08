@@ -161,7 +161,7 @@ export const Footer = (): React.ReactElement => {
         <Button
           className="h-auto mr-4 bg-[#1f2027b2] text-[#868686] transition-colors bg-transparent ml-8"
         >
-          Connect Wallet
+          {t("connect_wallet")}
         </Button>
 
         <div className="flex gap-4 items-center relative md:ml-auto ml-0">

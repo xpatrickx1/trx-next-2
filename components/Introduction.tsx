@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import { Chart } from "./Chart";
 import { Card, CardContent } from "./ui/card";
 
 type FeeItem = {
-  question: string;
-  answer: string;
+  fee_left: string;
+  fee_right: string;
 };
 
 export const Introduction = (): React.ReactElement => {
@@ -44,7 +44,7 @@ export const Introduction = (): React.ReactElement => {
   
 
   return (
-    <div className="flex flex-wrap ">
+    <div className="flex flex-wrap md:mx-3">
       <div className="flex flex-col px-8 md:px-6 lg:px-8 lg:flex-row mx-auto w-full max-w-7xl gap-12 sm:gap-8 lg:gap-12">
         <div className="flex flex-col w-full lg:w-1/2">
           <div className="relative mb-6 w-fit mt-[-1.00px] font-normal text-white text-md sm:text-lg tracking-[0] leading-[normal]">
@@ -57,7 +57,12 @@ export const Introduction = (): React.ReactElement => {
               </p>
 
               <p className="relative w-full [font-family:'Public_Sans',Helvetica] font-light text-[#828282] text-sm sm:text-base tracking-[0] leading-5 sm:leading-6">
-                  {t("introduction_text_2")}
+                  <Trans
+                    i18nKey="introduction_text_2"
+                    components={{
+                      highlight1: <span className="text-[#19A3FF]" />,
+                    }}
+                  />
               </p>
           </div>
         </div>
@@ -154,30 +159,27 @@ export const Introduction = (): React.ReactElement => {
         </div>
       </div>
         <div className="flex px-0 md:px-6 lg:px-0 flex-col-reverse lg:flex-row gap-2">
-          <div className="flex flex-col sm:flex-row lg:flex-col w-full lg:w-[215px] items-start gap-3 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms] sm:[--animation-delay:1200ms]">
+          <div className="flex flex-col sm:flex-row lg:flex-col w-full lg:w-[215px] mx-auto max-w-[296px] sm:max-w-none items-start gap-3 translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms] sm:[--animation-delay:1200ms]">
             {apyData.map((item, index) => (
-              <Card key={index} className="w-full h-fit  lg:w-full  border-none">
-                <CardContent className="flex flex-col items-center justify-center rounded-[6px] bg-black px-10 sm:px-8 lg:px-10 py-4 sm:py-6 lg:py-[30px]">
-                  <div className="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                    <div className="relative self-stretch mt-[-1.00px] opacity-50  font-normal text-white text-sm sm:text-sm tracking-[0] leading-[normal]">
-                      {item.label}
-                    </div>
-
-                    <div
-                      className="relative self-stretch font-normal  text-[30px] lg:text-[34px] tracking-[0] leading-[normal]"
-                      style={{
-                        color: item.color,
-                        marginTop: index === 0 ? "-7px" : "0",
-                      }}
-                    >
-                      {item.value}
-                    </div>
+              <div key={index} className="days-card flex flex-col items-center w-full lg:w-full rounded-[6px] bg-[#242424A3] sm:bg-black  border-none justify-center px-10 sm:px-8 lg:px-10 py-4 sm:py-6 lg:py-7">
+                <div className="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
+                  <div className="relative self-stretch opacity-50  font-normal text-white text-sm">
+                    {item.label}
                   </div>
-                </CardContent>
-              </Card>
+
+                  <div
+                    className="relative self-stretch font-normal  text-[30px] lg:text-[34px] tracking-[0] leading-[normal]"
+                    style={{
+                      color: item.color,
+                    }}
+                  >
+                    {item.value}
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
-          <div className="w-full lg:flex-1">
+          <div className="w-full pl-4 sm:pl-0 lg:flex-1">
             <Chart />
           </div>
         </div>

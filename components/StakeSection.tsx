@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next'; 
+import { useTranslation, Trans } from 'react-i18next'; 
 import TabsBlockWithLogic from './TabsBlockWithLogic'; // Адаптуй шлях
 
 const StakeSection = ({
@@ -17,36 +17,22 @@ const StakeSection = ({
 }) => {
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const element = document.querySelector(`#${id} .day-select`);
-    if (element) {
-      element.style.opacity = '0';
-      setTimeout(() => {
-        element.style.opacity = '1';
-        element.style.transform = 'translateY(0)';
-      }, 600);
-    }
-    const percentageElement = document.querySelector(`#${id} .percentage`);
-    if (percentageElement) {
-      percentageElement.style.opacity = '0';
-      setTimeout(() => {
-        percentageElement.style.opacity = '1';
-        percentageElement.style.transform = 'translateY(0)';
-      }, 400);
-    }
-  }, []);
-
   return (
     <section
       id={id}
-      className="relative mb-0 sm:mb-6 flex flex-col items-center lg:items-start md:rounded-2xl max-w-7xl xl:mx-auto justify-between md:mx-3 pt-[10rem]"
+      className="relative mb-0 md:mb-6 flex flex-col items-center lg:items-start md:rounded-2xl max-w-7xl xl:mx-auto justify-between md:mx-3 pt-[6rem] sm:pt-[10rem]"
     >
       <div className="flex gap-2 md:gap-20 pl-[32px] md:pl-0 mb-10 flex-wrap">
         <h2 className="font-bold text-left text-[40px] md:text-[55px] max-w-sm relative z-10">
           <span className="text-white">{t(titleKey)}</span>
         </h2>
-        <div className="w-[283px] text-left font-normal text-white text-base leading-[normal]">
-          {description}
+        <div className="w-[200px] sm:w-[283px] text-left font-normal text-white text-base leading-[normal]">
+          <Trans
+            i18nKey={description}
+            components={{
+              highlight1: <span className="text-[#19A3FF]" />,
+            }}
+          />
         </div>
       </div>
 
@@ -58,7 +44,7 @@ const StakeSection = ({
                 <div className="font-normal whitespace-nowrap text-base sm:text-lg text-white tracking-[0]">{t("staking_apy")}</div>
                 <div className="relative days-select-container">
                   <div
-                    className="day-select rounded-md bg-[#58585866] text-[#B9B9B9] hover:bg-[#A3A1A166]  py-1 px-4 w-fit text-sm translate-y-[-1rem] transition-all duration-300"
+                    className="day-select rounded-md bg-[#58585866] text-[#B9B9B9] hover:bg-[#A3A1A166]  py-1 px-4 w-fit text-sm  transition-all duration-300"
                     style={{ transition: 'opacity 0.3s ease, transform 0.3s ease' }}
                   >
                     <button
@@ -107,7 +93,7 @@ const StakeSection = ({
                 {getPercentage()}
               </div>
             </div>
-            <div className="absolute sm:relative top-20 sm:top-4 right-0 z-[-1] opacity-0 sm:opacity-100">
+            <div className="absolute sm:relative top-20 sm:top-4 right-0 z-[-1] sm:opacity-100">
               <img
                 className="z-0 max-w-[385px]"
                 alt="Calculator"

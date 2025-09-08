@@ -17,7 +17,7 @@ export const HowToUse = (): React.ReactElement => {
   }));
 
   return (
-    <section id="howTo" className="relative mx-auto max-w-7xl mt-4 rounded-lg pt-8 sm:pt-12 pb-12 sm:pb-20 backdrop-blur-[14.2px] backdrop-brightness-[100%] bg-[radial-gradient(51.86%_173.38%_at_97%_5.83%,rgba(25,163,255,0.6)_14.9%,rgba(0,0,0,0.6)_52.88%)] rounded-lg relative">
+    <section id="howTo" className="relative mx-auto xl:mx-auto md:mx-3 max-w-7xl md:mt-4 md:rounded-lg pt-8 sm:pt-12 pb-12 sm:pb-20 backdrop-blur-[14.2px] backdrop-brightness-[100%] bg-[radial-gradient(51.86%_173.38%_at_97%_5.83%,rgba(25,163,255,0.6)_14.9%,rgba(0,0,0,0.6)_52.88%)] relative">
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6">
         <h2 className="text-xl sm:text-2xl lg:text-3xl max-w-[637px] mx-auto font-normal text-center mb-14 text-[#ffffff]">

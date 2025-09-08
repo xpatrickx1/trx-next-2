@@ -11,8 +11,8 @@ interface NavItem {
 }
 
 interface LanguageHeaderProps {
-  activeSection: string;
-  setActiveSection: (id: string) => void;
+  activeSection?: string;
+  setActiveSection?: (id: string) => void;
 }
 
 const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiveSection }) => {
@@ -23,7 +23,7 @@ const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiv
     i18n.changeLanguage(lng);
     localStorage.setItem('i18nextLng', lng);
   };
-  console.log(activeSection);
+
   const [navigationItems, setNavigationItems] = useState<NavItem[]>([
     { label: t('menu.USDT'), id: 'USDT', active: activeSection === 'USDT' },
     { label: t('menu.TRX'), id: 'TRX', active: activeSection === 'TRX' },
@@ -53,9 +53,27 @@ const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiv
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
-    setActiveSection(id); // Оновлюємо активну секцію через пропс
+    setActiveSection(id);
     setIsMenuOpen(false);
   };
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const updateActiveItem = useCallback(() => {
     const observer = new IntersectionObserver(
@@ -68,7 +86,7 @@ const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiv
                 active: item.id === entry.target.id,
               }))
             );
-            setActiveSection(entry.target.id); // Оновлюємо через пропс
+            setActiveSection(entry.target.id); 
           }
         });
       },
@@ -121,7 +139,9 @@ const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiv
   const currentLanguage = languages.find((lang) => lang.code === i18n.language) || languages[0];
 
   return (
-    <header className="flex w-full items-center justify-between px-2 py-2 mb-[15px] fixed top-0 z-50 bg-transparent">
+    <header className={`flex w-full items-center justify-between px-6 py-4 mb-[15px] fixed top-0 z-50 bg-transparent transition-all duration-300 ${
+      isScrolled ? 'backdrop-blur-[10px]' : ''
+    }`}>
       <div className="flex flex-1 justify-between items-center mx-auto max-w-7xl">
         <div className="flex gap-4 items-center relative">
           <button onClick={() => router.push('/')} aria-label="Go to home" className="flex items-center">
@@ -167,19 +187,19 @@ const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiv
 
         <Button
           variant="outline"
-          className="h-auto hidden md:flex mr-4 bg-[#1f2027b2] border-white backdrop-blur-[7px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7px)_brightness(100%)] text-white hover:text-black hover:bg-[#ffffff] hover:border-[#1F2027B2] transition-all duration-300"
+          className="h-auto hidden md:flex px-4 lg:px-9 mr-4 bg-[#1f2027b2] text-sm md:text-base border-white backdrop-blur-[7px] backdrop-brightness-[100%] text-white hover:text-black hover:bg-[#ffffff] hover:border-[#1F2027B2] transition-all duration-300"
         >
           <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<g clipPath="url(#clip0_687_557)">
-			<path d="M4.78955 4.9512C2.53238 4.9512 0.72029 6.89394 0.937012 9.19437C1.12643 11.2067 2.89146 12.6923 4.89697 12.6924H6.07959C6.36325 12.6924 6.593 12.4623 6.59326 12.1787C6.59326 11.8949 6.36342 11.6641 6.07959 11.6641H4.896C3.37365 11.6639 2.05347 10.5186 1.95264 9.01761C1.84191 7.36224 3.15715 5.97971 4.78857 5.97952H9.4585C10.9818 5.97952 12.3011 7.12562 12.4019 8.62698C12.5126 10.2824 11.1976 11.6641 9.56592 11.6641H8.27686C7.993 11.6641 7.76221 11.8949 7.76221 12.1787C7.76247 12.4624 7.99317 12.6924 8.27686 12.6924H9.4585C11.4642 12.6924 13.2301 11.2068 13.4194 9.19437C13.6354 6.89415 11.8237 4.95146 9.56689 4.9512H4.78955Z" fill="currentColor" stroke="currentColor" strokeWidth="0.4"/>
-			<path d="M14.022 8.30771C13.7382 8.30771 13.5085 8.5377 13.5083 8.82139C13.5083 9.10524 13.7381 9.33603 14.022 9.33603H15.2046C16.727 9.33621 18.0472 10.4814 18.1479 11.9825C18.2587 13.6379 16.9434 15.0204 15.312 15.0206H10.6421C9.11886 15.0206 7.79952 13.8745 7.69873 12.3731C7.588 10.7177 8.90303 9.33603 10.5347 9.33603H11.8247C12.1083 9.33577 12.3384 9.10508 12.3384 8.82139C12.3382 8.53786 12.1082 8.30798 11.8247 8.30771H10.6421C8.63642 8.30771 6.87062 9.79325 6.68213 11.8058L6.66748 12.0206C6.57969 14.2257 8.3484 16.0488 10.5347 16.0489H15.2046C17.2103 16.0489 18.9762 14.5633 19.1655 12.5509C19.3815 10.2507 17.5698 8.30798 15.313 8.30771H14.022Z" fill="currentColor" stroke="currentColor" strokeWidth="0.4"/>
-			</g>
-			<defs>
-			<clipPath id="clip0_687_557">
-			<rect width="20.0856" height="20.0856" fill="white" transform="matrix(-1 0 0 1 20.0933 0.457188)"/>
-			</clipPath>
-			</defs>
-		  </svg>
+            <g clipPath="url(#clip0_687_557)">
+            <path d="M4.78955 4.9512C2.53238 4.9512 0.72029 6.89394 0.937012 9.19437C1.12643 11.2067 2.89146 12.6923 4.89697 12.6924H6.07959C6.36325 12.6924 6.593 12.4623 6.59326 12.1787C6.59326 11.8949 6.36342 11.6641 6.07959 11.6641H4.896C3.37365 11.6639 2.05347 10.5186 1.95264 9.01761C1.84191 7.36224 3.15715 5.97971 4.78857 5.97952H9.4585C10.9818 5.97952 12.3011 7.12562 12.4019 8.62698C12.5126 10.2824 11.1976 11.6641 9.56592 11.6641H8.27686C7.993 11.6641 7.76221 11.8949 7.76221 12.1787C7.76247 12.4624 7.99317 12.6924 8.27686 12.6924H9.4585C11.4642 12.6924 13.2301 11.2068 13.4194 9.19437C13.6354 6.89415 11.8237 4.95146 9.56689 4.9512H4.78955Z" fill="currentColor" stroke="currentColor" strokeWidth="0.4"/>
+            <path d="M14.022 8.30771C13.7382 8.30771 13.5085 8.5377 13.5083 8.82139C13.5083 9.10524 13.7381 9.33603 14.022 9.33603H15.2046C16.727 9.33621 18.0472 10.4814 18.1479 11.9825C18.2587 13.6379 16.9434 15.0204 15.312 15.0206H10.6421C9.11886 15.0206 7.79952 13.8745 7.69873 12.3731C7.588 10.7177 8.90303 9.33603 10.5347 9.33603H11.8247C12.1083 9.33577 12.3384 9.10508 12.3384 8.82139C12.3382 8.53786 12.1082 8.30798 11.8247 8.30771H10.6421C8.63642 8.30771 6.87062 9.79325 6.68213 11.8058L6.66748 12.0206C6.57969 14.2257 8.3484 16.0488 10.5347 16.0489H15.2046C17.2103 16.0489 18.9762 14.5633 19.1655 12.5509C19.3815 10.2507 17.5698 8.30798 15.313 8.30771H14.022Z" fill="currentColor" stroke="currentColor" strokeWidth="0.4"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_687_557">
+            <rect width="20.0856" height="20.0856" fill="white" transform="matrix(-1 0 0 1 20.0933 0.457188)"/>
+            </clipPath>
+            </defs>
+          </svg>
           {t("connect_wallet")}
         </Button>
 
@@ -187,7 +207,7 @@ const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiv
         <div className="relative hidden md:flex language-selector h-auto bg-[#0d0d0d96] rounded-md border border-[#FFFBFB14] text-white transition-opacity" style={{ width: '95px' }}>
           <button
             onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-            className="w-full opacity-50 justify-center gap-2 text-black px-6 py-2 duration-200 flex items-center justify-between"
+            className="w-full opacity-50 justify-center gap-2 text-black px-6 py-[10px] duration-200 flex items-center justify-between"
             aria-haspopup="listbox"
             aria-expanded={isLanguageOpen}
           >
@@ -230,8 +250,8 @@ const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiv
 
       {/* Mobile dropdown menu (nav items only) */}
         <div
-          className={`fixed inset-x-0 top-14 z-40 flex flex-col items-center gap-4 bg-black text-white transition-all duration-500 overflow-hidden ${
-            isMenuOpen ? "max-h-[calc(100vh-56px)] h-full" : "max-h-0"
+          className={`fixed inset-x-0 top-16 z-40 flex flex-col items-center gap-4 bg-black text-white transition-all duration-500 overflow-hidden ${
+            isMenuOpen ? "max-h-[calc(100vh-56px)] h-screen" : "max-h-0"
           }`}
         >
           <nav className="flex flex-col items-center p-6 gap-4">
@@ -298,6 +318,7 @@ const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiv
                 onClick={() => {
                   changeLanguage(lang.code);
                   setIsLanguageOpen(false);
+                  setIsMenuOpen((v) => !v)
                 }}
                 className={`opacity-50 px-3 py-2 text-sm cursor-pointer outline-none hover:text-blue-600 transition-colors duration-150 ${
                   i18n.language === lang.code ? 'bg-black-50 text-blue-600 font-medium' : 'text-white-700'

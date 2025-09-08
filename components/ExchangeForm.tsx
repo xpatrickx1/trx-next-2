@@ -172,7 +172,7 @@ export default function ExchangeForm() {
         <div className="main-wrapper overflow-hidden relative">
             <LanguageHeader
                 activeSection={activeSection}
-                setActiveSection={setActiveSection} // Передаємо функцію для оновлення
+                setActiveSection={setActiveSection}
             />
             <div className="flex flex-row justify-center w-full px-0 mx-auto">
                 <div className="relative size-full">
@@ -258,7 +258,7 @@ export default function ExchangeForm() {
                             <StakeSection
                             id="stakeUsdt"
                             titleKey="hero_staked_usdt_text"
-                            description="hero_subtitle1"
+                            description="hero_subtitle_usdt"
                             selectedDays={selectedDays}
                             setIsDaysOpen={setIsDaysOpen}
                             isDaysOpen={isDaysOpen}
@@ -286,7 +286,7 @@ export default function ExchangeForm() {
                             <StakeSection
                             id="stakeTrx"
                             titleKey="hero_staked_trx_text"
-                            description="hero_subtitle1"
+                            description="hero_subtitle_trx"
                             selectedDays={selectedDays}
                             setIsDaysOpen={setIsDaysOpen}
                             isDaysOpen={isDaysOpen}
@@ -431,7 +431,7 @@ export default function ExchangeForm() {
                     </div>
 
 
-                    <section className="introduction z-[2] relative mx-auto max-w-7xl mx-4 sm:mb-6 md:rounded-lg pt-12 pb-20 sm:px-8 backdrop-blur-[7px] backdrop-brightness-[100%] [background:radial-gradient(51.86%_173.38%_at_96.7%_5.83%,rgba(25,163,255,0.6)_14.9%,rgba(0,0,0,0.6)_52.88%)]">
+                    <section className="introduction md:mx-3 xl:mx-auto z-[2] relative mx-auto max-w-7xl mx-4 md:mb-6 md:rounded-lg pt-12 pb-20 sm:px-8 backdrop-blur-[7px] backdrop-brightness-[100%] [background:radial-gradient(51.86%_173.38%_at_96.7%_5.83%,rgba(25,163,255,0.6)_14.9%,rgba(0,0,0,0.6)_52.88%)]">
                         <Introduction />
                         <div id="chart" style={{ width: '100%', height: '100%' }}></div>
                     </section>

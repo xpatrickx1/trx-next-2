@@ -36,6 +36,7 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
   
   // Окремий стан для кожної секції
   const [energyValue, setEnergyValue] = useState<number>(100);
+  const [isInputFocused, setIsInputFocused] = useState<boolean>(false);
   const { t } = useTranslation();
   
   // --- UTM-метка utm_energy ---
@@ -101,7 +102,7 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
                 {sectionType === 'USDT' ? t("getEnergy") : t("getEnergy")}
               </label>
             </div>
-            <div className="flex items-center relative rounded-md px-5 w-full bg-[#1F2027] border border-[#1F2027]">
+            <div className={`flex items-center relative rounded-md px-5 w-full bg-[#1F2027] border transition-all duration-300 ${isInputFocused ? 'border-[#0780D0]' : 'border-[#1F2027]'}`}>
               {/* Input value */}
               <input
                   type="text"
@@ -114,6 +115,8 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
                   value={energyValue}
                   min={10}
                   onChange={handleInputChange}
+                  onFocus={() => setIsInputFocused(true)}
+                  onBlur={() => setIsInputFocused(false)}
                   inputMode="numeric"
                   pattern="[0-9]*"
                   autoComplete="off"
@@ -139,7 +142,7 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
             <div className="flex flex-col w-full sm:w-auto">
               <div className="flex justify-start sm:justify-between items-center ">
                 <div className="font-normal text-left text-sm text-white opacity-60 mb-2">
-                  Reward {sectionType} APY
+                  {t("reward")} {sectionType} APY
                 </div>
               </div>
               <div className="w-full sm:min-w-[190px] h-[60px] border border-[#060606] justify-between rounded-md px-4 py-0 bg-[#060606] flex items-center relative">
@@ -164,7 +167,7 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
               key={opt.count}
               type="button"
               onClick={() => setEnergyValue(opt.energy)}
-              className={`w-[48%] sm:w-[25%] flex-grow items-center justify-center gap-2 whitespace-nowrap [font-family:'Space_Grotesk',Helvetica] rounded-md text-base leading-normal font-medium border   hover:text-accent-foreground px-4 py-1 h-9 sm:flex-1 text-white  hover:opacity-100 transition-opacity ${
+              className={`w-[48%] sm:w-[25%] flex-grow items-center justify-center gap-2 whitespace-nowrap [font-family:'Space_Grotesk',Helvetica] rounded-md text-base leading-normal font-medium border   hover:text-accent-foreground px-4 py-1 h-9 sm:flex-1 text-white  hover:opacity-100 transition-opacity transition-all duration-300 ${
                 selectedCount === opt.count
                   ? "border-[#0780D0] bg-[#077FCF8A] text-[#077FCF8A]  opacity-100 text-white "
                   : "border-[#1F2027] bg-[#1f2027] opacity-65"
@@ -175,12 +178,12 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
           ))}
         </div>
 
-        <div className="flex mt-1 mb-10 text-lg font-medium justify-end gap-20 sm:gap-4 ">
-          <div className="top-[496px] left-[1087px] opacity-30 [font-family:'Space_Mono',Helvetica] font-normal text-white text-sm tracking-[0.84px] leading-[normal]">
+        <div className="flex mt-1 mb-10 text-lg font-medium justify-end gap-16 sm:gap-20 sm:gap-4 ">
+          <div className="opacity-30 font-normal text-white text-sm tracking-[0.84px] leading-[normal]">
             Ratio:
           </div>
 
-          <div className="top-[496px] left-[1161px] opacity-30 [font-family:'Space_Mono',Helvetica] font-normal text-white text-sm tracking-[0.84px] leading-[normal]">
+          <div className="opacity-30 font-normal text-white text-sm leading-[normal]">
             1 {sectionType} = {trxRate} {sectionType}
           </div>
         </div>
@@ -188,7 +191,7 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
         <div className="flex space-x-4 mt-4">
           <button
               onClick={connectWallet}
-              className={`max-w-[623px] mx-auto purchase-energy-btn w-full py-3 md:py-[18px] text-[16px] sm:text-[21px] rounded-md transition-all flex justify-center items-center
+              className={`max-w-[623px] relative mx-auto purchase-energy-btn w-full py-3 md:py-[18px] text-[16px] sm:text-[21px] rounded-md transition-all flex justify-center items-center
             ${
                   isConnecting
                       ? "bg-gray-500 cursor-not-allowed"
@@ -196,10 +199,22 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
               }`}
               disabled={isConnecting}
           >
+            <div
+                  className="absolute inset-0"
+                  style={{
+                    background: "linear-gradient(103.92deg, #058AAF  25.12%, #004663 79.05%)",
+                    borderRadius: "5px", 
+                    padding: "1px",
+                    WebkitMask:
+                      "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    WebkitMaskComposite: "xor",
+                    maskComposite: "exclude",
+                  }}
+                ></div>
             {isConnecting ? (
                 t("loadingExchange")
             ) : (
-                t("purchaseBtn")
+                t("connect_wallet")
             )}
           </button>
         </div>

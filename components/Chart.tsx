@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useRef } from 'react';
 import ReactECharts from "echarts-for-react";
 
 export const Chart = ({ 
   data = [3.35, 6.27, 3.85, 5.27, 6.34, 8.94, 5.36, 8.94, 10.42, 9, 14], 
   categories = ["", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEPT", ""] 
 }) => {
+  const containerRef = useRef(null);
+  const containerWidth = containerRef.current ? containerRef.current.offsetWidth : window.innerWidth;
+    const isMobile = containerWidth <= 768;
     const options = {
         tooltip: {
             trigger: "axis",
@@ -47,7 +50,7 @@ export const Chart = ({
               show: true,
               color: "rgba(255, 255, 255, 0.5)",
               fontSize: 12,
-              padding: [20, 0, 0, 0]  
+              padding: [20, 0, 0, 0],
             },
           },
         yAxis: {
@@ -68,7 +71,8 @@ export const Chart = ({
             formatter: "{value} %",
             color: "rgba(255, 255, 255, 0.5)",
             fontSize: 12,
-            padding: [0, 20, 0, 0] 
+            padding: isMobile ? [0, 5, 0, 0] : [0, 20, 0, 0],
+            margin: 5,
           },
           splitLine: {
             show: true,
@@ -120,7 +124,7 @@ export const Chart = ({
       };
 
   return (
-    <ReactECharts option={options} style={{ height: "480px", width: "100%", maxWidth: "1000px", marginTop: "-17px" }} />
+    <ReactECharts option={options} style={{ height: "510px", width: "100%", maxWidth: "1000px", marginTop: "-50px" }} />
   );
 };
 

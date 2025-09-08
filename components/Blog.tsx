@@ -11,17 +11,17 @@ export const Blog = (): React.ReactElement => {
   const posts = t("blog.posts", { returnObjects: true }) as BlogPost[];
 
   return (
-    <section className="w-full max-w-7xl mx-auto">
-        <div id="blog" className="blog-bg w-full container mx-auto max-w-[1615px] pb-28">
+    <section className="w-full max-w-7xl px-6 xl:px-0 xl:mx-auto">
+        <div id="blog" className="blog-bg w-full container mx-auto  pb-16">
           <div className="flex align-center justify-center sm:bg-black/90 rounded-lg sm:my-6 sm:py-6 pt-4 ">
             <h2 className="font-normal text-white text-base sm:text-3xl text-center tracking-[0] leading-[59.1px] ">
               {t("section_title_blog")}
             </h2>
           </div>
           <div className="flex flex-wrap lg:flex-nowrap justify-center gap-[20px] mb-12">
-          {posts.slice(1, 4).map((article, index) => (
+          {posts.slice(0, 3).map((article, index) => (
             
-            <Card className="w-full flex flex-col max-w-[411px]  bg-[#f3f3f3e6] rounded-[8px] border-0 overflow-hidden" key={article.id}>
+            <Card className=" w-full flex flex-col max-w-[411px]  bg-[#f3f3f3e6] rounded-[8px] border-0 overflow-hidden" key={article.id}>
                 <div className="relative">
                     <img
                         className="w-full h-[206px] object-cover"
@@ -51,9 +51,13 @@ export const Blog = (): React.ReactElement => {
                     </div>
                     
                     <div className="flex flex-col gap-3">
-                      <h3 className="w-[292.05px] font-bold text-white text-[21px] tracking-[0] leading-[normal]">
+                      <Link
+                        href={`/blog/${article.slug}`}
+                        className="w-[292.05px] font-bold text-white text-[21px] tracking-[0] leading-[normal]"
+                        aria-label={`Read more about ${article.title}`}
+                      >
                           {article.title}
-                      </h3>
+                      </Link>
                       <p className="font-normal text-[#A6A6A6] text-base tracking-[0] leading-6">
                         {truncateText(article.excerpt, 100)} 
                       </p>

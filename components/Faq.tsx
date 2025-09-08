@@ -18,10 +18,10 @@ export const Faq = (): React.ReactElement => {
   };
 
   return (
-    <section id="faq" className="mx-auto max-w-7xl mx-4 rounded-lg">
-      <div className="mx-auto max-w-7xl mx-4 sm:rounded-lg pt-12 pb-20 backdrop-blur-[7px] backdrop-brightness-[100%] bg-transparent sm:[background:linear-gradient(62.12deg,rgba(0,0,0,0.7)_49.21%,rgba(25,163,255,0.7)_126.89%)]">
+    <section id="faq" className="xl:mx-auto md:mx-3 max-w-7xl md:rounded-lg">
+      <div className="mx-auto max-w-7xl mx-4 md:rounded-lg pt-12 bp-18 sm:pb-20 backdrop-blur-[7px] backdrop-brightness-[100%] bg-transparent sm:[background:linear-gradient(62.12deg,rgba(0,0,0,0.7)_49.21%,rgba(25,163,255,0.7)_126.89%)]">
         <div className="container mx-auto relative z-10 pb-10 px-8">
-          <h2 className="text-3xl font-normal text-center mb-8 text-[#ffffff]">{t("faq_title")}</h2>
+          <h2 className="text-xl sm:text-3xl font-normal text-center mb-8 text-[#ffffff]">{t("faq_title")}</h2>
           <div className="faq-list relative z-[3] space-y-3 max-w-[842px] mx-auto">
             {faqItems.map((item, idx) => {
               const isOpen = openIndexes.includes(idx);
@@ -38,7 +38,7 @@ export const Faq = (): React.ReactElement => {
                     aria-expanded={isOpen}
                   >
                     <span 
-                      className="relative self-stretch  mt-[-1.00px] font-normal text-[#565656]  text-sm sm:text-[21px] tracking-[0] leading-6">
+                      className="relative self-stretch font-normal text-[#565656]  text-sm sm:text-[21px] tracking-[0] leading-6">
                         {item.question}
                     </span>
                     <span
