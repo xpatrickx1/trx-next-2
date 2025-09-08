@@ -1,7 +1,7 @@
 "use client";
 
-import { ChevronDownIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import Image from 'next/image'
 import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "../components/ui/button";
 import { useRouter } from "next/router";
@@ -12,7 +12,7 @@ interface NavItem {
   active: boolean;
 }
 
-export const Footer = (): React.ReactElement => {
+export default function Footer () {
   const { i18n, t } = useTranslation();
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const router = useRouter();
@@ -166,7 +166,7 @@ export const Footer = (): React.ReactElement => {
 
         <div className="flex gap-4 items-center relative md:ml-auto ml-0">
           <button onClick={() => router.push('/')} aria-label="Go to home" className="flex items-center">
-            <img src="/icons/logo.svg" alt="Logo" style={{ maxHeight: '40px' }} />
+            <Image src="/icons/logo.svg" width={160} height={40} alt="Logo" style={{ maxHeight: '40px' }} />
           </button>
           <div className="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 bg-[#58585866] text-[#19a3ff] text-sm">
             v.4.20

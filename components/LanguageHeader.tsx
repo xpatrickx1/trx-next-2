@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import Image from 'next/image';
 import { Button } from '../components/ui/button';
 import { useRouter } from 'next/router';
 import { useClickOutside } from '../utils/useClickOutside';
@@ -145,7 +146,7 @@ const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiv
       <div className="flex flex-1 justify-between items-center mx-auto max-w-7xl">
         <div className="flex gap-4 items-center relative">
           <button onClick={() => router.push('/')} aria-label="Go to home" className="flex items-center">
-            <img src="/icons/logo.svg" alt="Logo" style={{ maxHeight: '40px' }} />
+            <Image src="/icons/logo.svg" width={160} height={40} alt="Logo" style={{ maxHeight: '40px' }} />
           </button>
           <div className="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 bg-[#58585866] text-[#19a3ff] text-sm">
             v.4.20

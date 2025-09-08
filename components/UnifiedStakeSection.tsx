@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import Image from 'next/image';
 import {BeatLoader, CircleLoader, ClipLoader, DotLoader} from "react-spinners";
 import {router} from "next/client";
 import { useBinanceRate } from '../hooks/useBinanceRate';
@@ -11,13 +12,13 @@ const ENERGY_OPTIONS = [
   { count: 100, energy: 1000 },
 ];
 
-const APY_RATE = 29.52; // APY відсоток
+const APY_RATE = 29.52;
 
 interface UnifiedStakeSectionProps {
   onOpenWalletModal: () => void;
   isConnecting: boolean;
   connectWallet: () => void;
-  sectionType: 'USDT' | 'TRX' | 'sUSDT' | 'sTRX'; // тип секції для ізоляції стану
+  sectionType: 'USDT' | 'TRX' | 'sUSDT' | 'sTRX';
 }
 
 const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
@@ -134,7 +135,7 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
                     {sectionType}
                   </div>
 
-                  <img src={`icons/${sectionType.toLowerCase()}.svg`} alt={sectionType} className="w-5 h-5"/>
+                  <Image src={`icons/${sectionType.toLowerCase()}.svg`} width={20} height={20} alt={sectionType} className="w-5 h-5"/>
                 </div>
               </div>
             </div>

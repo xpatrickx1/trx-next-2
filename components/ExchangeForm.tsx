@@ -16,12 +16,7 @@ import UnifiedStakeSection from "./UnifiedStakeSection";
 import TabsBlockWithLogic from "./TabsBlockWithLogic";
 import LanguageHeader from "./LanguageHeader";
 import { useClickOutside } from "../utils/useClickOutside";
-import { HowToUse } from "./HowToUse";
 import StakeSection from "./StakeSection";
-import { Introduction } from "./Introduction";
-import { Faq } from "./Faq";
-import { Blog } from "./Blog";
-import { Footer } from "./Footer";
 import GradientLoader from "./GradientLoader";
 import {router} from "next/client";
 
@@ -431,17 +426,10 @@ export default function ExchangeForm() {
                     </div>
 
 
-                    <section className="introduction md:mx-3 xl:mx-auto z-[2] relative mx-auto max-w-7xl mx-4 md:mb-6 md:rounded-lg pt-12 pb-20 sm:px-8 backdrop-blur-[7px] backdrop-brightness-[100%] [background:radial-gradient(51.86%_173.38%_at_96.7%_5.83%,rgba(25,163,255,0.6)_14.9%,rgba(0,0,0,0.6)_52.88%)]">
-                        <Introduction />
-                        <div id="chart" style={{ width: '100%', height: '100%' }}></div>
-                    </section>
                     
-                    <Faq />
-                    <HowToUse />
-                    <Blog />
                 </div>
             </div>
-            <Footer />
+           
         </div>
     );
 }

@@ -6,7 +6,7 @@ type FaqItem = {
   answer: string;
 };
 
-export const Faq = (): React.ReactElement => {
+export default function Faq () {
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
   const { t } = useTranslation();
   const faqItems = t("faq", { returnObjects: true }) as FaqItem[];

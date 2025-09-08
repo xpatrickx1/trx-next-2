@@ -2,12 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import Image from 'next/image';
 import Link from "next/link";
 import { Card, CardContent } from "../../components/ui/card";
 import { truncateText } from "../../utils/truncateText";
 import { BlogPost } from "../../types/BlogPost";
 
-export const BlogArticle = (): React.ReactElement => {
+export default function BlogArticle () {
   const { t, ready } = useTranslation("common");
   const [englishSlugs, setEnglishSlugs] = useState<{ id: number; slug: string }[]>([]);
 
@@ -61,10 +62,12 @@ export const BlogArticle = (): React.ReactElement => {
           // <article key={idx} className="w-full max-w-[411px] justify-self-center">
             <Card className=" w-full flex flex-col max-w-[411px]  bg-[#f3f3f3e6] rounded-[8px] border-0 overflow-hidden " key={post.id}>
               <div className="relative">
-                <img
+                <Image
                   className="w-full h-[206px] object-cover"
                   alt={post.title}
                   src={post.imageUrl}
+                  width={411}
+                  height={206}
                 />
               </div>
               <CardContent className="flex flex-col justify-between gap-6 p-4 xl:p-14 pt-9 flex-1 bg-[radial-gradient(51.86%_153.38%_at_117%_75.83%,rgba(25,163,255,0.6)_10.9%,rgba(0,0,0,0.9)_92.88%)]">

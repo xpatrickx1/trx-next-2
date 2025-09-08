@@ -1,13 +1,17 @@
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useTranslation } from "react-i18next";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
 import fs from "fs/promises";
 import path from "path";
 import { BlogPost } from "../../types/BlogPost";
 import LanguageHeader from "../../components/LanguageHeader";
-import { Footer } from "../../components/Footer";
+
+const Footer = dynamic(() => import("../../components/Footer"), {
+  ssr: false,
+});
 
 interface BlogPostPageProps {
   post: BlogPost | null;

@@ -1,9 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import dynamic from "next/dynamic";
 
 import LanguageHeader from "../components/LanguageHeader";
-import { Footer } from "../components/Footer";
+
+const Footer = dynamic(() => import("../components/Footer"), {
+  ssr: false,
+});
 
 export default function ThankYou() {
   const { t } = useTranslation();

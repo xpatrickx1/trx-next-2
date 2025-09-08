@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useTranslation, Trans } from 'react-i18next'; 
+import Image from 'next/image';
 import TabsBlockWithLogic from './TabsBlockWithLogic'; // Адаптуй шлях
 
 const StakeSection = ({
@@ -94,10 +95,12 @@ const StakeSection = ({
               </div>
             </div>
             <div className="absolute sm:relative top-20 sm:top-4 right-0 z-[-1] sm:opacity-100">
-              <img
-                className="z-0 max-w-[385px]"
+              <Image
+                className="z-0 max-w-[385px] w-auto"
                 alt="Calculator"
                 src="icons/hero-card.svg"
+                width={385}
+                height={385}
               />
             </div>
           </div>

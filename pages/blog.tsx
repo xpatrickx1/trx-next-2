@@ -1,8 +1,19 @@
-import React from "react";''
+import React from "react";
+import dynamic from "next/dynamic";
 import LanguageHeader from "../components/LanguageHeader";
-import { BlogHero } from "../components/blog/BlogHero";
-import { BlogArticle } from "../components/blog/BlogArticle";
-import { Footer } from "../components/Footer";
+
+const BlogHero = dynamic(() => import("../components/blog/BlogHero"), {
+  ssr: false,
+});
+
+const BlogArticle = dynamic(() => import("../components/blog/BlogArticle"), {
+  ssr: false,
+});
+
+const Footer = dynamic(() => import("../components/Footer"), {
+  ssr: false,
+});
+
 
 export const Blog = (): React.ReactElement => {
   return (

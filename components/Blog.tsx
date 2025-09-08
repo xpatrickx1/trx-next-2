@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import { Button } from "../components/ui/button";
+import Image from 'next/image'
 import { Card, CardContent } from "../components/ui/card";
 import Link from "next/link";
 import { truncateText } from "../utils/truncateText";
 import { BlogPost } from "../types/BlogPost";
 
-export const Blog = (): React.ReactElement => {
+export default function Blog () {
   const { t } = useTranslation();
   const posts = t("blog.posts", { returnObjects: true }) as BlogPost[];
 
@@ -23,11 +23,12 @@ export const Blog = (): React.ReactElement => {
             
             <Card className=" w-full flex flex-col max-w-[411px]  bg-[#f3f3f3e6] rounded-[8px] border-0 overflow-hidden" key={article.id}>
                 <div className="relative">
-                    <img
-                        className="w-full h-[206px] object-cover"
-                        alt="Rectangle"
-                        src={article.imageUrl}
-                    />
+                  <Image
+                    src={article.imageUrl}
+                    width={500}
+                    height={500}
+                    alt="Picture post"
+                  />
                 </div>
         
                 <CardContent className={`flex flex-col justify-between gap-6 p-4 xl:p-14 pt-9 flex-1

@@ -6,7 +6,7 @@ type ExchangeItem = {
   description: string;
 };
 
-export const HowToUse = (): React.ReactElement => {
+export default function HowToUse () {
   const { t } = useTranslation();
   const steps = t("exchangeSteps", { returnObjects: true }) as ExchangeItem[];
   const exchangeSteps = steps.map((step, index) => ({

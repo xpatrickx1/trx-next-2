@@ -1,11 +1,12 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import Image from 'next/image';
 import Link from "next/link";
 import { Card, CardContent } from "../../components/ui/card";
 import { truncateText } from "../../utils/truncateText";
 import { BlogPost } from "../../types/BlogPost";
 
-export const BlogHero = (): React.ReactElement => {
+export default function BlogHero () {
   const { t } = useTranslation();
   const posts = t("blog.posts", { returnObjects: true }) as BlogPost[];
   const firstPost = posts[0] || {
@@ -18,7 +19,7 @@ export const BlogHero = (): React.ReactElement => {
   };
   
   return (
-    <section className="w-full animate-fade-in pt-[10rem] overflow-hidden mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full animate-fade-in pt-[6rem] overflow-hidden mx-auto px-4 sm:px-6 lg:px-8">
       <div className="relative mx-auto max-w-7xl mt-4 rounded-lg pt-8 sm:pt-12 pb-12 sm:pb-20 backdrop-blur-[14.2px] backdrop-brightness-[100%] bg-[radial-gradient(51.86%_173.38%_at_97%_5.83%,rgba(25,163,255,0.6)_14.9%,rgba(0,0,0,0.6)_52.88%)] rounded-lg relative">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 flex flex-col gap-4 sm:gap-5 lg:gap-6">
         <nav className="w-full max-w-7xl mx-auto text-sm sm:text-base text-white mb-4 sm:mb-2" aria-label="Breadcrumb">
@@ -45,10 +46,12 @@ export const BlogHero = (): React.ReactElement => {
             <CardContent className="p-0 h-auto">
               <div className="flex flex-col sm:flex-row h-full">
                 <div className="w-full sm:max-w-[300px] lg:max-w-[478px] h-full overflow-hidden rounded-b-0 rounded-t-2xl sm:rounded-l-2xl sm:rounded-r-none">
-                  <img
+                  <Image
                     className="w-full h-full object-cover"
                     alt={firstPost.title}
                     src={firstPost.imageUrl}
+                    width={478}
+                    height={300}
                   />
                 </div>
                 <div className="flex-1 p-4 sm:p-6 lg:p-[34px_34px_34px_62px] animate-fade-in">

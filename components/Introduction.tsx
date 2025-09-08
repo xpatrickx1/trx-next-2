@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useTranslation, Trans } from "react-i18next";
+import Image from 'next/image';
 import { Chart } from "./Chart";
 import { Card, CardContent } from "./ui/card";
 
@@ -8,7 +9,7 @@ type FeeItem = {
   fee_right: string;
 };
 
-export const Introduction = (): React.ReactElement => {
+export default function Introduction () {
   const { t } = useTranslation();
   const FeeItems = t("fees_list", { returnObjects: true }) as FeeItem[];
 
@@ -102,7 +103,7 @@ export const Introduction = (): React.ReactElement => {
             ))}
           </div>
           <div className="flex gap-3 items-center justify-center mt-4 sm:mt-2 font-normal text-[#1da5ff] text-md sm:text-base tracking-[0] leading-[normal] cursor-pointer hover:text-[#3ab0ff] transition-colors">
-          <img src="icons/freport.svg" alt="USDT" className="w-4 h-4"/>Finance Reports
+          <Image src="icons/freport.svg" width={16} height={16} alt="USDT" className="w-4 h-4"/>Finance Reports
           </div>
         </div>
       </div>
@@ -116,10 +117,12 @@ export const Introduction = (): React.ReactElement => {
           >
             <CardContent className="flex flex-col items-start gap-3 pl-4 sm:pl-[54px] pr-4 sm:pr-9 pt-4 sm:pt-[30px] pb-6 sm:pb-10">
               <div className="inline-flex items-center gap-3 relative flex-[0_0_auto]">
-                <img
+                <Image
                   className="relative w-6 h-5"
                   alt={token.name}
                   src={token.icon}
+                  width={24}
+                  height={24}
                 />
 
                 <div className="inline-flex items-center gap-4 sm:gap-6 relative flex-[0_0_auto]">
@@ -127,10 +130,12 @@ export const Introduction = (): React.ReactElement => {
                     {token.name}
                   </div>
 
-                  <img
+                  <Image
                     className="relative w-6 h-6 cursor-pointer hover:opacity-70 transition-opacity"
                     alt="Add"
                     src={token.addIcon}
+                    width={24}
+                    height={24}
                   />
                 </div>
               </div>
@@ -140,10 +145,12 @@ export const Introduction = (): React.ReactElement => {
                   {token.address}
                 </div>
 
-                <img
-                  className="relative w-[17.23px] h-[17.24px] cursor-pointer hover:opacity-70 transition-opacity"
+                <Image
+                  className="relative w-[17px] h-[17px] cursor-pointer hover:opacity-70 transition-opacity"
                   alt="Copy"
                   src={token.copyIcon}
+                  width={17}
+                  height={17}
                 />
               </div>
             </CardContent>
@@ -184,6 +191,6 @@ export const Introduction = (): React.ReactElement => {
           </div>
         </div>
       </div>
-</div>
+    </div>
   );
 };
