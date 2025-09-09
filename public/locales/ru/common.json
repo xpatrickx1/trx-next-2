@@ -118,8 +118,8 @@
     "orderCancelled": "Заказ отменён"
   },
 
-  "hero_subtitle_trx": "Стейкайте свой TRX, чтобы получить <highlight1>sTRX</highlight1> и <highlight1>зарабатывать двойную доходность</highlight1>",
-  "hero_subtitle_usdt": "Стейкайте свой USDT, чтобы получить <highlight1>sUSDT</highlight1> и <highlight1>зарабатывать двойную доходность</highlight1>",
+  "hero_subtitle_trx": "Стейкайте свой TRX, чтобы получить <highlight1>sTRX</highlight1> \n и <highlight1>зарабатывать двойную доходность</highlight1>",
+  "hero_subtitle_usdt": "Стейкайте свой USDT, чтобы получить <highlight1>sUSDT</highlight1>  \n  и <highlight1>зарабатывать двойную доходность</highlight1>",
 "hero_staked_trx_text": "Застейкано TRX",
 "hero_staked_usdt_text": "Застейкано USDT",
 "flashExchange": "Стейкать",

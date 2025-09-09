@@ -116,8 +116,8 @@
     "orderCancelled": "Commande annulée"
   },
 
-  "hero_subtitle_trx": "Stakez votre TRX pour obtenir <highlight1>sTRX</highlight1> et <highlight1>gagner un rendement double</highlight1>",
-  "hero_subtitle_usdt": "Stakez votre USDT pour obtenir <highlight1>sUSDT</highlight1> et <highlight1>gagner un rendement double</highlight1>",
+  "hero_subtitle_trx": "Stakez votre TRX pour obtenir <highlight1>sTRX</highlight1> \n et <highlight1>gagner un rendement double</highlight1>",
+  "hero_subtitle_usdt": "Stakez votre USDT pour obtenir <highlight1>sUSDT</highlight1> \n et <highlight1>gagner un rendement double</highlight1>",
   "hero_staked_trx_text": "TRX staké",
   "hero_staked_usdt_text": "USDT staké",
   "flashExchange": "Staker",

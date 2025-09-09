@@ -123,7 +123,8 @@
       "back": "Zurück zur Startseite"
     },
 
-  "hero_subtitle": "Setzen Sie Ihr TRX ein, um <highlight1>sTRX</highlight1> zu erhalten und <highlight1>doppelte Erträge zu verdienen</highlight1>",
+    "hero_subtitle_usdt": "Setzen Sie Ihre USDT ein, um <highlight1>sUSDT</highlight1> \n zu erhalten und <highlight1>den doppelten Ertrag zu erzielen</highlight1>",
+  "hero_subtitle_trx": "Setzen Sie Ihr TRX ein, um <highlight1>sTRX</highlight1> \n zu erhalten und <highlight1>doppelte Erträge zu verdienen</highlight1>",
   "hero_staked_trx_text": "Eingesetztes TRX",
   "hero_staked_usdt_text": "Eingesetztes USDT",
   "flashExchange": "Einsetzen",

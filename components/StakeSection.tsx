@@ -24,10 +24,10 @@ const StakeSection = ({
       className="relative mb-0 md:mb-6 flex flex-col items-center lg:items-start md:rounded-2xl max-w-7xl xl:mx-auto justify-between md:mx-3 pt-[6rem] sm:pt-[10rem]"
     >
       <div className="flex gap-2 md:gap-20 pl-[32px] md:pl-0 mb-10 flex-wrap">
-        <h2 className="font-bold text-left text-[40px] md:text-[55px] max-w-sm relative z-10">
+        <h2 className="font-bold text-left text-[40px] md:text-[55px] max-w-fit relative z-10 whitespace-nowrap">
           <span className="text-white">{t(titleKey)}</span>
         </h2>
-        <div className="w-[200px] sm:w-[283px] text-left font-normal text-white text-base leading-[normal]">
+        <div className="w-full whitespace-pre-line sm:w-[370px] text-left font-normal text-white text-base leading-[normal]">
           <Trans
             i18nKey={description}
             components={{

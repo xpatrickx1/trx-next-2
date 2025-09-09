@@ -118,8 +118,8 @@
   },
 
   "connect_wallet": "Conectar wallet",
-  "hero_subtitle_trx": "Apostea tu TRX para obtener <highlight1>sTRX</highlight1> y <highlight1>ganar rendimiento doble</highlight1>",
-  "hero_subtitle_usdt": "Apostea tu USDT para obtener <highlight1>sUSDT</highlight1> y <highlight1>ganar rendimiento doble</highlight1>",
+  "hero_subtitle_trx": "Apostea tu TRX para obtener <highlight1>sTRX</highlight1> \n y <highlight1>ganar rendimiento doble</highlight1>",
+  "hero_subtitle_usdt": "Apostea tu USDT para obtener <highlight1>sUSDT</highlight1> \n y <highlight1>ganar rendimiento doble</highlight1>",
   "hero_staked_trx_text": "TRX apostado",
   "hero_staked_usdt_text": "USDT apostado",
   "flashExchange": "Apostar",

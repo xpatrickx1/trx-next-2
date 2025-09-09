@@ -127,8 +127,8 @@
     "orderCancelled": "Order has been cancelled"
   },
 
-  "hero_subtitle_trx": "Stake your TRX to get <highlight1>sTRX</highlight1> and <highlight1>earn double yield</highlight1>",
-  "hero_subtitle_usdt": "Stake your USDT to get <highlight1>sUSDT</highlight1> and <highlight1>earn double yield</highlight1>",
+  "hero_subtitle_trx": "Stake your TRX to get <highlight1>sTRX</highlight1> \n and <highlight1>earn double yield</highlight1>",
+  "hero_subtitle_usdt": "Stake your USDT to get <highlight1>sUSDT</highlight1> \n and <highlight1>earn double yield</highlight1>",
   "staking_apy": "Staking APY",
   "card_text": "The yields consist of voting rewards from TRON governance and yields from Energy rental",
   "introduction" : "Introduction",

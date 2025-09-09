@@ -114,8 +114,8 @@
     "orderCancelled": "Pedido cancelado"
   },
 
-  "hero_subtitle_trx": "Aposte seu TRX para obter <highlight1>sTRX</highlight1> e <highlight1>ganhar rendimento duplo</highlight1>",
-  "hero_subtitle_usdt": "Aposte seu USDT para obter <highlight1>sUSDT</highlight1> e <highlight1>ganhar rendimento duplo</highlight1>",
+  "hero_subtitle_trx": "Aposte seu TRX para obter <highlight1>sTRX</highlight1> \n e <highlight1>ganhar rendimento duplo</highlight1>",
+  "hero_subtitle_usdt": "Aposte seu USDT para obter <highlight1>sUSDT</highlight1> \n e <highlight1>ganhar rendimento duplo</highlight1>",
 "hero_staked_trx_text": "TRX apostado",
 "hero_staked_usdt_text": "USDT apostado",
 "flashExchange": "Apostar",
