@@ -1256,3 +1256,8 @@ button:focus {
 #faq {
   font-family: Public Sans;
 }
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 type FaqItem = {
@@ -8,8 +8,13 @@ type FaqItem = {
 
 export default function Faq () {
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
-  const { t } = useTranslation();
-  const faqItems = t("faq", { returnObjects: true }) as FaqItem[];
+  const { t, i18n } = useTranslation();
+  const [faqItems, setFaqItems] = useState<FaqItem[]>([]);
+  
+  useEffect(() => {
+    const items = t("faq", { returnObjects: true }) as FaqItem[] || [];
+    setFaqItems(items);
+  }, [t, i18n.language]);
 
   const toggle = (idx: number) => {
     setOpenIndexes((prev) =>
@@ -21,15 +26,18 @@ export default function Faq () {
     <section id="faq" className="xl:mx-auto md:mx-3 max-w-7xl md:rounded-lg">
       <div className="mx-auto max-w-7xl mx-4 md:rounded-lg pt-12 bp-18 sm:pb-20 backdrop-blur-[7px] backdrop-brightness-[100%] bg-transparent sm:[background:linear-gradient(62.12deg,rgba(0,0,0,0.7)_49.21%,rgba(25,163,255,0.7)_126.89%)]">
         <div className="container mx-auto relative z-10 pb-10 px-8">
-          <h2 className="text-xl sm:text-3xl font-normal text-center mb-8 text-[#ffffff]">{t("faq_title")}</h2>
+          <h2 className="text-xl sm:text-3xl font-normal text-center mb-8 text-[#ffffff]">
+            {t("faq_title") || "Staking FAQs"}
+          </h2>
           <div className="faq-list relative z-[3] space-y-3 max-w-[842px] mx-auto">
-            {faqItems.map((item, idx) => {
+            {
+              faqItems.map((item, idx) => {
               const isOpen = openIndexes.includes(idx);
               return (
                 <div
                   key={idx}
                   className={` rounded-2xl backdrop-blur-[10px] overflow-hidden shadow-sm ${
-                    isOpen ? '' : ''
+                    isOpen ? "bg-black/60" : "bg-black/50"
                   }`}
                 >
                   <button
@@ -38,7 +46,7 @@ export default function Faq () {
                     aria-expanded={isOpen}
                   >
                     <span 
-                      className="relative self-stretch font-normal text-[#565656]  text-sm sm:text-[21px] tracking-[0] leading-6">
+                      className="relative self-stretch font-normal text-[#565656]  text-sm sm:text-[21px] leading-6">
                         {item.question}
                     </span>
                     <span
@@ -59,9 +67,10 @@ export default function Faq () {
                       {item.answer}
                       </div>
                   </div>
-            </div>
+                </div>
               );
-            })}
+            })
+          }
           </div>
         </div>
       </div>

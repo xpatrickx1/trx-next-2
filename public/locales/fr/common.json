@@ -115,7 +115,7 @@
     "paymentError": "Erreur pendant le paiement, veuillez vérifier le portefeuille.",
     "orderCancelled": "Commande annulée"
   },
-
+  "copied" : "Copié",
   "hero_subtitle_trx": "Stakez votre TRX pour obtenir <highlight1>sTRX</highlight1> \n et <highlight1>gagner un rendement double</highlight1>",
   "hero_subtitle_usdt": "Stakez votre USDT pour obtenir <highlight1>sUSDT</highlight1> \n et <highlight1>gagner un rendement double</highlight1>",
   "hero_staked_trx_text": "TRX staké",
@@ -217,8 +217,8 @@
         {
           "id": 1,
           "slug": "how-does-crypto-staking-work",
-          "date": "04 Septembre",
-          "readTime": "6 min.",
+          "date": "3 Septembre",
+          "readTime": "12 min.",
           "title": "Comment fonctionne le staking de crypto ?",
           "excerpt": "Le staking de crypto-monnaies permet aux utilisateurs de verrouiller leurs jetons pour soutenir les réseaux blockchain et gagner des récompenses. Contrairement au minage, le staking utilise un mécanisme de preuve d’enjeu (PoS), plus économe en énergie et plus accessible.",
           "imageUrl": "/icons/blog1.png",
@@ -232,8 +232,8 @@
         {
           "id": 2,
           "slug": "crypto-restaking-complete-guide",
-          "date": "04 Septembre",
-          "readTime": "7 min.",
+          "date": "27 August",
+          "readTime": "5 min.",
           "title": "Le restaking en crypto : Guide complet",
           "excerpt": "Le restaking est une nouvelle stratégie DeFi qui permet aux stakers de maximiser leurs récompenses en réutilisant leurs actifs jalonnés sur plusieurs protocoles. Cela augmente les opportunités de rendement, mais implique également des risques plus élevés.",
           "imageUrl": "/icons/blog2.png",
@@ -247,8 +247,8 @@
         {
           "id": 3,
           "slug": "how-to-earn-cryptocurrency",
-          "date": "04 Septembre",
-          "readTime": "5 min.",
+          "date": "29 July",
+          "readTime": "7 min.",
           "title": "Comment gagner des crypto-monnaies",
           "excerpt": "Il existe de nombreuses façons de gagner des crypto-monnaies : staking, minage, trading, fourniture de liquidité et même jeux play-to-earn. Chaque méthode présente ses propres risques et récompenses.",
           "imageUrl": "/icons/blog3.png",

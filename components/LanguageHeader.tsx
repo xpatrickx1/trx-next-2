@@ -149,7 +149,7 @@ const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiv
             <Image src="/icons/logo.svg" width={160} height={40} alt="Logo" style={{ maxHeight: '40px' }} />
           </button>
           <div className="inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 bg-[#58585866] text-[#19a3ff] text-sm">
-            v.4.20
+            v 1.5.4
           </div>
         </div>
 
@@ -208,7 +208,7 @@ const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiv
         <div className="relative hidden md:flex language-selector h-auto bg-[#0d0d0d96] rounded-md border border-[#FFFBFB14] text-white transition-opacity" style={{ width: '95px' }}>
           <button
             onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-            className="w-full opacity-50 justify-center gap-2 text-black px-6 py-[10px] duration-200 flex items-center justify-between"
+            className="w-full opacity-50 justify-center gap-2 text-black px-6 py-[10px] duration-200 flex items-center justify-between hover:opacity-100"
             aria-haspopup="listbox"
             aria-expanded={isLanguageOpen}
           >
@@ -237,7 +237,7 @@ const LanguageHeader: React.FC<LanguageHeaderProps> = ({ activeSection, setActiv
                     changeLanguage(lang.code);
                     setIsLanguageOpen(false);
                   }}
-                  className={`opacity-50 px-3 py-2 text-sm cursor-pointer outline-none hover:text-blue-600 transition-colors duration-150 ${
+                  className={`opacity-50 px-3 py-2 text-sm cursor-pointer outline-none hover:text-white hover:opacity-100 transition-all duration-150 ${
                     i18n.language === lang.code ? 'bg-black-50 text-blue-600 font-medium' : 'text-white-700'
                   }`}
                 >

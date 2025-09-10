@@ -54,6 +54,7 @@ export default function Blog () {
                     <div className="flex flex-col gap-3">
                       <Link
                         href={`/blog/${article.slug}`}
+                        target="_blank"
                         className="w-[292.05px] font-bold text-white text-[21px] tracking-[0] leading-[normal]"
                         aria-label={`Read more about ${article.title}`}
                       >

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import Image from 'next/image';
 import { Chart } from "./Chart";
@@ -12,26 +12,27 @@ type FeeItem = {
 export default function Introduction () {
   const { t } = useTranslation();
   const FeeItems = t("fees_list", { returnObjects: true }) as FeeItem[];
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
   const tokenCards = [
     {
       icon: "/icons/stusdt.svg",
       name: "stUSDT",
-      address: "TThzxNRLrW...d9udCWEdZ3",
+      address: "TThzxNRLrTR7NHqjeKQotSzgjLj6tW2d9udCWEdZ3",
       addIcon: "/icons/addw.svg",
       copyIcon: "/icons/copy.svg",
     },
     {
       icon: "/icons/cusdt.svg",
       name: "USDT",
-      address: "TR7NHqjeKQ...otSzgjLj6t",
+      address: "TR7NHqjeKQTR7NHqjeKQotSzgjLj6totSzgjLj6t",
       addIcon: "/icons/addw.svg",
       copyIcon: "/icons/copy.svg",
     },
     {
       icon: "/icons/tusd2.svg",
       name: "TUSDT",
-      address: "TUpMhErZL2...okS4GjC1F4",
+      address: "TUpMhErZLTR7NHqjeKQotSzgjLj6t2okS4GjC1F4",
       addIcon: "/icons/addw.svg",
       copyIcon: "/icons/copy.svg",
     },
@@ -42,6 +43,21 @@ export default function Introduction () {
     { label: t("last_30_days"), value: "4.44%", color: "#18a0fb" },
     { label: t("since_inception"), value: "3.83%", color: "#18a0fb" },
   ];
+
+  const truncateAddress = (address: string) => {
+    if (address.length <= 20) return address;
+    return `${address.slice(0, 10)}...${address.slice(-10)}`;
+  };
+
+  const handleCopyAddress = async (address: string, index: number) => {
+    try {
+      await navigator.clipboard.writeText(address);
+      setCopiedIndex(index);
+      setTimeout(() => setCopiedIndex(null), 2000);
+    } catch (err) {
+      console.error('Failed to copy address:', err);
+    }
+  };
   
 
   return (
@@ -102,9 +118,9 @@ export default function Introduction () {
               </div>
             ))}
           </div>
-          <div className="flex gap-3 items-center justify-center mt-4 sm:mt-2 font-normal text-[#1da5ff] text-md sm:text-base tracking-[0] leading-[normal] cursor-pointer hover:text-[#3ab0ff] transition-colors">
-          <Image src="icons/freport.svg" width={16} height={16} alt="USDT" className="w-4 h-4"/>Finance Reports
-          </div>
+          <a href="/" target="_blank" className="flex gap-3 items-center justify-center mt-4 sm:mt-2 font-normal text-[#1da5ff] text-md sm:text-base tracking-[0] leading-[normal] cursor-pointer hover:text-[#3ab0ff] transition-colors">
+            <Image src="icons/freport.svg" width={16} height={16} alt="USDT" className="w-4 h-4"/>Finance Reports
+          </a>
         </div>
       </div>
 
@@ -130,28 +146,43 @@ export default function Introduction () {
                     {token.name}
                   </div>
 
-                  <Image
-                    className="relative w-6 h-6 cursor-pointer hover:opacity-70 transition-opacity"
-                    alt="Add"
-                    src={token.addIcon}
-                    width={24}
-                    height={24}
-                  />
+                  <a href="/" target="_blank">
+                    <Image
+                      className="relative w-6 h-6 cursor-pointer hover:opacity-70 transition-opacity"
+                      alt="Add"
+                      src={token.addIcon}
+                      width={24}
+                      height={24}
+                    />
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
                 <div className="relative w-fit mt-[-1.00px] opacity-40 [font-family:'Space_Grotesk',Helvetica] font-light text-white text-xs sm:text-sm tracking-[0] leading-[normal] underline cursor-pointer hover:opacity-60 transition-opacity">
-                  {token.address}
+                  {truncateAddress(token.address)}
                 </div>
 
-                <Image
-                  className="relative w-[17px] h-[17px] cursor-pointer hover:opacity-70 transition-opacity"
-                  alt="Copy"
-                  src={token.copyIcon}
-                  width={17}
-                  height={17}
-                />
+                <div className="relative">
+                  <span 
+                    className="cursor-pointer copy"
+                    onClick={() => handleCopyAddress(token.address, index)}
+                  >
+                    <Image
+                      className="relative w-[17px] h-[17px] cursor-pointer hover:opacity-70 transition-opacity"
+                      alt="Copy"
+                      src={token.copyIcon}
+                      width={17}
+                      height={17}
+                    />
+                  </span>
+                  
+                  {copiedIndex === index && (
+                    <div className="absolute top-[-35px] left-1/2 transform -translate-x-1/2 bg-[#1F1F1F] text-white text-xs px-2 py-1 rounded-md shadow-lg whitespace-nowrap z-10">
+                      {t("copied")}
+                    </div>
+                  )}
+                </div>
               </div>
             </CardContent>
           </Card>

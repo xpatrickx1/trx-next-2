@@ -12,7 +12,7 @@ const ENERGY_OPTIONS = [
   { count: 100, energy: 1000 },
 ];
 
-const APY_RATE = 29.52;
+const APY_RATE = 16.71;
 
 interface UnifiedStakeSectionProps {
   onOpenWalletModal: () => void;
@@ -86,18 +86,43 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Розрахунки для стейкінгу
-  const trxAmount = energyValue;
-  const usdAmount = trxRate ? trxAmount * trxRate : 0;
-  const apyReward = (trxAmount * APY_RATE) / 100;
-  const apyRewardUsd = trxRate ? apyReward * trxRate : 0;
+  const inputAmount = energyValue;
+  
+  let stakedAmount = 0;
+  let rewardAmount = 0;
+  let rewardAmountUsd = 0;
+  let ratioText = "";
+  
+  if (sectionType === 'USDT') {
+    stakedAmount = inputAmount;
+    rewardAmount = (inputAmount * APY_RATE) / 100;
+    rewardAmountUsd = rewardAmount;
+    ratioText = "1 USDT = 1 sUSDT";
+  } else if (sectionType === 'sUSDT') {
+    stakedAmount = inputAmount * 0.999; 
+    rewardAmount = 0;
+    rewardAmountUsd = 0;
+    ratioText = "1 sUSDT = 1-0.1% USDT";
+  } else if (sectionType === 'TRX') {
+    const trxToUsdtRate = 0.3345;
+    stakedAmount = inputAmount * trxToUsdtRate;
+    rewardAmount = (stakedAmount * APY_RATE) / 100;
+    rewardAmountUsd = rewardAmount;
+    ratioText = "1 TRX = 1 sTRX";
+  } else if (sectionType === 'sTRX') {
+    const trxToUsdtRate = 0.3345;
+    stakedAmount = inputAmount / trxToUsdtRate;
+    rewardAmount = 0;
+    rewardAmountUsd = 0;
+    ratioText = "1 sTRX = 1-0.1% TRX";
+  }
 
   return (
       <div id={`${sectionType.toLowerCase()}-section`} className="rounded-lg pb-20 sm:pb-8 px-8 md:px-12">
         <div className="relative">
           
-          <div className="flex gap-6 sm:gap-3 flex-wrap sm:flex-nowrap">
-            <div className="flex flex-col">
+          <div className={`flex gap-6 sm:gap-3 flex-wrap ${(sectionType === 'sUSDT' || sectionType === 'sTRX') ? 'sm:flex-nowrap' : 'sm:flex-nowrap'}`}>
+            <div className={`flex flex-col ${(sectionType === 'sUSDT' || sectionType === 'sTRX') ? 'w-full' : 'w-full sm:w-[65%]'}`}>
             <div className="flex justify-between items-center ">
               <label className="font-normal text-left text-sm text-white opacity-60 mb-2">
                 {sectionType === 'USDT' ? t("getEnergy") : t("getEnergy")}
@@ -108,7 +133,7 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
               <input
                   type="text"
                   id={`${sectionType.toLowerCase()}_display`}
-                  className="py-3 w-[50%] text-white bg-transparent"
+                  className={`py-3 text-white bg-transparent ${(sectionType === 'sUSDT' || sectionType === 'sTRX') ? 'w-[70%]' : 'w-[50%]'}`}
                   style={{
                     MozAppearance: "textfield" as any,
                   }}
@@ -127,7 +152,10 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
                 style={{
                   fontFamily: "Space Grotesk",
                 }}>
-                  ≈ ${usdAmount.toFixed(2)}
+                  ≈ ${stakedAmount.toFixed(2)}
+                  {(sectionType === 'sUSDT' || sectionType === 'sTRX') && (
+                    <span className="text-red-400 text-sm ml-1">-0.1%</span>
+                  )}
                 </div>
 
                 <div className="inline-flex items-center gap-3 relative flex-[0_0_auto]">
@@ -140,26 +168,29 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
               </div>
             </div>
             </div>
-            <div className="flex flex-col w-full sm:w-auto">
-              <div className="flex justify-start sm:justify-between items-center ">
-                <div className="font-normal text-left text-sm text-white opacity-60 mb-2">
-                  {t("reward")} {sectionType} APY
+            {/* Reward секція тільки для стейкінгу */}
+            {(sectionType === 'USDT' || sectionType === 'TRX') && (
+              <div className="flex flex-col w-full sm:w-[35%]">
+                <div className="flex justify-start sm:justify-between items-center ">
+                  <div className="font-normal text-left text-sm text-white opacity-60 mb-2">
+                    {t("reward")} {sectionType} APY
+                  </div>
                 </div>
-              </div>
-              <div className="w-full sm:min-w-[190px] h-[60px] border border-[#060606] justify-between rounded-md px-4 py-0 bg-[#060606] flex items-center relative">
-                <div className="relative w-fit [font-family:'Space_Grotesk',Helvetica] font-normal text-[#3ab0ff] text-[21px] tracking-[0] leading-[normal]">
-                  {APY_RATE}
-                </div>
+                <div className="w-full sm:min-w-[190px] h-[60px] border border-[#060606] justify-between rounded-md px-4 py-0 bg-[#060606] flex items-center relative">
+                  <div className="relative w-fit [font-family:'Space_Grotesk',Helvetica] font-normal text-[#3ab0ff] text-[21px] tracking-[0] leading-[normal]">
+                    {APY_RATE}%
+                  </div>
 
-                <div className="justify-end gap-3 flex items-center relative">
-                  <div className="inline-flex items-center gap-3 relative flex-[0_0_auto] ml-[-6.00px]">
-                    <div className="relative w-fit mt-[-1.00px] opacity-30 [font-family:'Space_Grotesk',Helvetica] font-light text-white text-[21px] tracking-[0] leading-[normal]">
-                      ≈ ${apyRewardUsd.toFixed(2)}
+                  <div className="justify-end gap-3 flex items-center relative">
+                    <div className="inline-flex items-center gap-3 relative flex-[0_0_auto] ml-[-6.00px]">
+                      <div className="relative w-fit mt-[-1.00px] opacity-30 [font-family:'Space_Grotesk',Helvetica] font-light text-white text-[21px] tracking-[0] leading-[normal]">
+                        ≈ ${rewardAmountUsd.toFixed(2)}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
         <div className="right-2 flex items-center rounded-lg gap-2 py-6 sm:py-3 flex-wrap sm:flex-nowrap">
@@ -185,7 +216,7 @@ const UnifiedStakeSection: React.FC<UnifiedStakeSectionProps> = ({
           </div>
 
           <div className="opacity-30 font-normal text-white text-sm leading-[normal]">
-            1 {sectionType} = {trxRate} {sectionType}
+            {ratioText}
           </div>
         </div>
 

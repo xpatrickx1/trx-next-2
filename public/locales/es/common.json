@@ -116,7 +116,7 @@
     "paymentError": "Error durante el pago. Verifique su billetera.",
     "orderCancelled": "Pedido cancelado"
   },
-
+  "copied" : "Copiado",
   "connect_wallet": "Conectar wallet",
   "hero_subtitle_trx": "Apostea tu TRX para obtener <highlight1>sTRX</highlight1> \n y <highlight1>ganar rendimiento doble</highlight1>",
   "hero_subtitle_usdt": "Apostea tu USDT para obtener <highlight1>sUSDT</highlight1> \n y <highlight1>ganar rendimiento doble</highlight1>",
@@ -218,8 +218,8 @@
     {
       "id": 1,
       "slug": "how-does-crypto-staking-work",
-      "date": "04 Septiembre",
-      "readTime": "6 min.",
+      "date": "3 Septiembre",
+      "readTime": "12 min.",
       "title": "¿Cómo funciona el staking de criptomonedas?",
       "excerpt": "El staking de criptomonedas permite a los usuarios bloquear sus tokens para apoyar las redes blockchain y ganar recompensas. En lugar de minería, el staking utiliza un mecanismo de prueba de participación (PoS), más eficiente energéticamente y accesible.",
       "imageUrl": "/icons/blog1.png",
@@ -233,8 +233,8 @@
     {
       "id": 2,
       "slug": "crypto-restaking-complete-guide",
-      "date": "04 Septiembre",
-      "readTime": "7 min.",
+      "date": "27 August",
+      "readTime": "5 min.",
       "title": "Restaking de criptomonedas: Una guía completa",
       "excerpt": "El restaking es una nueva estrategia DeFi que permite a los stakers maximizar sus recompensas reutilizando los activos apostados en varios protocolos. Aumenta las oportunidades de rendimiento, pero conlleva mayores riesgos.",
       "imageUrl": "/icons/blog2.png",
@@ -248,8 +248,8 @@
     {
       "id": 3,
       "slug": "how-to-earn-cryptocurrency",
-      "date": "04 Septiembre",
-      "readTime": "5 min.",
+      "date": "29 July",
+      "readTime": "7 min.",
       "title": "Cómo ganar criptomonedas",
       "excerpt": "Existen múltiples formas de ganar criptomonedas: staking, minería, trading, provisión de liquidez e incluso juegos play-to-earn. Cada método tiene sus propios riesgos y recompensas.",
       "imageUrl": "/icons/blog3.png",

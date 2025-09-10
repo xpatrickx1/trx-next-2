@@ -122,7 +122,7 @@
       "description": "Wir haben Ihre Anfrage erhalten und werden uns in Kürze bei Ihnen melden.",
       "back": "Zurück zur Startseite"
     },
-
+    "copied" : "Kopiert",
     "hero_subtitle_usdt": "Setzen Sie Ihre USDT ein, um <highlight1>sUSDT</highlight1> \n zu erhalten und <highlight1>den doppelten Ertrag zu erzielen</highlight1>",
   "hero_subtitle_trx": "Setzen Sie Ihr TRX ein, um <highlight1>sTRX</highlight1> \n zu erhalten und <highlight1>doppelte Erträge zu verdienen</highlight1>",
   "hero_staked_trx_text": "Eingesetztes TRX",
@@ -218,8 +218,8 @@
     {
       "id": 1,
       "slug": "how-does-crypto-staking-work",
-      "date": "04. September",
-      "readTime": "6 Min.",
+      "date": "3 September",
+      "readTime": "12 Min.",
       "title": "Wie funktioniert Krypto-Staking?",
       "excerpt": "Beim Krypto-Staking sperren Nutzer ihre Token, um Blockchain-Netzwerke zu unterstützen und Belohnungen zu erhalten. Anstelle von Mining verwendet Staking den energieeffizienteren Proof-of-Stake (PoS)-Mechanismus.",
       "imageUrl": "/icons/blog1.png",
@@ -233,8 +233,8 @@
     {
       "id": 2,
       "slug": "crypto-restaking-complete-guide",
-      "date": "04. September",
-      "readTime": "7 Min.",
+      "date": "27 August",
+      "readTime": "5 Min.",
       "title": "Krypto-Restaking: Ein vollständiger Leitfaden",
       "excerpt": "Restaking ist eine neue DeFi-Strategie, mit der Staker ihre Belohnungen maximieren können, indem sie bereits gestakte Assets in mehreren Protokollen erneut einsetzen. Dies erhöht die Renditechancen, bringt jedoch höhere Risiken mit sich.",
       "imageUrl": "/icons/blog2.png",
@@ -248,8 +248,8 @@
     {
       "id": 3,
       "slug": "how-to-earn-cryptocurrency",
-      "date": "04. September",
-      "readTime": "5 Min.",
+      "date": "29 July",
+      "readTime": "7 Min.",
       "title": "Wie verdient man Kryptowährung?",
       "excerpt": "Es gibt verschiedene Möglichkeiten, Kryptowährungen zu verdienen: Staking, Mining, Handel, Liquiditätsbereitstellung und sogar Play-to-Earn-Spiele. Jede Methode hat eigene Risiken und Chancen.",
       "imageUrl": "/icons/blog3.png",

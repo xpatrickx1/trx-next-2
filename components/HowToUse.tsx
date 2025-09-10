@@ -52,7 +52,7 @@ export default function HowToUse () {
           </div>
           
         </div>
-        <a href="#stakeUsdt"
+        <a href="#staking"
               className="relative mb-6 sm:mb-10 max-w-[296px] purchase-energy-btn text-sm sm:text-base lg:text-[19px] mt-14 sm:mt-16 lg:mt-20 w-full sm:max-w-[283px] rounded-[5px] sm:max-h-[60px] mx-auto py-3 sm:py-6 transition-all flex justify-center items-center"
           >
             {t("start_staking")}

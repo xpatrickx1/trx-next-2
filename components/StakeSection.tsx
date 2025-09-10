@@ -21,9 +21,9 @@ const StakeSection = ({
   return (
     <section
       id={id}
-      className="relative mb-0 md:mb-6 flex flex-col items-center lg:items-start md:rounded-2xl max-w-7xl xl:mx-auto justify-between md:mx-3 pt-[6rem] sm:pt-[10rem]"
+      className="relative mb-0 md:mb-6 flex flex-col items-left lg:items-start md:rounded-2xl max-w-7xl xl:mx-auto justify-between md:mx-3 pt-[6rem] sm:pt-[10rem]"
     >
-      <div className="flex gap-2 md:gap-20 pl-[32px] md:pl-0 mb-10 flex-wrap">
+      <div id="staking" className="flex gap-2 md:gap-10 xl:gap-20 pl-[32px] justify-start items-start md:pl-0 mb-10 flex-col md:flex-row">
         <h2 className="font-bold text-left text-[40px] md:text-[55px] max-w-fit relative z-10 whitespace-nowrap">
           <span className="text-white">{t(titleKey)}</span>
         </h2>

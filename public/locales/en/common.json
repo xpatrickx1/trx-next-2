@@ -127,6 +127,7 @@
     "orderCancelled": "Order has been cancelled"
   },
 
+  "copied" : "Copied",
   "hero_subtitle_trx": "Stake your TRX to get <highlight1>sTRX</highlight1> \n and <highlight1>earn double yield</highlight1>",
   "hero_subtitle_usdt": "Stake your USDT to get <highlight1>sUSDT</highlight1> \n and <highlight1>earn double yield</highlight1>",
   "staking_apy": "Staking APY",
@@ -220,8 +221,8 @@
     {
       "id": 1,
       "slug": "how-does-crypto-staking-work",
-      "date": "04 September",
-      "readTime": "6 min.",
+      "date": "3 September",
+      "readTime": "12 min.",
       "title": "How Does Crypto Staking Work?",
       "excerpt": "Crypto staking allows users to lock their tokens to support blockchain networks and earn rewards. Instead of mining, staking uses a proof-of-stake (PoS) mechanism that is more energy-efficient and accessible.",
       "imageUrl": "/icons/blog1.png",
@@ -235,8 +236,8 @@
     {
       "id": 2,
       "slug": "crypto-restaking-complete-guide",
-      "date": "04 September",
-      "readTime": "7 min.",
+      "date": "27 August",
+      "readTime": "5 min.",
       "title": "Crypto Restaking: A Complete Guide",
       "excerpt": "Restaking is a new DeFi strategy that allows stakers to maximize their rewards by reusing staked assets across multiple protocols. It enhances yield opportunities but comes with higher risks.",
       "imageUrl": "/icons/blog2.png",
@@ -250,8 +251,8 @@
     {
       "id": 3,
       "slug": "how-to-earn-cryptocurrency",
-      "date": "04 September",
-      "readTime": "5 min.",
+      "date": "29 July",
+      "readTime": "7 min.",
       "title": "How to Earn Cryptocurrency",
       "excerpt": "There are multiple ways to earn cryptocurrency: staking, mining, trading, providing liquidity, and even play-to-earn games. Each method has its own risks and rewards.",
       "imageUrl": "/icons/blog3.png",
