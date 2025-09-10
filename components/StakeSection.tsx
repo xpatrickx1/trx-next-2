@@ -38,7 +38,7 @@ const StakeSection = ({
       </div>
 
       <div className="w-full text-center relative flex flex-wrap flex-col-reverse lg:flex-row lg:flex-nowrap md:gap-6">
-        <div className="lg:w-[50%] flex flex-col justify-between max-w-full py-8 pb-20 sm:pb-8 px-8 md:px-12 md:rounded-lg backdrop-blur-[7px] backdrop-brightness-[100%] bg-[linear-gradient(27deg,rgba(0,0,0,0.6)_32%,rgba(25,163,255,0.6)_100%)]">
+        <div className="lg:w-[40%] xl:w-[50%] flex flex-col justify-between max-w-full py-8 pb-20 sm:pb-8 px-8 md:px-12 md:rounded-lg backdrop-blur-[7px] backdrop-brightness-[100%] bg-[linear-gradient(27deg,rgba(0,0,0,0.6)_32%,rgba(25,163,255,0.6)_100%)]">
           <div className="flex justify-between">
             <div className="flex flex-col w-full sm:w-auto">
               <div className="flex gap-6 items-center justify-between sm:justify-start ">
@@ -108,7 +108,7 @@ const StakeSection = ({
             {t("card_text")}
           </div>
         </div>
-        <div className="lg:w-[50%] max-w-full pt-2 md:rounded-lg backdrop-blur-[7px] backdrop-brightness-[100%] bg-[radial-gradient(51.86%_173.38%_at_3.3%_5.83%,rgba(25,163,255,0.6)_14.9%,rgba(0,0,0,0.6)_52.88%)]">
+        <div className="lg:w-[60%] xl:w-[50%] max-w-full pt-2 md:rounded-lg backdrop-blur-[7px] backdrop-brightness-[100%] bg-[radial-gradient(51.86%_173.38%_at_3.3%_5.83%,rgba(25,163,255,0.6)_14.9%,rgba(0,0,0,0.6)_52.88%)]">
           <TabsBlockWithLogic
             stakeSection={stakeSection}
             unstakeSection={unstakeSection}
